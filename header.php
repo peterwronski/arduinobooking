@@ -25,12 +25,12 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.php"></a>
+            <a class="navbar-brand" href="./"></a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="index.php">Home</a></li>
-                <li><a href="about.php">About Arduino</a></li>
+                <li class="active"><a href="./">Home</a></li>
+                <li><a href="about">About Arduino</a></li>
                 <li><a href="components">Components</a></li>
                 <li><a href="http://campusmoodle.rgu.ac.uk">CampusNoodle</a></li>
             </ul>
