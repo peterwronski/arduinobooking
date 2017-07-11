@@ -6,11 +6,9 @@
  * Time: 16:29
  */
 
-include('header.php'); ?>
+include('header.php');
 
-
-<?
-define('INCLUDE_DIR', dirname(__FILE__) . '/inc/');
+define('INCLUDE_DIR', dirname(__FILE__));
 $rules = array(
     //
     //main pages
