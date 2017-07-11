@@ -115,3 +115,11 @@ h2{
 .login-help{
     font-size: 12px;
 }
+
+
+
+
+footer {
+    position: fixed;
+    bottom:0px;
+}
