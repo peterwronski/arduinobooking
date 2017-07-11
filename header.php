@@ -29,7 +29,7 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
+                <li class="active"><a href="index.php">Home</a></li>
                 <li><a href="about.php">About Arduino</a></li>
                 <li><a href="components">Components</a></li>
                 <li><a href="http://campusmoodle.rgu.ac.uk">CampusNoodle</a></li>
