@@ -41,6 +41,10 @@
                         <div class="modal-dialog">
                             <div class="loginmodal-container">
                                 <h1>Login to Your Account</h1><br>
+                                <div class="alert alert-info">
+                                    <strong>Heads up!</strong>This system is currently not connected to the RGU network, therefore your existing RGU credentials won't work unless you create a new account on this system.
+                                </div>
+
                                 <form>
                                     <input type="text" name="user" placeholder="Username">
                                     <input type="password" name="pass" placeholder="Password">
