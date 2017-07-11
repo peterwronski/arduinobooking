@@ -8,11 +8,39 @@
 
 include('header.php'); ?>
 
-<h1> Hello World!</h1> <br/>
 
-<h2>Goodbye World!</h2>
-
-
-</body
-
-</html>
+<?
+define('INCLUDE_DIR', dirname(__FILE__) . '/inc/');
+$rules = array(
+    //
+    //main pages
+    //
+    'about' => "/about",
+    'components' => "/components",
+    'bookings' => "/bookings",
+    'booking' => "/booking/(?'bookingID'[\w\-]+)",
+    //
+    //Admin Pages
+    //
+    'login' => "/login",
+    'viewuser' => "/viewuser",
+    'logout' => "/logout",
+    //
+    // Home Page
+    //
+    'home' => "/"
+);
+$uri = rtrim(dirname($_SERVER["SCRIPT_NAME"]), '/');
+$uri = '/' . trim(str_replace($uri,
+        ''
+        , $_SERVER['REQUEST_URI']), '/');
+$uri = urldecode($uri);
+foreach ($rules as $action => $rule) {
+    if (preg_match('~^' . $rule . '$~i', $uri, $params)) {
+        include(INCLUDE_DIR . $action . '.php');
+        exit();
+    }
+}
+// nothing is found so handle the 404 error
+include(INCLUDE_DIR . '404.php');
+?>
