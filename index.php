@@ -13,6 +13,7 @@ $rules = array(
     //
     //main pages
     //
+
     'about' => "/about",
     'components' => "/components",
     'bookings' => "/bookings",
@@ -26,7 +27,8 @@ $rules = array(
     //
     // Home Page
     //
-    'home' => "/"
+    'home' => "/",
+    'index' => "/"
 );
 $uri = rtrim(dirname($_SERVER["SCRIPT_NAME"]), '/');
 $uri = '/' . trim(str_replace($uri,
