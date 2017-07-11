@@ -30,8 +30,8 @@
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="#">Home</a></li>
-                <li><a href="#">About Arduino</a></li>
-                <li><a href="#">Components</a></li>
+                <li><a href="about.php">About Arduino</a></li>
+                <li><a href="components">Components</a></li>
                 <li><a href="http://campusmoodle.rgu.ac.uk">CampusNoodle</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
