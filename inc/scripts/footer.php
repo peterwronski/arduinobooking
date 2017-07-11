@@ -1,22 +1,19 @@
 </body>
 
+
 <footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-4 footer">
-               <a href="https://www.arduino.cc/"><img src="/inc/img/arduinologo.png" height="50px" width="140px" class="img-responsive" alt="Arduino Community Logo and Link"/></a>
-            </div>
+<nav class="navbar navbar-inverse navbar-fixed-bottom">
+    <div class="container-fluid">
+        <ul class="nav navbar-nav">
+            <li><a class="navbar-text" href="https://www.arduino.cc/"><img src="/inc/img/arduinologo.png" height="50px" width="140px" class="img-responsive" alt="Arduino Community Logo and Link"/></a></li>
 
-            <div class="col-sm-4 footer">
-                <a href="http://www.rgu.ac.uk/"><img src="/inc/img/csdmlogo.png" height="50px" width="150px" class="img-responsive" alt="RGU School of Computing Science and Digital Media Logo and Link"/></a>
-            </div>
+            <li><a class="navbar-text" href="http://www.rgu.ac.uk/"><img src="/inc/img/csdmlogo.png" height="50px" width="150px" class="img-responsive" alt="RGU School of Computing Science and Digital Media Logo and Link"/></a></li>
 
-            <div class="col-sm-4 footer">
-                &copy;RGU 2017 <br/>
-                Designed and Developed by Peter Wronski
-            </div>
-        </div>
+            <li><a class="navbar-text" href="#">&copy;RGU 2017 <br/>
+                    Designed and Developed by Peter Wronski</a></li>
+        </ul>
     </div>
+</nav>
 </footer>
 
 </html>
