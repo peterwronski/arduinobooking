@@ -5,10 +5,10 @@
  * Date: 11/07/2017
  * Time: 16:29
  */
+/*gonna put a bunch of comments in here*/
 
-include('header.php');
 
-define('INCLUDE_DIR', dirname(__FILE__));
+define('INCLUDE_DIR', dirname(__FILE__) . '/inc/');
 $rules = array(
     //
     //main pages
