@@ -25,7 +25,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="../../"><img src="img/logomain.png" class="img-responsive" alt="Arduino Booking At RGU Logo"/></a>
+            <a class="navbar-brand" href="../../"><img src="/../../img/logomain.png" class="img-responsive" alt="Arduino Booking At RGU Logo"/></a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
