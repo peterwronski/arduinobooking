@@ -6,7 +6,7 @@
 
         <div class="row">
             <div class="col-sm-4">
-                <a href="https://www.arduino.cc/"><img src="/inc/img/arduinologo.png" class="img-responsive" alt="Arduino Community Logo and Link"/></a>
+                <a href="https://www.arduino.cc/"><img src="/inc/img/arduinologo.png" class="img-responsive" height="70%" alt="Arduino Community Logo and Link"/></a>
             </div>
 
             <div class="col-sm-4">
