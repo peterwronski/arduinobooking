@@ -14,7 +14,7 @@
             </div>
 
             <div class="col-sm-4">
-                <p class="navbar-text pull-left">&copy;RGU 2017//Developed by Peter Wronski</p>
+                <p class="navbar-text">&copy;RGU 2017//Developed by Peter Wronski</p>
             </div>
         </div>
 
