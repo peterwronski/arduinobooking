@@ -2,7 +2,7 @@
 
 
 <footer>
-<nav class="navbar navbar-inverse navbar-fixed-bottom footernav">
+<nav class="navbar navbar-inverse navbar-fixed-bottom footernav" id="footernav">
     <div class="container-fluid">
         <ul class="nav navbar-nav">
             <li><a class="navbar-brand" href="https://www.arduino.cc/"><img src="/inc/img/arduinologo.png" height="15px" width="85px" class="img-responsive" alt="Arduino Community Logo and Link"/></a></li>

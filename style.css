@@ -116,7 +116,12 @@ h2{
     font-size: 12px;
 }
 
-
+#footernav > li > a, .navbar-brand {
+    padding-top:4px !important;
+    padding-bottom:0 !important;
+    height: 28px;
+}
+#footernav {min-height:28px !important;}
 
 
 footer {
@@ -130,9 +135,3 @@ footer {
     align-items: center;
 }
 
-.footernav > li > a, .navbar-brand {
-    padding-top:4px !important;
-    padding-bottom:0 !important;
-    height: 28px;
-}
-.navbar {min-height:28px !important;}
