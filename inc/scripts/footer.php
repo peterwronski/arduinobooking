@@ -2,7 +2,7 @@
 
 
 
-    <div class="footer navbar-fixed-bottom">
+<footer class="fixed-bottom">
         <hr/>
     <div class="container-fluid">
         <ul class="nav navbar-nav">
@@ -15,7 +15,7 @@
         </ul>
     </div>
 
-    </div>
+</footer>
 
 </html>
 
