@@ -1,10 +1,10 @@
 <?php
-include ('dbconnect.php');
+include ('scripts/dbconnect.php');
 if (($_POST['password']!=$_POST['password2'])) {// this checks to see if both password fields are a match
 echo'<script type="text/javascript">
     alert("Your passwords aren\'t matching. Please make sure your passwords match before submitting the form.");
 
-    window.location = "./"
+    window.location.href = "./"
 </script>';
 };
 
@@ -34,13 +34,13 @@ if($count==0) {
         echo ' <script type="text/javascript">
             alert("You\'ve made an account.");
 
-    window.location = "./"
+    window.location.href = "./"
         </script>';
     };
 } else {
     echo'<script type="text/javascript">
             alert("This Student ID is already registered.");
-    window.location = " ./"
+    window.location.href = "./"
         </script>';
 }
 ?>
