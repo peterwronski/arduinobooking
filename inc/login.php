@@ -1,5 +1,5 @@
 <?php
-include('dbconnect.php');
+include('scripts/dbconnect.php');
 
 
 $email = trim($_POST['email']);
