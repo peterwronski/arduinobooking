@@ -40,7 +40,7 @@ if (password_verify($pass, $row['pass']) && $count==1) {
     header("Location: inc/home.php");
     ?>
     <script type="text/javascript">
-        alert("Wrong email or password. Please try again.");
+        alert("You're logged in");
 
         window.location = "inc/home.php"
         </script>

@@ -45,7 +45,7 @@
                                     <strong>Heads up!</strong>This system is currently not connected to the RGU network, therefore your existing RGU credentials won't work unless you create a new account on this system.
                                 </div>
 
-                                <form action="login.php" method="POST">
+                                <form action="scripts/login.php" method="POST">
                                     <input type="text" name="email" placeholder="Email">
                                     <input type="password" name="pass" placeholder="Password">
                                     <input type="submit" name="login" class="login loginmodal-submit" value="Login">
