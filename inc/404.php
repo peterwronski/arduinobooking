@@ -1,3 +1,4 @@
+session_start();
 <?php include('scripts/header.php'); ?>
 
 
