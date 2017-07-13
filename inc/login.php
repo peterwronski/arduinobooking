@@ -25,9 +25,9 @@ $pass = stripslashes($pass);
 $email = $conn->real_escape_string($email);
 $pass = $conn->real_escape_string($pass);
 
-var_dump($email, $row);
 
-/*
+
+
 $query = $conn->query("SELECT email, pass, studentid name FROM users WHERE email='$email'");
 
 $row=$query->fetch_array();
@@ -36,7 +36,7 @@ var_dump ($row);
 
 $count = $query->num_rows; // if email/password are correct returns must be 1 row
 
-/*password_verify($pass, $row['pass']) -- IMPLEMENT AFTER REGISTRATION
+/*password_verify($pass, $row['pass']) -- IMPLEMENT AFTER REGISTRATION*/
 if ($pass == $row['pass'] && $count==1) {
     $_SESSION['userloggedin'] = $row['name'];
     $_SESSION['studentid'] = $row['studentid'];
@@ -61,6 +61,6 @@ else {
 </script>
 
     <?php
-}*/
-$conn->close();}
+}
+$conn->close(); }
 ?>
