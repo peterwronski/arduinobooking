@@ -13,7 +13,7 @@ session_start();
 include('dbconnect.php');
 //echo'required dbconnect file';
 
-$email = trim($_POST["email"]);
+$email = trim($_POST['email']);
 $pass = trim($_POST['pass']);
 
 
@@ -37,22 +37,22 @@ if (password_verify($pass, $row['pass']) && $count==1) {
     $_SESSION['studentid'] = $row['studentid'];
     header("Location: home");
 
-    header("Location: inc/home.php");
+    header("Location:home");
     ?>
     <script type="text/javascript">
         alert("You're logged in");
 
-        window.location = "inc/home.php"
+        window.location = "home"
         </script>
     <?php
 }
 else {
-    header("Location: inc/home.php");
+    header("Location:home");
     ?>
 <script type="text/javascript">
     alert("Wrong email or password. Please try again.");
 
-    window.location = "inc/home.php"
+    window.location = "home"
 </script>
 
     <?php
