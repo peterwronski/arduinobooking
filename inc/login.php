@@ -41,13 +41,14 @@ if ($pass == $row['pass'] && $count==1) {
     $_SESSION['userloggedin'] = $row['name'];
     $_SESSION['studentid'] = $row['studentid'];
 
-
-    header("Location:./");
     echo "<script type='text/javascript'>alert('good login')</script>";
+    header("Location:./");
+
 }
 else {
-    header("Location:login");
     echo "<script type='text/javascript'>alert('bad login')</script>";
+    header("Location:login");
+
 
 }
 $conn->close(); }
