@@ -29,6 +29,8 @@ $query = $conn->query("SELECT email, pass, studentid name FROM users WHERE email
 
 $row=$query->fetch_array();
 
+var_dump ($row);
+
 $count = $query->num_rows; // if email/password are correct returns must be 1 row
 
 
