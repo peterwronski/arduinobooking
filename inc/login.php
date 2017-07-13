@@ -25,7 +25,7 @@ $count = $query->num_rows; // if email/password are correct returns must be 1 ro
 
 /*password_verify($pass, $row['pass']) -- IMPLEMENT AFTER REGISTRATION*/
 if ($pass == $row['pass'] && $count==1) {
-    $_SESSION['userloggedin'] = $row['name'];
+    $_SESSION['userloggedin'] = $row['fname'];
     $_SESSION['studentid'] = $row['studentid'];
 
 
