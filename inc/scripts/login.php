@@ -36,14 +36,23 @@ if (password_verify($pass, $row['pass']) && $count==1) {
     $_SESSION['userloggedin'] = $row['name'];
     $_SESSION['studentid'] = $row['studentid'];
     header("Location: home");
+
+    header("Location: inc/home.php");
+    ?>
+    <script type="text/javascript">
+        alert("Wrong email or password. Please try again.");
+
+        window.location = "inc/home.php"
+        </script>
+    <?php
 }
 else {
-    header("Location: home");
+    header("Location: inc/home.php");
     ?>
 <script type="text/javascript">
     alert("Wrong email or password. Please try again.");
 
-    window.location = "home"
+    window.location = "inc/home.php"
 </script>
 
     <?php
