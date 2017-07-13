@@ -56,31 +56,31 @@
                                     </form>
 
                                     <div class="login-help">
-                                        <a href="#" data-toggle="modal" data-target="#reg-modal" data-dismiss="login-modal">Register</a> - <a href="#">Forgot Password</a>
-
-                                        <div class="modal fade" id="reg-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-                                            <div class="modal-dialog">
-                                                <div class="regmodal-container">
-                                                    <h1>Register a new account</h1><br>
-                                                    <form action="register" method="POST">
-                                                        <input type="text" name="studentid" placeholder="Student ID" aria-required="true" required>
-                                                        <input type="text" name="fname" placeholder="First name" aria-required="true" required>
-                                                        <input type="text" name="sname" placeholder="Surname" aria-required="true" required>
-                                                        <input type="text" name="email" placeholder="Email" aria-required="true" required>
-                                                        <input type="password" name="pass" placeholder="Password" aria-required ="true" required>
-                                                        <input type="password" name="pass2" placeholder="Confirm password" aria-required ="true" required>
-                                                        <input type="text" name="course" placeholder="Your course">
-                                                        <input type="submit" name="register" class="register regmodal-submit" value="Register">
-                                                    </form>
-                                                </div>
-                                            </div>
-                                        </div>
-
+                                        <a href="#">Forgot Password</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                 </li>
+                //
+                <li><a href="#" data-toggle="modal" data-target="#reg-modal"><span class="glyphicon glyphicon-plus-sign"></span>Register</a>
+                    <div class="modal fade" id="reg-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                        <div class="modal-dialog">
+                            <div class="regmodal-container">
+                                <h1>Register a new account</h1><br>
+                                <form action="register" method="POST">
+                                    <input type="text" name="studentid" placeholder="Student ID" aria-required="true" required>
+                                    <input type="text" name="fname" placeholder="First name" aria-required="true" required>
+                                    <input type="text" name="sname" placeholder="Surname" aria-required="true" required>
+                                    <input type="text" name="email" placeholder="Email" aria-required="true" required>
+                                    <input type="password" name="pass" placeholder="Password" aria-required ="true" required>
+                                    <input type="password" name="pass2" placeholder="Confirm password" aria-required ="true" required>
+                                    <input type="text" name="course" placeholder="Your course">
+                                    <input type="submit" name="register" class="register regmodal-submit" value="Register">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 <? }; ?>
             </ul>
         </div>
