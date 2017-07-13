@@ -31,13 +31,13 @@ if ($pass == $row['pass'] && $count==1) {
 
     echo "<script>
 alert('Good login');
-window.location.href='home';
+window.location.href='./';
 </script>";
 }
 else {
     echo "<script>
 alert('Something\'s fucked');
-window.location.href='home';
+window.location.href='./';
 </script>";
 
 

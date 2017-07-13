@@ -1,5 +1,7 @@
+
+<?php
 session_start();
-<?php include('scripts/header.php'); ?>
+include('scripts/header.php'); ?>
 
 
 <div class="alert alert-warning">
