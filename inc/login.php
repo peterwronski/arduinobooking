@@ -42,11 +42,11 @@ if ($pass == $row['pass'] && $count==1) {
     $_SESSION['studentid'] = $row['studentid'];
 
 
-    header("Location:home");
+    header("Location:./");
     echo "<script type='text/javascript'>alert('good login')</script>";
 }
 else {
-    header("Location:home");
+    header("Location:login");
     echo "<script type='text/javascript'>alert('bad login')</script>";
 
 }
