@@ -21,9 +21,9 @@ $rules = array(
     //
     //Admin Pages
     //
-    'login' => "login",
-    'viewuser' => "viewuser",
-    'logout' => "logout",
+    'login' => "/login",
+    'viewuser' => "/viewuser",
+    'logout' => "/logout",
     //
     // Home Page
     //
