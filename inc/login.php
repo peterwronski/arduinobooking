@@ -43,24 +43,12 @@ if ($pass == $row['pass'] && $count==1) {
 
 
     header("Location:home");
-    ?>
-    <script type="text/javascript">
-        alert("You're logged in");
-
-        window.location = "home"
-        </script>
-    <?php
+    echo "<script type='text/javascript'>alert('good login')</script>";
 }
 else {
     header("Location:home");
-    ?>
-<script type="text/javascript">
-    alert("Wrong email or password. Please try again.");
+    echo "<script type='text/javascript'>alert('bad login')</script>";
 
-    window.location = "home"
-</script>
-
-    <?php
 }
 $conn->close(); }
 ?>
