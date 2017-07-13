@@ -84,11 +84,11 @@
 
                         $row=$query->fetch_array();
 
-                        var_dump ($row);
+
 
                         $count = $query->num_rows; // if email/password are correct returns must be 1 row
 
-                        /*password_verify($pass, $row['pass']) -- IMPLEMENT AFTER REGISTRATION
+                        /*password_verify($pass, $row['pass']) -- IMPLEMENT AFTER REGISTRATION*/
                         if ($pass == $row['pass'] && $count==1) {
                             $_SESSION['userloggedin'] = $row['name'];
                             $_SESSION['studentid'] = $row['studentid'];
@@ -113,7 +113,7 @@
                         </script>
 
                             <?php
-                        }*/
+                        }
                         $conn->close();}
                     ?>
                 </li>
