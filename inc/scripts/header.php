@@ -56,7 +56,26 @@
                                     </form>
 
                                     <div class="login-help">
-                                        <a href="#">Register</a> - <a href="#">Forgot Password</a>
+                                        <a href="register" data-toggle="modal" data-target="#reg-modal">Register</a> - <a href="#">Forgot Password</a>
+
+                                        <div class="modal fade" id="reg-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                                            <div class="modal-dialog">
+                                                <div class="regmodal-container">
+                                                    <h1>Register a new account</h1><br>
+                                                    <form action="register" method="POST">
+                                                        <input type="text" name="studentid" placeholder="Student ID" aria-required="true" required>
+                                                        <input type="text" name="fname" placeholder="First name" aria-required="true" required>
+                                                        <input type="text" name="sname" placeholder="Surname" aria-required="true" required>
+                                                        <input type="text" name="email" placeholder="Email" aria-required="true" required>
+                                                        <input type="password" name="pass" placeholder="Password" aria-required ="true" required>
+                                                        <input type="password" name="pass2" placeholder="Confirm password" aria-required ="true" required>
+                                                        <input type="text" name="course" placeholder="Your course">
+                                                        <input type="submit" name="register" class="register regmodal-submit" value="Register">
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+
                                     </div>
                                 </div>
                             </div>
