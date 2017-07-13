@@ -34,7 +34,7 @@ if ($pass == $row['pass'] && $count==1) {
 }
 else {
     echo "<script type='text/javascript'>alert('bad login')</script>";
-    header("Location:login");
+    header("Location:./");
 
 
 }

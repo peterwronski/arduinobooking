@@ -35,6 +35,12 @@
                 <li><a href="http://campusmoodle.rgu.ac.uk">CampusNoodle</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
+                <?php
+                if (isset($_SESSION['userloggedin'])&&(($_SESSION['userloggedin']) == true)) {
+                echo'<p class="navbar-text">Welcome ' .$_SESSION['userloggedin'] .'</p></li>
+                <li><a href="logout.php"><span class="glyphicon glyphicon-user"></span> Log out</a></li>';
+                }
+                else { ?>
                 <li><a href="#" data-toggle="modal" data-target="#login-modal"><span class="glyphicon glyphicon-user"></span>Login</a>
                         <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
                             <div class="modal-dialog">
@@ -56,6 +62,7 @@
                             </div>
                         </div>
                 </li>
+                <? }; ?>
             </ul>
         </div>
     </div>
