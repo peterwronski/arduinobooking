@@ -66,7 +66,7 @@
                 <li><a href="#" data-toggle="modal" data-target="#reg-modal"><span class="glyphicon glyphicon-plus-sign"></span>Register</a>
                     <div class="modal fade" id="reg-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
                         <div class="modal-dialog">
-                            <div class="regmodal-container">
+                            <div class="loginmodal-container">
                                 <h1>Register a new account</h1><br>
                                 <form action="register" method="POST">
                                     <input type="text" name="studentid" placeholder="Student ID" aria-required="true" required>
@@ -76,7 +76,7 @@
                                     <input type="password" name="pass" placeholder="Password" aria-required ="true" required>
                                     <input type="password" name="pass2" placeholder="Confirm password" aria-required ="true" required>
                                     <input type="text" name="course" placeholder="Your course">
-                                    <input type="submit" name="register" class="register regmodal-submit" value="Register">
+                                    <input type="submit" name="register" class="register loginmodal-submit" value="Register">
                                 </form>
                             </div>
                         </div>
