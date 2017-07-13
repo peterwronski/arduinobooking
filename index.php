@@ -7,7 +7,7 @@
  */
 /*gonna put a bunch of comments in here*/
 
-/*
+
 define('INCLUDE_DIR', dirname(__FILE__) . '/inc/');
 $rules = array(
     //
@@ -42,7 +42,7 @@ foreach ($rules as $action => $rule) {
     }
 }
 // nothing is found so handle the 404 error
-include(INCLUDE_DIR . '404.php'); */
+include(INCLUDE_DIR . '404.php');
 ?>
 
 <h1>Hello World, this is the index page</h1>
