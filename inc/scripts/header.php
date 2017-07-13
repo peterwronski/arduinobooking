@@ -36,8 +36,7 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#" data-toggle="modal" data-target="#login-modal"><span class="glyphicon glyphicon-user"></span>Login</a>
-
-
+                    <?php include('login.php') ?>
                 </li>
             </ul>
         </div>
