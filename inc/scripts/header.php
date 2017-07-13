@@ -36,9 +36,6 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#" data-toggle="modal" data-target="#login-modal"><span class="glyphicon glyphicon-user"></span>Login</a>
-                    <?php
-                    if ($_SERVER['REQUEST_METHOD'] === 'GET') { ?>
-
                         <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
                             <div class="modal-dialog">
                                 <div class="loginmodal-container">
@@ -46,7 +43,6 @@
                                     <div class="alert alert-info">
                                         <strong>Heads up!</strong>This system is currently not connected to the RGU network, therefore your existing RGU credentials won't work unless you create a new account on this system.
                                     </div>
-
                                     <form action="login" method="POST">
                                         <input type="text" name="email" placeholder="Email">
                                         <input type="password" name="pass" placeholder="Password">
@@ -65,4 +61,3 @@
     </div>
 </nav>
 
-<!--check-->
