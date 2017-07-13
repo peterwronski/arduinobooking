@@ -38,7 +38,7 @@
                 <?php
                 if (isset($_SESSION['userloggedin'])&&(($_SESSION['userloggedin']) == true)) {
                 echo'<p class="navbar-text">Welcome ' .$_SESSION['userloggedin'] .'</p></li>
-                <li><a href="logout.php"><span class="glyphicon glyphicon-user"></span> Log out</a></li>';
+                <li><a href="logout"><span class="glyphicon glyphicon-user"></span> Log out</a></li>';
                 }
                 else { ?>
                 <li><a href="#" data-toggle="modal" data-target="#login-modal"><span class="glyphicon glyphicon-user"></span>Login</a>
