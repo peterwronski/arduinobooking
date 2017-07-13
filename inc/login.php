@@ -5,14 +5,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') { ?>
             <form action="login" method="POST">
                 <input type="text" name="email" placeholder="Email">
                 <input type="password" name="pass" placeholder="Password">
-                <input type="submit" name="login" class="login loginmodal-submit" value="Login">
+                <input type="submit" name="login" value="Login">
             </form>
 
 <? }
 elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
-include('dbconnect.php');
+include('scripts/dbconnect.php');
 
 
 $email = trim($_POST['email']);
