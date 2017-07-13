@@ -56,7 +56,7 @@
                                     </form>
 
                                     <div class="login-help">
-                                        <a href="register" data-toggle="modal" data-target="#reg-modal">Register</a> - <a href="#">Forgot Password</a>
+                                        <a href="#" data-toggle="modal" data-target="#reg-modal" data-dismiss="login-modal">Register</a> - <a href="#">Forgot Password</a>
 
                                         <div class="modal fade" id="reg-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
                                             <div class="modal-dialog">
