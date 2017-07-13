@@ -15,7 +15,7 @@ $pass = $conn->real_escape_string($pass);
 
 
 
-$query = $conn->query("SELECT email, pass, studentid name FROM users WHERE email='$email'");
+$query = $conn->query("SELECT email, pass, studentid ,fname FROM users WHERE email='$email'");
 
 $row=$query->fetch_array();
 
