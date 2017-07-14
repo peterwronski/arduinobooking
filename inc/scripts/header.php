@@ -75,7 +75,7 @@
                                     <input type="text" name="email" placeholder="Email" aria-required="true" required>
                                     <input type="password" name="pass" placeholder="Password" aria-required ="true" required>
                                     <input type="password" name="pass2" placeholder="Confirm password" aria-required ="true" required>
-                                    <input type="text" name="course" placeholder="Your course">
+                                    <input type="text" name="course" placeholder="Your course (Optional)">
                                     <input type="submit" name="register" class="register loginmodal-submit" value="Register">
                                 </form>
                             </div>

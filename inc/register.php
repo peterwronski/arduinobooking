@@ -1,6 +1,6 @@
 <?php
 include ('scripts/dbconnect.php');
-if (($_POST['password']!=$_POST['password2'])) {// this checks to see if both password fields are a match
+if (($_POST['pass']!=$_POST['pass2'])) {// this checks to see if both password fields are a match
 echo'<script type="text/javascript">
     alert("Your passwords aren\'t matching. Please make sure your passwords match before submitting the form.");
 
@@ -31,9 +31,8 @@ $count=$check_studentid->num_rows;
 if($count==0) {
     $adduser = "INSERT INTO users VALUE('$studentid', '$fname', '$sname', '$email', '$pass', '$course')";
     if ($conn->query($adduser) === TRUE) {
-        echo ' <script type="text/javascript">
+        echo '<script type="text/javascript">
             alert("You\'ve made an account.");
-
     window.location.href = "./"
         </script>';
     };
