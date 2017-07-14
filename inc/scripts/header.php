@@ -68,6 +68,9 @@
                         <div class="modal-dialog">
                             <div class="loginmodal-container">
                                 <h1>Register a new account</h1><br>
+                                <div class="alert alert-info">
+                                    <strong>Heads up!</strong>This system is designed for RGU students only. You will have to use an RGU email to make an account.
+                                </div>
                                 <form action="register" method="POST">
                                     <input type="text" name="studentid" placeholder="Student ID" aria-required="true" required>
                                     <input type="text" name="fname" placeholder="First name" aria-required="true" required>
