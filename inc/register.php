@@ -28,7 +28,7 @@ echo'<script type="text/javascript">
     $count = $check_studentid->num_rows;
 
     if ($count == 0) {
-        $adduser = "INSERT INTO users VALUE('$studentid', '$fname', '$sname', '$email', '$pass', '$course')";
+        $adduser = "INSERT INTO users VALUE('$studentid', '$fname', '$sname', '$email', '$hashAndSalt', '$course')";
         if ($conn->query($adduser) === TRUE) {
             echo '<script type="text/javascript">
             alert("You\'ve made an account.");
