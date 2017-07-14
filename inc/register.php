@@ -1,5 +1,7 @@
 <?php
 include ('scripts/dbconnect.php');
+
+
 if (($_POST['pass']!==$_POST['pass2'])) {// this checks to see if both password fields are identical
 echo'<script type="text/javascript">
     alert("Your passwords aren\'t matching. Please make sure your passwords match before submitting the form.");
@@ -14,6 +16,10 @@ echo'<script type="text/javascript">
     $email = $_POST['email'];
     $pass = $_POST['pass'];
     $course = $_POST['course'];
+
+    list($user, $domain) = explode('@', $email);
+
+    if($domain == 'rgu.ac.uk'){
 
     $studentid = $conn->real_escape_string($studentid);
     $fname = $conn->real_escape_string($fname);
@@ -38,6 +44,12 @@ echo'<script type="text/javascript">
     } else {
         echo '<script type="text/javascript">
             alert("This Student ID is already registered.");
+    window.location.href = "./"
+        </script>';
+    }
+} else {
+    echo '<script type="text/javascript">
+            alert("You\'ve used a wrong email domain. Please use your RGU student email.");
     window.location.href = "./"
         </script>';
     }
