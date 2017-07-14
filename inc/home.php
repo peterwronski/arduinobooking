@@ -2,8 +2,8 @@
 session_start();
 include('scripts/header.php');
 
-if(isset($msg)){
-    echo $msg;
+if(isset($_SESSION['msg'])){
+    echo $_SESSION['msg'];
 }
 
 ?>
