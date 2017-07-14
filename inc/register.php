@@ -1,6 +1,6 @@
 <?php
 include ('scripts/dbconnect.php');
-if (($_POST['pass']!=$_POST['pass2'])) {// this checks to see if both password fields are a match
+if (($_POST['pass']!==$_POST['pass2'])) {// this checks to see if both password fields are identical
 echo'<script type="text/javascript">
     alert("Your passwords aren\'t matching. Please make sure your passwords match before submitting the form.");
 

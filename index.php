@@ -25,6 +25,7 @@ $rules = array(
     //Admin Pages
     //
     'login' => "/login",
+    'register' => "/register",
     'viewuser' => "/viewuser",
     'logout' => "/logout",
     //
