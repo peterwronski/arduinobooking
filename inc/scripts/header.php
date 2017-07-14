@@ -73,6 +73,7 @@
                                     <input type="text" name="fname" placeholder="First name" aria-required="true" required>
                                     <input type="text" name="sname" placeholder="Surname" aria-required="true" required>
                                     <input type="text" name="email" placeholder="Email" aria-required="true" required>
+                                    <p>Use your Student ID (i.e. <i>1234567@rgu.ac.uk</i>) or your name (i.e. <i>j.smith@rgu.ac.uk</i>)</p>
                                     <input type="password" name="pass" placeholder="Password" aria-required ="true" required>
                                     <input type="password" name="pass2" placeholder="Confirm password" aria-required ="true" required>
                                     <input type="text" name="course" placeholder="Your course (Optional)">
