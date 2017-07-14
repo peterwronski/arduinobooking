@@ -3,11 +3,10 @@ include ('scripts/dbconnect.php');
 
 
 if (($_POST['pass']!==$_POST['pass2'])) {// this checks to see if both password fields are identical
-echo'<script type="text/javascript">
-    alert("Your passwords aren\'t matching. Please make sure your passwords match before submitting the form.");
+    $msg = '<div class="alert alert-danger">
+                                    <strong>Heads up!</strong>. Your passwords aren\'t matching. Please make sure your passwords match before submitting the form.
+                                </div>';
 
-    window.location.href = "./"
-</script>';
 } else {
 
     $studentid = $_POST['studentid'];
@@ -16,6 +15,7 @@ echo'<script type="text/javascript">
     $email = $_POST['email'];
     $pass = $_POST['pass'];
     $course = $_POST['course'];
+
 
     list($user, $domain) = explode('@', $email);
 
@@ -27,31 +27,30 @@ echo'<script type="text/javascript">
     $email = $conn->real_escape_string($email);
     $pass = $conn->real_escape_string($pass);
     $course = $conn->real_escape_string($course);
+    $activation_hash=md5( rand(0,1000) );
 
-    $hashAndSalt = password_hash($pass, PASSWORD_DEFAULT);
+    $hashAndSalt = password_hash($pass, PASSWORD_DEFAULT); //Encrypting the password
 
     $check_studentid = $conn->query("SELECT studentid FROM users WHERE studentid='$studentid'"); #CHECKING THAT THE STUDENTID ISN'T REGISTERED
     $count = $check_studentid->num_rows;
 
     if ($count == 0) {
-        $adduser = "INSERT INTO users VALUE('$studentid', '$fname', '$sname', '$email', '$hashAndSalt', '$course')";
+        $adduser = "INSERT INTO users VALUE('$studentid', '$fname', '$sname', '$email', '$hashAndSalt', '$course', '$activation_hash')";
         if ($conn->query($adduser) === TRUE) {
-            echo '<script type="text/javascript">
-            alert("You\'ve made an account.");
-    window.location.href = "./"
-        </script>';
+            $msg = '<div class="alert alert-success">
+                                    <strong>Awesome!</strong>. Your account has been created. Check your email for an activation link which will enable you to login to your account.
+                                </div>';
         };
     } else {
-        echo '<script type="text/javascript">
-            alert("This Student ID is already registered.");
-    window.location.href = "./"
-        </script>';
+
+        $msg = '<div class="alert alert-danger">
+                                    <strong>Heads up!</strong>. This student ID is already registered.
+                                </div>';
     }
 } else {
-    echo '<script type="text/javascript">
-            alert("You\'ve used a wrong email domain. Please use your RGU student email.");
-    window.location.href = "./"
-        </script>';
+        $msg = '<div class="alert alert-danger">
+                                    <strong>Heads up!</strong>. You MUST use an RGU email address to make an account.
+                                </div>';
     }
 }
 ?>
