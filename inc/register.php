@@ -3,7 +3,8 @@ include ('scripts/dbconnect.php');
 
 
 if (($_POST['pass']!==$_POST['pass2'])) {// this checks to see if both password fields are identical
-    $_SESSION['msg'] = '<div class="alert alert-danger">
+    $_SESSION['msg'] = '<div class="alert alert-danger alert-dismissable">
+                                    <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
                                     <strong>Heads up!</strong>. Your passwords aren\'t matching. Please make sure your passwords match before submitting the form.
                                 </div>';
     header('Location: ./');
@@ -38,20 +39,23 @@ if (($_POST['pass']!==$_POST['pass2'])) {// this checks to see if both password 
     if ($count == 0) {
         $adduser = "INSERT INTO users VALUE('$studentid', '$fname', '$sname', '$email', '$hashAndSalt', '$course', '$activation_hash')";
         if ($conn->query($adduser) === TRUE) {
-            $_SESSION['msg'] = '<div class="alert alert-success">
+            $_SESSION['msg'] = '<div class="alert alert-success alert-dismissable" >
+                                    <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
                                     <strong>Awesome!</strong>. Your account has been created. Check your email for an activation link which will enable you to login to your account.
                                 </div>';
             header('Location: ./');
         };
     } else {
 
-        $_SESSION['msg'] = '<div class="alert alert-danger">
+        $_SESSION['msg'] = '<div class="alert alert-danger alert-dismissable">
+                                    <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
                                     <strong>Heads up!</strong>. This student ID is already registered.
                                 </div>';
         header('Location: ./');
     }
 } else {
-        $_SESSION['msg'] = '<div class="alert alert-danger">
+        $_SESSION['msg'] = '<div class="alert alert-danger alert-dismissable">
+                                    <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
                                     <strong>Heads up!</strong>. You MUST use an RGU email address to make an account.
                                 </div>';
         header('Location: ./');
