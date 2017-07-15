@@ -56,7 +56,7 @@ if (($_POST['pass']!==$_POST['pass2'])) {// this checks to see if both password 
             ////////////////////////////////
 
             $_SESSION['msg'] = '<div class="alert alert-success alert-dismissable" >
-                                    <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+                                    <a href="?unset_function" class="close" data-dismiss="alert" aria-label="close">×</a>
                                     <strong>Awesome!</strong>. Your account has been created. Check your email for an activation link which will enable you to login to your account.
                                 </div>';
             header('Location: ./');
