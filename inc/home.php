@@ -2,11 +2,10 @@
 session_start();
 include('scripts/header.php');
 
-function unset_function()
-{
+$pageWasRefreshed = isset($_SERVER['HTTP_CACHE_CONTROL']) && $_SERVER['HTTP_CACHE_CONTROL'] === 'max-age=150';
+if($pageWasRefreshed){
     unset($_SESSION['msg']);
 }
-
 
 if(isset($_SESSION['msg'])){
     echo $_SESSION['msg'];
