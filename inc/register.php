@@ -39,6 +39,20 @@ if (($_POST['pass']!==$_POST['pass2'])) {// this checks to see if both password 
     if ($count == 0) {
         $adduser = "INSERT INTO users VALUE('$studentid', '$fname', '$sname', '$email', '$hashAndSalt', '$course', '$activation_hash')";
         if ($conn->query($adduser) === TRUE) {
+            //MAIL ACTIVATION CODE
+            $to = $email;
+            $subject = 'ArduinoBookingRGU | Verification';
+            $message = ' Hi ' .$fname .'!
+            Thanks for signing up to ArduinoBooking for RGU!
+            
+            Please click this link to activate your account: 
+            http://arduinobooking.azurebwebsites.com/verify.php?email='.$email.'&hash='.$activation_hash.'';
+
+            $headers = 'From:noreply@arduinobooking.azurewebsites.com' . "\r\n";
+            mail($to, $subject, $message, $headers);
+
+            ////////////////////////////////
+
             $_SESSION['msg'] = '<div class="alert alert-success alert-dismissable" >
                                     <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
                                     <strong>Awesome!</strong>. Your account has been created. Check your email for an activation link which will enable you to login to your account.
