@@ -31,6 +31,7 @@ if (($_POST['pass']!==$_POST['pass2'])) {// this checks to see if both password 
     $course = $conn->real_escape_string($course);
     $activation_hash=md5( rand(0,1000) );
 
+echo $activation_hash;
     $hashAndSalt = password_hash($pass, PASSWORD_DEFAULT); //Encrypting the password
 
     $check_studentid = $conn->query("SELECT studentid FROM users WHERE studentid='$studentid'"); #CHECKING THAT THE STUDENTID ISN'T REGISTERED
@@ -50,7 +51,7 @@ if (($_POST['pass']!==$_POST['pass2'])) {// this checks to see if both password 
 
             $headers = 'From:noreply@arduinobooking.azurewebsites.com' . "\r\n";
             //mail($to, $subject, $message, $headers);*/
-echo $email .', ' .$activation_hash;
+//echo $email .', ' .$activation_hash;
             ////////////////////////////////
 
             $_SESSION['msg'] = '<div class="alert alert-success alert-dismissable" >
