@@ -19,9 +19,9 @@ if (($_POST['pass']!==$_POST['pass2'])) {// this checks to see if both password 
     $course = $_POST['course'];
 
 
-    list($user, $domain) = explode('@', $email);
+    //list($user, $domain) = explode('@', $email);
 
-    if($domain == 'rgu.ac.uk'){
+    //if($domain == 'rgu.ac.uk'){
 
     $studentid = $conn->real_escape_string($studentid);
     $fname = $conn->real_escape_string($fname);
@@ -67,12 +67,12 @@ echo $email .', ' .$activation_hash;
                                 </div>';
         header('Location: ./');
     }
-} else {
+/*} else {
         $_SESSION['msg'] = '<div class="alert alert-danger alert-dismissable">
                                     <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
                                     <strong>Heads up!</strong>. You MUST use an RGU email address to make an account.
                                 </div>';
         header('Location: ./');
-    }
+    }*/
 }
 ?>
