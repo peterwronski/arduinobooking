@@ -49,8 +49,8 @@ if (($_POST['pass']!==$_POST['pass2'])) {// this checks to see if both password 
             http://arduinobooking.azurebwebsites.com/verify.php?email='.$email.'&hash='.$activation_hash.'';
 
             $headers = 'From:noreply@arduinobooking.azurewebsites.com' . "\r\n";
-            mail($to, $subject, $message, $headers);
-
+            //mail($to, $subject, $message, $headers);
+echo $message;
             ////////////////////////////////
 
             $_SESSION['msg'] = '<div class="alert alert-success alert-dismissable" >
