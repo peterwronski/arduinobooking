@@ -6,7 +6,7 @@ if(isset($_GET['email']) && !empty($_GET['email']) AND isset($_GET['activation_h
     $activation_hash = $conn->real_escape_string($_GET['activation_hash']);
 
     $search = $conn->query("SELECT email, activation_hash, activated FROM users WHERE email='".$email."' AND activation_hash='".$activation_hash."' AND activated='0'");
-    $match  = mysql_num_rows($search);
+    $match = $search->num_rows;
 
     if ($match > 0){
         $conn->query("UPDATE users SET activated='1' WHERE email='".$email."' AND activation_hash='".$activation_hash."' AND activated='0'");
