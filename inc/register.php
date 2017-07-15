@@ -30,6 +30,7 @@ if (($_POST['pass']!==$_POST['pass2'])) {// this checks to see if both password 
     $pass = $conn->real_escape_string($pass);
     $course = $conn->real_escape_string($course);
     $activation_hash=md5( rand(0,1000) );
+    $activated = 0;
 
 
     $hashAndSalt = password_hash($pass, PASSWORD_DEFAULT); //Encrypting the password
