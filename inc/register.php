@@ -40,7 +40,7 @@ if (($_POST['pass']!==$_POST['pass2'])) {// this checks to see if both password 
         $adduser = "INSERT INTO users VALUE('$studentid', '$fname', '$sname', '$email', '$hashAndSalt', '$course', '$activation_hash')";
         if ($conn->query($adduser) === TRUE) {
             //MAIL ACTIVATION CODE
-            $to = $email;
+            /*$to = $email;
             $subject = 'ArduinoBookingRGU | Verification';
             $message = ' Hi ' .$fname .'!
             Thanks for signing up to ArduinoBooking for RGU!
@@ -49,8 +49,8 @@ if (($_POST['pass']!==$_POST['pass2'])) {// this checks to see if both password 
             http://arduinobooking.azurebwebsites.com/verify.php?email='.$email.'&hash='.$activation_hash.'';
 
             $headers = 'From:noreply@arduinobooking.azurewebsites.com' . "\r\n";
-            //mail($to, $subject, $message, $headers);
-echo $message;
+            //mail($to, $subject, $message, $headers);*/
+echo $email .', ' .$activation_hash;
             ////////////////////////////////
 
             $_SESSION['msg'] = '<div class="alert alert-success alert-dismissable" >
