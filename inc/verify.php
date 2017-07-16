@@ -4,8 +4,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     <div class="container">
         <div class="row">
             <div class="loginmodal-container">
-                <div class="alert alert-info alert-dismissable" >
-                    <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+                <div class="alert alert-info" >
+
     <form action="verify" method="POST">
         <strong>Check your email!</strong> We have sent an email containing an activation code, which will enable you to use the account. <br/>
         Paste the code in the box below and click 'Submit' <br/>
