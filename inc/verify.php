@@ -24,14 +24,14 @@ if(!empty($_GET['email']) && !empty($_GET['activation_hash'])){
                                     <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
                                     <strong>Oh no!</strong>. Your account couldn\'t be activated.
                                 </div>';
-            header('Location: ./');
+            header('Location: inc/home.php');
         } else {
 
             $_SESSION['msg'] = '<div class="alert alert-success alert-dismissable" >
                                     <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
                                     <strong>Awesome!</strong>. Your account has been activated. You can now log in using the credentials you provided during registration.
                                 </div>';
-            header('Location: ./');
+            header('Location: inc/home.php');
         };
     } else {
         $_SESSION['msg'] = '<div class="alert alert-danger alert-dismissable" >
