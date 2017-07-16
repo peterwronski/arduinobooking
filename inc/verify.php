@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                 <div class="alert alert-info" >
 
     <form action="verify" method="POST">
-        <strong>Check your email!</strong> We have sent an email containing an activation code, which will enable you to use the account. <br/>
+        <strong>Check your email!</strong> <br/> We have sent an email containing an activation code, which will enable you to use the account. <br/>
         Paste the code in the box below and click 'Submit' <br/>
         <input type="text" name="activation_hash" placeholder="Enter your activation code here" required aria-required/> <br/>
         <input type="submit" name="activation_submit"/>
