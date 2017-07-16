@@ -41,17 +41,28 @@ if (($_POST['pass']!==$_POST['pass2'])) {// this checks to see if both password 
     if ($count == 0) {
         $adduser = "INSERT INTO users VALUE('$studentid', '$fname', '$sname', '$email', '$hashAndSalt', '$course', '$activation_hash', '$activated')" or die('Insert query failed');
         if ($conn->query($adduser) === TRUE) {
-            //MAIL ACTIVATION CODE - based on https://code.tutsplus.com/tutorials/how-to-implement-email-verification-for-new-members--net-3824
-            $to = $email;
-            $subject = 'ArduinoBookingRGU | Verification';
+
+            //source - https://stackoverflow.com/questions/712392/send-email-using-the-gmail-smtp-server-from-a-php-page
+            require_once 'scripts/swift/lib/swift_required.php';
+
             $message = ' Hi ' .$fname .'!
             Thanks for signing up to ArduinoBooking for RGU!
             
             Please click this link to activate your account: 
             http://arduinobooking.azurebwebsites.com/verify.php?email='.$email.'&hash='.$activation_hash.'';
 
-            $headers = 'From:noreply@arduinobooking.azurewebsites.com' . "\r\n";
-            mail($to, $subject, $message, $headers);
+            $transport = Swift_SmtpTransport::newInstance('smtp.gmail.com', 465, "ssl")
+                ->setUsername('noreply.arduinobooking')
+                ->setPassword('arduinopass');
+
+            $mailer = Swift_Mailer::newInstance($transport);
+
+            $activation_mail = Swift_Message::newInstance('Test Subject')
+                ->setFrom(array('noreply.arduinobooking@gmail.com' => 'NoReply - ArduinoBooking'))
+                ->setTo($email)
+                ->setBody($message);
+
+            $result = $mailer->send($activation_mail);
 
             ////////////////////////////////
 

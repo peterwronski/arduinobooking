@@ -29,16 +29,18 @@ if (password_verify($pass, $row['pass'])&& $count==1) {
     $_SESSION['studentid'] = $row['studentid'];
 
 
-    echo "<script>
-alert('Good login');
-window.location.href='./';
-</script>";
+    $_SESSION['msg'] = '<div class="alert alert-success alert-dismissable">
+                                    <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+                                    <strong>Hi there ' .$_SESSION['userloggedin'] .'!</strong>.
+                                </div>';
+    header('Location: ./');
 }
 else {
-    echo "<script>
-alert('Something\'s fucked');
-window.location.href='./';
-</script>";
+    $_SESSION['msg'] = '<div class="alert alert-danger alert-dismissable">
+                                    <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+                                    <strong>Heads up!</strong>. Your email or password are wrong.
+                                </div>';
+    header('Location: ./');
 
 
 }
