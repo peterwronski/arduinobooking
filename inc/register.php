@@ -45,22 +45,22 @@ if (($_POST['pass']!==$_POST['pass2'])) {// this checks to see if both password 
             //source - https://stackoverflow.com/questions/712392/send-email-using-the-gmail-smtp-server-from-a-php-page
             require_once 'scripts/swift/lib/swift_required.php';
 
-            $emailcontent = ' Hi ' .$fname .'!
-            Thanks for signing up to ArduinoBooking for RGU!
-            
-            Please click this link to activate your account: 
-            http://arduinobooking.azurebwebsites.com/verify.php?email='.$email.'&hash='.$activation_hash.'';
+            ;
 
-            $transport = Swift_SmtpTransport::newInstance('ssl://smtp.gmail.com', 465, "ssl")
+            $transport = Swift_SmtpTransport::newInstance('ssl://smtp.gmail.com', 465)
                 ->setUsername('noreply.arduinobooking@gmail.com')
                 ->setPassword('arduinopass');
 
             $mailer = Swift_Mailer::newInstance($transport);
 
-            $message = Swift_Message::newInstance('Test Subject')
+            $message = Swift_Message::newInstance('ArduinoBooking - Activate your account')
                 ->setFrom(array('noreply.arduinobooking@gmail.com' => 'NoReply - ArduinoBooking'))
                 ->setTo(array($email => $fname))
-                ->setBody($emailcontent);
+                ->setBody(' Hi ' .$fname .'!
+            Thanks for signing up to ArduinoBooking for RGU!
+            
+            Please click this link to activate your account: 
+            http://arduinobooking.azurebwebsites.com/verify.php?email='.$email.'&hash='.$activation_hash.'');
 
             if ($mailer->send($message)) {
                 $_SESSION['msg'] = '<div class="alert alert-success alert-dismissable" >
