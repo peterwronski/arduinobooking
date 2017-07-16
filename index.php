@@ -44,8 +44,7 @@ $uri = '/' . trim(str_replace($uri,
 $uri = urldecode($uri);
 foreach ($rules as $action => $rule) {
     if (preg_match('~^' . $rule . '$~i', $uri, $params)) {
-        $params_dump = var_dump($params);
-        $_SESSION['lastcalledaction'] = $action .', ' .$params_dump;
+        $_SESSION['lastcalledaction'] = $action;
         include(INCLUDE_DIR . $action . '.php');
         exit();
     }
