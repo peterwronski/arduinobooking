@@ -5,7 +5,7 @@
 
 <?php
 
-
+include('scripts/dbconnect.php');
 
 //Based on https://code.tutsplus.com/tutorials/how-to-implement-email-verification-for-new-members--net-3824
 
