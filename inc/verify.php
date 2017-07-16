@@ -1,9 +1,12 @@
 <?php
+start_session();
 include ('scripts/dbconnect.php');
 
 //Based on https://code.tutsplus.com/tutorials/how-to-implement-email-verification-for-new-members--net-3824
 
-if(isset($_GET['email']) && !empty($_GET['email']) AND isset($_GET['activation_hash']) && !empty($_GET['activation_hash'])){
+if(!empty($_GET['email']) && !empty($_GET['activation_hash'])){
+
+
     $email = $conn->real_escape_string($_GET['email']);
     $activation_hash = $conn->real_escape_string($_GET['activation_hash']);
 
