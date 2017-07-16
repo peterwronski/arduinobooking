@@ -9,6 +9,10 @@ if(!empty($_GET['email']) && !empty($_GET['activation_hash'])){
     $email = $_GET['email'];
     $activation_hash = $_GET['activation_hash'];
 
+    var_dump($email);
+
+    var_dump($activation_hash);
+
     $email = $conn->real_escape_string($email);
     $activation_hash = $conn->real_escape_string($activation_hash);
 
