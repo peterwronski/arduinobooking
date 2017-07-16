@@ -50,7 +50,7 @@ if (($_POST['pass']!==$_POST['pass2'])) {// this checks to see if both password 
             Thanks for signing up to ArduinoBooking for RGU!
             
             Please click this link to activate your account: 
-            http://arduinobooking.azurebwebsites.com/verify.php?email='.$email.'&hash='.$activation_hash.'';
+            http://arduinobooking.azurebwebsites.com/verify?email='.$email.'&hash='.$activation_hash;
 
 
             $mail->IsSMTP();
