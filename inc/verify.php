@@ -13,12 +13,12 @@ $activation_hash = $_POST['activation_hash'];
 $activation_hash = $conn->real_escape_string($activation_hash);
 echo $activation_hash;
 
-    $search = $conn->query("SELECT email, activation_hash, activated FROM users WHERE activation_hash='.$activation_hash.' AND activated='0'");
+    $search = $conn->query("SELECT activation_hash, activated FROM users WHERE activation_hash='.$activation_hash.' AND activated=0");
     $match = $search->num_rows;
 
 
     if ($match > 0){
-        $activate=$conn->query("UPDATE users SET activated=1 WHERE activation_hash='.$activation_hash");
+        $activate=$conn->query("UPDATE users SET activated==1 WHERE activation_hash='.$activation_hash ");
 
         if(!$activate){
             $_SESSION['msg'] = '<div class="alert alert-danger alert-dismissable" >
