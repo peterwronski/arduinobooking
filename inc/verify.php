@@ -1,10 +1,21 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     include('scripts/header.php'); ?>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <div class="alert alert-info alert-dismissable" >
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
     <form action="verify" method="POST">
+        <strong>Check your email!</strong> We have sent an email containing an activation code, which will enable you to use the account. <br/>
+        Paste the code in the box below and click 'Submit'
         <input type="text" name="activation_hash" placeholder="Enter your activation code here" required aria-required/>
         <input type="submit" name="activation_submit"/>
     </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <?php
     include('scripts/footer.php');
