@@ -13,9 +13,10 @@ if(!empty($_GET['email']) && !empty($_GET['activation_hash'])){
 
     $search = $conn->query("SELECT email, activation_hash, activated FROM users WHERE email='.$email.' AND activation_hash='.$activation_hash.' AND activated='0'");
     $match = $search->num_rows;
+    echo $match;
 
     if ($match > 0){
-        $conn->query("UPDATE users SET activated='1' WHERE email=' .$email.' AND activation_hash='.$activation_hash.' AND activated='0'");
+        $conn->query("UPDATE users SET activated='1' WHERE email=' .$email.' AND activation_hash='.$activation_hash");
 
         $_SESSION['msg'] = '<div class="alert alert-success alert-dismissable" >
                                     <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
