@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
 
     if ($match > 0) {
-        $activate = $conn->query("UPDATE users SET activated==1 WHERE activation_hash='" . $activation_hash . "';");
+        $activate = $conn->query("UPDATE users SET activated=1 WHERE activation_hash='" . $activation_hash . "';");
 
         if ($activate) {
 
