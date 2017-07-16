@@ -18,11 +18,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
     echo $activation_hash;
 
-/*
+
     $search = $conn->query("SELECT activation_hash, activated FROM users WHERE activation_hash='.$activation_hash.' AND activated=0");
     $match = $search->num_rows;
 
+    echo $activation_hash;
+    echo $search;
+    echo $match;
 
+/*
     if ($match > 0) {
         $activate = $conn->query("UPDATE users SET activated==1 WHERE activation_hash='.$activation_hash ");
 
