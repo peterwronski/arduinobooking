@@ -26,7 +26,7 @@ $rules = array(
     //
     'login' => "/login",
     'register' => "/register",
-    'verify' => "/verify/(?'email'[_a-z0-9-]+) ?'activation_hash'[_a-z0-9-]+) ",
+    'verify' => "/verify(?'email'[_a-z0-9-]+) ?'activation_hash'[_a-z0-9-]+) ",
 
     'viewuser' => "/viewuser",
     'logout' => "/logout",
