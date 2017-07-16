@@ -17,7 +17,7 @@ if(!empty($_GET['email']) && !empty($_GET['activation_hash'])){
 
 
     if ($match > 0){
-        $activate=$conn->query("UPDATE users SET activated='1' WHERE email=' .$email.' AND activation_hash='.$activation_hash");
+        $activate=$conn->query("UPDATE users SET activated=1 WHERE email=' .$email.' AND activation_hash='.$activation_hash");
 
         if(!$activate){
             $_SESSION['msg'] = '<div class="alert alert-danger alert-dismissable" >
