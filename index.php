@@ -27,7 +27,7 @@ $rules = array(
     //
     'login' => "/login",
     'register' => "/register",
-    //'verify' => "/verify/([\w\-]+)",
+    'verify' => "/verify",
 
     'viewuser' => "/viewuser",
     'logout' => "/logout",
