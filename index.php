@@ -21,12 +21,13 @@ $rules = array(
     'components' => "/components",
     'bookings' => "/bookings",
     'booking' => "/booking/(?'bookingID'[\w\-]+)",
+
     //
     //Admin Pages
     //
     'login' => "/login",
     'register' => "/register",
-    'verify' => "/verify(?'email'[/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/ ]+ '&activation_hash'[\w\-]+)",
+    'verify' => "/verify/(?'email'[\w\-]+'&activation_hash'[\w\-]+)",
 
     'viewuser' => "/viewuser",
     'logout' => "/logout",
