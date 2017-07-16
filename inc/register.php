@@ -19,9 +19,9 @@ if (($_POST['pass']!==$_POST['pass2'])) {// this checks to see if both password 
     $course = $_POST['course'];
 
 
-    //list($user, $domain) = explode('@', $email);
+    list($user, $domain) = explode('@', $email);
 
-    //if($domain == 'rgu.ac.uk'){
+    if($domain == 'rgu.ac.uk'){
 
     $studentid = $conn->real_escape_string($studentid);
     $fname = $conn->real_escape_string($fname);
@@ -41,7 +41,7 @@ if (($_POST['pass']!==$_POST['pass2'])) {// this checks to see if both password 
     if ($count == 0) {
         $adduser = "INSERT INTO users VALUE('$studentid', '$fname', '$sname', '$email', '$hashAndSalt', '$course', '$activation_hash', '$activated')" or die('Insert query failed');
         if ($conn->query($adduser) === TRUE) {
-            //MAIL ACTIVATION CODE
+            //MAIL ACTIVATION CODE - based on https://code.tutsplus.com/tutorials/how-to-implement-email-verification-for-new-members--net-3824
             $to = $email;
             $subject = 'ArduinoBookingRGU | Verification';
             $message = ' Hi ' .$fname .'!
@@ -69,12 +69,12 @@ if (($_POST['pass']!==$_POST['pass2'])) {// this checks to see if both password 
                                 </div>';
         header('Location: ./');
     }
-/*} else {
+} else {
         $_SESSION['msg'] = '<div class="alert alert-danger alert-dismissable">
                                     <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
                                     <strong>Heads up!</strong>. You MUST use an RGU email address to make an account.
                                 </div>';
         header('Location: ./');
-    }*/
+    }
 }
 ?>
