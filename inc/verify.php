@@ -37,15 +37,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     if ($match > 0) {
         $activate = $conn->query("UPDATE users SET activated=1 WHERE activation_hash='" . $activation_hash . "';");
 
-        if ($activate) {
-            $_SESSION['userloggedin'] = $row['fname'];
-            $_SESSION['studentid'] = $row['studentid'];
+
 
             $_SESSION['msg'] = '<div class="alert alert-success alert-dismissable" >
                                     <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
                                     <strong>Awesome!</strong>. Your account has been activated! 
                                 </div>';
-            header('Location: ./');
+            header('Location: login');
         } else {
             $_SESSION['msg'] = '<div class="alert alert-danger alert-dismissable" >
                                     <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
