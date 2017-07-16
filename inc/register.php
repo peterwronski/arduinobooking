@@ -45,32 +45,36 @@ if (($_POST['pass']!==$_POST['pass2'])) {// this checks to see if both password 
             //source - https://stackoverflow.com/questions/712392/send-email-using-the-gmail-smtp-server-from-a-php-page
             require_once 'scripts/swift/lib/swift_required.php';
 
-            $message = ' Hi ' .$fname .'!
+            $emailcontent = ' Hi ' .$fname .'!
             Thanks for signing up to ArduinoBooking for RGU!
             
             Please click this link to activate your account: 
             http://arduinobooking.azurebwebsites.com/verify.php?email='.$email.'&hash='.$activation_hash.'';
 
-            $transport = Swift_SmtpTransport::newInstance('smtp.gmail.com', 465, "ssl")
-                ->setUsername('noreply.arduinobooking')
+            $transport = Swift_SmtpTransport::newInstance('ssl://smtp.gmail.com', 465, "ssl")
+                ->setUsername('noreply.arduinobooking@gmail.com')
                 ->setPassword('arduinopass');
 
             $mailer = Swift_Mailer::newInstance($transport);
 
-            $activation_mail = Swift_Message::newInstance('Test Subject')
+            $message = Swift_Message::newInstance('Test Subject')
                 ->setFrom(array('noreply.arduinobooking@gmail.com' => 'NoReply - ArduinoBooking'))
-                ->setTo($email)
-                ->setBody($message);
+                ->setTo(array($email => $fname))
+                ->setBody($emailcontent);
 
-            $result = $mailer->send($activation_mail);
-
-            ////////////////////////////////
-
-            $_SESSION['msg'] = '<div class="alert alert-success alert-dismissable" >
+            if ($mailer->send($message)) {
+                $_SESSION['msg'] = '<div class="alert alert-success alert-dismissable" >
                                     <a href="" class="close" data-dismiss="alert" aria-label="close">×</a>
                                     <strong>Awesome!</strong>. Your account has been created. Check your email for an activation link which will enable you to login to your account.
                                 </div>';
-            header('Location: ./');
+                header('Location: ./');
+            } else {
+                echo 'I am sure your configuration are not correct. :(';
+            }
+
+            ////////////////////////////////
+
+
         };
     } else {
 
