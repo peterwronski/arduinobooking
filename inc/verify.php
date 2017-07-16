@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $activation_hash = $_POST['activation_hash'];
     $activation_hash = $conn->real_escape_string($activation_hash);
 
-    $activation_query = "SELECT studentid, activation_hash, activated FROM users WHERE activation_hash='".$activation_hash ."' AND activated=0";
+    $activation_query = "SELECT studentid, fname, activation_hash, activated FROM users WHERE activation_hash='".$activation_hash ."' AND activated=0";
     $search = $conn->query($activation_query);
     $match = $search->num_rows;
 
@@ -27,10 +27,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         $activate = $conn->query("UPDATE users SET activated=1 WHERE activation_hash='" . $activation_hash . "';");
 
         if ($activate) {
+            $_SESSION['userloggedin'] = $row['fname'];
+            $_SESSION['studentid'] = $row['studentid'];
 
             $_SESSION['msg'] = '<div class="alert alert-success alert-dismissable" >
                                     <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-                                    <strong>Awesome!</strong>. Your account has been activated. You can now log in using the credentials you provided during registration.
+                                    <strong>Awesome!</strong>. Your account has been activated! 
                                 </div>';
             header('Location: ./');
         } else {
