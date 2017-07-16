@@ -16,12 +16,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $activation_hash = $_POST['activation_hash'];
     $activation_hash = $conn->real_escape_string($activation_hash);
 
-    $search = $conn->query("SELECT studentid, activation_hash, activated FROM users WHERE activation_hash=' ".$activation_hash. "' AND activated=0");
+    $activation_query = "SELECT studentid, activation_hash, activated FROM users WHERE activation_hash=' ".$activation_hash ."' AND activated=0";
+    $search = $conn->query($activation_query);
     $match = $search->num_rows;
 
     echo $activation_hash;
     echo $match;
-
+    echo $activation_query;
 
 /*
     if ($match > 0) {
