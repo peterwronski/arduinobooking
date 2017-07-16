@@ -45,8 +45,6 @@ if (($_POST['pass']!==$_POST['pass2'])) {// this checks to see if both password 
             //source - https://stackoverflow.com/questions/712392/send-email-using-the-gmail-smtp-server-from-a-php-page
             require_once 'scripts/swift/lib/swift_required.php';
 
-            ;
-
             $transport = Swift_SmtpTransport::newInstance('ssl://smtp.gmail.com', 465)
                 ->setUsername('noreply.arduinobooking@gmail.com')
                 ->setPassword('arduinopass');
@@ -55,7 +53,7 @@ if (($_POST['pass']!==$_POST['pass2'])) {// this checks to see if both password 
 
             $message = Swift_Message::newInstance('ArduinoBooking - Activate your account')
                 ->setFrom(array('noreply.arduinobooking@gmail.com' => 'NoReply - ArduinoBooking'))
-                ->setTo(array($email => $fname))
+                ->setTo(array('$email' => '$fname'))
                 ->setBody(' Hi ' .$fname .'!
             Thanks for signing up to ArduinoBooking for RGU!
             
