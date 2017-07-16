@@ -20,11 +20,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $search = $conn->query($activation_query);
     $match = $search->num_rows;
 
-    echo $activation_hash;
-    echo $match;
-    echo $activation_query;
 
-/*
+
+
     if ($match > 0) {
         $activate = $conn->query("UPDATE users SET activated==1 WHERE activation_hash='.$activation_hash ");
 
@@ -49,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                                 </div>';
         header('Location: ./');
     };
-*/
+
 };
 
 
