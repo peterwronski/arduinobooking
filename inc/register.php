@@ -41,11 +41,11 @@ if (($_POST['pass']!==$_POST['pass2'])) {// this checks to see if both password 
     if ($count == 0) {
         $adduser = "INSERT INTO users VALUE('$studentid', '$fname', '$sname', '$email', '$hashAndSalt', '$course', '$activation_hash', '$activated')" or die('Insert query failed');
         if ($conn->query($adduser) === TRUE) {
-            require_once('class.phpmailer.php');
+            require_once('scripts/PHPMailer/class.phpmailer.php');
 
-            $mail             = new PHPMailer();
+            $mail= new PHPMailer();
 
-            $body             = ' Hi ' .$fname .'!
+            $body= ' Hi ' .$fname .'!
             Thanks for signing up to ArduinoBooking for RGU!
             
             Please click this link to activate your account: 
