@@ -1,10 +1,11 @@
 <?php
 
-include ('scripts/dbconnect.php');
+
 
 //Based on https://code.tutsplus.com/tutorials/how-to-implement-email-verification-for-new-members--net-3824
 
 if(!empty($_GET['email']) && !empty($_GET['activation_hash'])){
+    include ('scripts/dbconnect.php');
     $email = $_GET['email'];
     $activation_hash = $_GET['activation_hash'];
 
