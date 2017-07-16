@@ -1,27 +1,23 @@
+<form method="POST">
+    <input type="text" name="activation_hash" placeholder="Enter your activation code here" required aria-required/>
+    <input type="submit" name="activation_submit"/>
+</form>
+
 <?php
 
 
 
 //Based on https://code.tutsplus.com/tutorials/how-to-implement-email-verification-for-new-members--net-3824
 
-if(!empty($_GET['email']) && !empty($_GET['activation_hash'])){
-    include ('scripts/dbconnect.php');
-    $email = $_GET['email'];
-    $activation_hash = $_GET['activation_hash'];
+$activation_hash = $_POST['activation_hash'];
+$activation_hash = $conn->real_escape_string($activation_hash);
 
-    var_dump($email);
-
-    var_dump($activation_hash);
-
-    $email = $conn->real_escape_string($email);
-    $activation_hash = $conn->real_escape_string($activation_hash);
-
-    $search = $conn->query("SELECT email, activation_hash, activated FROM users WHERE email='.$email.' AND activation_hash='.$activation_hash.' AND activated='0'");
+    $search = $conn->query("SELECT email, activation_hash, activated FROM users WHERE activation_hash='.$activation_hash.' AND activated='0'");
     $match = $search->num_rows;
 
 
     if ($match > 0){
-        $activate=$conn->query("UPDATE users SET activated=1 WHERE email=' .$email.' AND activation_hash='.$activation_hash");
+        $activate=$conn->query("UPDATE users SET activated=1 WHERE activation_hash='.$activation_hash");
 
         if(!$activate){
             $_SESSION['msg'] = '<div class="alert alert-danger alert-dismissable" >
@@ -43,15 +39,9 @@ if(!empty($_GET['email']) && !empty($_GET['activation_hash'])){
                                     <strong>Oh no!</strong>. This account couldn\'t be found
                                 </div>';
         header('Location: ./');
-    }
+    };
 
 
-}else{
-    $_SESSION['msg'] = '<div class="alert alert-danger alert-dismissable" >
-                                    <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-                                    <strong>Oh no!</strong>This account either doesn\'t exist, or has already been activated.
-                                </div>';
-    header('Location: ./');
-}
+
 
 ?>
