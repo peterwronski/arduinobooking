@@ -1,4 +1,5 @@
 <?php
+session_start();
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     include('scripts/header.php'); ?>
     <div class="container">
@@ -37,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     if ($match > 0) {
         $activate = $conn->query("UPDATE users SET activated=1 WHERE activation_hash='" . $activation_hash . "';");
 
-
+        if($activate){
 
             $_SESSION['msg'] = '<div class="alert alert-success alert-dismissable" >
                                     <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
@@ -60,7 +61,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                                 </div>';
         header('Location: ./');
     };
-
 };
 
 
