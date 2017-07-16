@@ -1,17 +1,19 @@
+<?php
+include('scripts/header.php'); ?>
 <form method="POST">
     <input type="text" name="activation_hash" placeholder="Enter your activation code here" required aria-required/>
     <input type="submit" name="activation_submit"/>
 </form>
 
 <?php
-
+include ('scripts/footer.php');
 include('scripts/dbconnect.php');
 
 //Based on https://code.tutsplus.com/tutorials/how-to-implement-email-verification-for-new-members--net-3824
 
 $activation_hash = $_POST['activation_hash'];
 $activation_hash = $conn->real_escape_string($activation_hash);
-echo $activation_hash;
+
 
     $search = $conn->query("SELECT activation_hash, activated FROM users WHERE activation_hash='.$activation_hash.' AND activated=0");
     $match = $search->num_rows;
