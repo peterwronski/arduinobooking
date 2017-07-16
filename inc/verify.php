@@ -20,8 +20,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $match = $search->num_rows;
 
     echo $activation_hash;
-    var_dump($search);
-    var_dump($match);
+    echo $match;
+
 
 /*
     if ($match > 0) {
