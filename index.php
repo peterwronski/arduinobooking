@@ -26,7 +26,7 @@ $rules = array(
     //
     'login' => "/login",
     'register' => "/register",
-    'verify' => '/verify',
+    'verify' => '/verify(?\'bookingID\'[\w\-]+)',
     'viewuser' => "/viewuser",
     'logout' => "/logout",
     //
