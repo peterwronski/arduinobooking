@@ -1,6 +1,6 @@
 <?php
 include('scripts/header.php'); ?>
-<form method="POST">
+<form action="verify" method="POST">
     <input type="text" name="activation_hash" placeholder="Enter your activation code here" required aria-required/>
     <input type="submit" name="activation_submit"/>
 </form>
