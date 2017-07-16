@@ -42,6 +42,7 @@ if (($_POST['pass']!==$_POST['pass2'])) {// this checks to see if both password 
         $adduser = "INSERT INTO users VALUE('$studentid', '$fname', '$sname', '$email', '$hashAndSalt', '$course', '$activation_hash', '$activated')" or die('Insert query failed');
         if ($conn->query($adduser) === TRUE) {
             require_once('scripts/PHPMailer/class.phpmailer.php');
+            include("scripts/PHPMailer/class.smtp.php");
 
             $mail= new PHPMailer();
 
@@ -70,7 +71,7 @@ if (($_POST['pass']!==$_POST['pass2'])) {// this checks to see if both password 
             $mail->MsgHTML($body);
 
 
-            $mail->AddAddress($email, $fname);
+            $mail->AddAddress("$email", "$fname");
 
             if(!$mail->Send()) {
                 echo "Mailer Error: " . $mail->ErrorInfo;
