@@ -26,7 +26,7 @@ $rules = array(
     //
     'login' => "/login",
     'register' => "/register",
-    'verify' => '/verify(?\'bookingID\'[\w\-]+)',
+    'verify' => '/verify(?\'email=\'[\w\-]+)\'activation_hash=\'[\w\-]+) ',
     'viewuser' => "/viewuser",
     'logout' => "/logout",
     //
