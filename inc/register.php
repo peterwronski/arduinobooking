@@ -41,34 +41,49 @@ if (($_POST['pass']!==$_POST['pass2'])) {// this checks to see if both password 
     if ($count == 0) {
         $adduser = "INSERT INTO users VALUE('$studentid', '$fname', '$sname', '$email', '$hashAndSalt', '$course', '$activation_hash', '$activated')" or die('Insert query failed');
         if ($conn->query($adduser) === TRUE) {
+            require_once('class.phpmailer.php');
 
-            //source - https://stackoverflow.com/questions/712392/send-email-using-the-gmail-smtp-server-from-a-php-page
-            require_once 'scripts/swift/lib/swift_required.php';
+            $mail             = new PHPMailer();
 
-            $transport = Swift_SmtpTransport::newInstance('ssl://smtp.gmail.com', 465)
-                ->setUsername('noreply.arduinobooking@gmail.com')
-                ->setPassword('arduinopass');
-
-            $mailer = Swift_Mailer::newInstance($transport);
-
-            $message = Swift_Message::newInstance('ArduinoBooking - Activate your account')
-                ->setFrom(array('noreply.arduinobooking@gmail.com' => 'NoReply - ArduinoBooking'))
-                ->setTo(array('$email' => '$fname'))
-                ->setBody(' Hi ' .$fname .'!
+            $body             = ' Hi ' .$fname .'!
             Thanks for signing up to ArduinoBooking for RGU!
             
             Please click this link to activate your account: 
-            http://arduinobooking.azurebwebsites.com/verify.php?email='.$email.'&hash='.$activation_hash.'');
+            http://arduinobooking.azurebwebsites.com/verify.php?email='.$email.'&hash='.$activation_hash.'';
 
-            if ($mailer->send($message)) {
+
+            $mail->IsSMTP();
+
+            $mail->SMTPDebug  = 1;
+
+            $mail->SMTPAuth   = true;                  // enable SMTP authentication
+            $mail->SMTPSecure = "ssl";                 // sets the prefix to the servier
+            $mail->Host       = "smtp.gmail.com";      // sets GMAIL as the SMTP server
+            $mail->Port       = 465;                   // set the SMTP port for the GMAIL server
+            $mail->Username   = "noreply.arduinobooking@gmail.com";  // GMAIL username
+            $mail->Password   = "arduinopass";
+
+            $mail->SetFrom('noreply.arduinobooking@gmail.com', 'ArduinoBooking');
+
+            $mail->Subject    = "Account Activation | Arduino Booking";
+
+            $mail->MsgHTML($body);
+
+
+            $mail->AddAddress($email, $fname);
+
+            if(!$mail->Send()) {
+                echo "Mailer Error: " . $mail->ErrorInfo;
+            } else {
                 $_SESSION['msg'] = '<div class="alert alert-success alert-dismissable" >
                                     <a href="" class="close" data-dismiss="alert" aria-label="close">×</a>
                                     <strong>Awesome!</strong>. Your account has been created. Check your email for an activation link which will enable you to login to your account.
                                 </div>';
                 header('Location: ./');
-            } else {
-                echo 'I am sure your configuration are not correct. :(';
             }
+
+
+
 
             ////////////////////////////////
 
