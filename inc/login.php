@@ -26,9 +26,9 @@ if(!isset($_SESSION['userloggedin'])) {
     if (password_verify($pass, $row['pass']) && $count == 1) {
         if ($activated == 1) {
             session_start();
-            $fname = $row['fname'];
-            $_SESSION['userloggedin'] = $fname;
-            $_SESSION['studentid'] = $row['studentid'];
+
+            $_SESSION['userloggedin'] = $row['fname'];
+            $_SESSION['email'] = $row['email'];
 
 
             $_SESSION['msg'] = '<div class="alert alert-success alert-dismissable">
@@ -36,6 +36,7 @@ if(!isset($_SESSION['userloggedin'])) {
                                     <strong>Hi there ' . $_SESSION['userloggedin'] . '!</strong>
                                 </div>';
             header('Location: ./');
+            exit();
 
         } else {
             header('Location: verify');
