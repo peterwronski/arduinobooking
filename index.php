@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 /**
  * Created by PhpStorm.
  * User: Peter
@@ -46,7 +46,7 @@ foreach ($rules as $action => $rule) {
     if (preg_match('~^' . $rule . '$~i', $uri, $params)) {
         //$_SESSION['lastcalledaction'] = $action;
         include(INCLUDE_DIR . $action . '.php');
-
+exit();
 
     }
 }
