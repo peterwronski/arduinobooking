@@ -9,6 +9,5 @@ include('scripts/header.php'); ?>
 
 
 <?php
-echo 'Action called: ' .$_SESSION ['lastcalledaction'];
-session_unset($_SESSION['lastcalledaction']);
+
 include('scripts/footer.php'); ?>
