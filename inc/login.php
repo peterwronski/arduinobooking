@@ -26,7 +26,8 @@ if(!isset($_SESSION['userloggedin'])) {
     if (password_verify($pass, $row['pass']) && $count == 1) {
         if ($activated == 1) {
             session_start();
-            $_SESSION['userloggedin'] = $row['fname'];
+            $fname = $row['fname'];
+            $_SESSION['userloggedin'] = $fname;
             $_SESSION['studentid'] = $row['studentid'];
 
 
