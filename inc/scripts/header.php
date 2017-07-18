@@ -42,14 +42,15 @@ session_start();
                 echo'<p class="navbar-text">Welcome ' .$_SESSION['userloggedin'] .'</p></li>
                 <li><a href="logout"><span class="glyphicon glyphicon-user"></span> Log out</a></li>';
                 }
-                else { ?>
+                else {
+                    echo'
                 <li><a href="#" data-toggle="modal" data-target="#login-modal"><span class="glyphicon glyphicon-user"></span>Login</a>
                         <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
                             <div class="modal-dialog">
                                 <div class="loginmodal-container">
                                     <h1>Login to Your Account</h1><br>
                                     <div class="alert alert-info">
-                                        <strong>Heads up!</strong>This system is currently not connected to the RGU network, therefore your existing RGU credentials won't work unless you create a new account on this system.
+                                        <strong>Heads up!</strong>This system is currently not connected to the RGU network, therefore your existing RGU credentials won\'t work unless you create a new account on this system.
                                     </div>
                                     <form action="login" method="POST">
                                         <input type="text" name="email" placeholder="Email" aria-required="true" required>
@@ -64,7 +65,7 @@ session_start();
                             </div>
                         </div>
                 </li>
-                //
+                
                 <li><a href="#" data-toggle="modal" data-target="#reg-modal"><span class="glyphicon glyphicon-plus-sign"></span>Register</a>
                     <div class="modal fade" id="reg-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
                         <div class="modal-dialog">
@@ -86,8 +87,8 @@ session_start();
                                 </form>
                             </div>
                         </div>
-                    </div>
-                <? }; ?>
+                    </div> ';
+                 }; ?>
             </ul>
         </div>
     </div>
