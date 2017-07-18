@@ -6,11 +6,7 @@
  * Date: 11/07/2017
  * Time: 16:29
  */
-/*gonna put a bunch of comments in here*/
 
-/*Some more comments in here*/
-
-/*More comments because I need to do a thing*/
 
 
 define('INCLUDE_DIR', dirname(__FILE__) . '/inc/');
