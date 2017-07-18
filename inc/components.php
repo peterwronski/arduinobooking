@@ -1,7 +1,7 @@
 <?php
 session_start();
 include('scripts/header.php');
-if(!isset($_SESSION['userloggedin'])){
+if(!isset($_SESSION['userloggedin']) || empty($_SESSION['userloggedin'])){
     $_SESSION['msg'] = '<div class="alert alert-danger alert-dismissable" >
                                     <a href="" class="close" data-dismiss="alert" aria-label="close">×</a>
                                     <strong>Hold up!</strong> You have to be logged in to access the content of this page. 
