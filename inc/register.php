@@ -9,7 +9,7 @@ if (($_POST['pass']!==$_POST['pass2'])) {// this checks to see if both password 
                                     <strong>Heads up!</strong>. Your passwords aren\'t matching. Please make sure your passwords match before submitting the form.
                                 </div>';
     header('Location: ./');
-    exit();
+
 
 } else {
 

@@ -36,7 +36,7 @@ if(!isset($_SESSION['userloggedin']) && empty($_SESSION['userloggedin'])) {
                                     <strong>Hi there ' . $_SESSION['userloggedin'] . '!</strong>
                                 </div>';
             header('Location: ./');
-            exit();
+
 
         } else {
             header('Location: verify');

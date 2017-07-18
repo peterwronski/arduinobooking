@@ -47,7 +47,7 @@ foreach ($rules as $action => $rule) {
         //$_SESSION['lastcalledaction'] = $action;
         include(INCLUDE_DIR . $action . '.php');
 
-        exit();
+
     }
 }
 // nothing is found so handle the 404 error
