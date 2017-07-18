@@ -116,7 +116,9 @@ h2{
     font-size: 12px;
 }
 
-
+#componentdiv{
+    border: 1px solid black;
+}
 
 footer {
     position:fixed;
