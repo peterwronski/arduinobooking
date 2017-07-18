@@ -36,6 +36,7 @@ session_start();
                                     <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
                                     <strong>Hi there ' . $_SESSION['userloggedin'] . '!</strong>
                                 </div>';
+            session_write_close();
             header('Location: ./');
 
 
