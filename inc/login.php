@@ -32,7 +32,8 @@ if(!isset($_SESSION['userloggedin'])) {
 
             $_SESSION['msg'] = '<div class="alert alert-success alert-dismissable">
                                     <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-                                    <strong>Hi there ' . $_SESSION['userloggedin'] . '!</strong>.
+                                    <strong>Hi there ' . $_SESSION['userloggedin'] . '!</strong> <br/>
+                                    ' .var_dump($_SESSION['userloggedin']) .'
                                 </div>';
             header('Location: ./');
 
@@ -43,7 +44,7 @@ if(!isset($_SESSION['userloggedin'])) {
     } else {
         $_SESSION['msg'] = '<div class="alert alert-danger alert-dismissable">
                                     <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-                                    <strong>Heads up!</strong>. Your email or password are wrong.
+                                    <strong>Heads up!</strong> Your email or password are wrong.
                                 </div>';
         header('Location: ./');
 
@@ -54,7 +55,7 @@ if(!isset($_SESSION['userloggedin'])) {
 } else {
     $_SESSION['msg'] = '<div class="alert alert-danger alert-dismissable">
                                     <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-                                    <strong>Heads up!</strong>. You\'re already logged in!
+                                    <strong>Heads up!</strong> You\'re already logged in!
                                 </div>';
     header('Location: ./');
     exit();
