@@ -1,7 +1,7 @@
 <?php
 
 include('scripts/header.php');
-if (!isset($_SESSION['userloggedin'])){
+if (isset($_SESSION['userloggedin'])){
 
     $_SESSION['msg'] = '<div class="alert alert-danger alert-dismissable" >
                                     <a href="" class="close" data-dismiss="alert" aria-label="close">×</a>
@@ -12,9 +12,10 @@ if (!isset($_SESSION['userloggedin'])){
     header('Location: ./');
 
 
-}; ?>
+} else { ?>
 
-<h1>This is the COMPONENTS page</h1>
+    <h1>This is the COMPONENTS page</h1>
 
-<?php
+    <?php
+};
 include('scripts/footer.php'); ?>
