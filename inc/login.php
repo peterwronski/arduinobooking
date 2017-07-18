@@ -34,8 +34,10 @@ if(!isset($_SESSION['userloggedin'])) {
                                     <strong>Hi there ' . $_SESSION['userloggedin'] . '!</strong>.
                                 </div>';
             header('Location: ./');
+            exit();
         } else {
             header('Location: verify');
+            exit();
         }
     } else {
         $_SESSION['msg'] = '<div class="alert alert-danger alert-dismissable">
@@ -43,6 +45,7 @@ if(!isset($_SESSION['userloggedin'])) {
                                     <strong>Heads up!</strong>. Your email or password are wrong.
                                 </div>';
         header('Location: ./');
+        exit();
 
 
     }
@@ -53,5 +56,6 @@ if(!isset($_SESSION['userloggedin'])) {
                                     <strong>Heads up!</strong>. You\'re already logged in!
                                 </div>';
     header('Location: ./');
+    exit();
 }
 ?>

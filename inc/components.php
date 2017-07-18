@@ -10,6 +10,7 @@ if (!isset($_SESSION['userloggedin'])){
                                     <a href="#" data-toggle="modal" data-target="#reg-modal">HERE</a> to register.
                                 </div>';
     header('Location: ./');
+    exit();
 
 }; ?>
 
