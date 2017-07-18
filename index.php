@@ -10,6 +10,8 @@
 
 /*Some more comments in here*/
 
+/*More comments because I need to do a thing*/
+
 
 define('INCLUDE_DIR', dirname(__FILE__) . '/inc/');
 $rules = array(
