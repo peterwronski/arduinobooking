@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 include('scripts/header.php');
 if (!isset($_SESSION['userloggedin'])){
 

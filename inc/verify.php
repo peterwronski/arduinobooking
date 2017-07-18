@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     include('scripts/header.php'); ?>
     <div class="container">
@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     <?php
     include('scripts/footer.php');
 }  elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    session_start();
+
     include('scripts/dbconnect.php');
 
 //Based on https://code.tutsplus.com/tutorials/how-to-implement-email-verification-for-new-members--net-3824
