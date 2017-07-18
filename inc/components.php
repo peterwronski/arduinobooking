@@ -1,7 +1,7 @@
 <?php
 session_start();
 include('scripts/header.php');
-if(isset($_SESSION['userloggedin']) && !empty($_SESSION['userloggedin'])){ ?>
+if (isset($_SESSION['userloggedin'])&&(($_SESSION['userloggedin']) == true)){ ?>
 
     <h1>This is the COMPONENTS page</h1>
 
