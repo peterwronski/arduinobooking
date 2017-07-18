@@ -1,7 +1,7 @@
 <?php
 session_unset();
 session_start();
-if(!isset($_SESSION['userloggedin']) && empty($_SESSION['userloggedin'])) {
+
     include('scripts/dbconnect.php');
 
 
@@ -54,12 +54,5 @@ if(!isset($_SESSION['userloggedin']) && empty($_SESSION['userloggedin'])) {
 
     }
     $conn->close();
-} else {
-    $_SESSION['msg'] = '<div class="alert alert-danger alert-dismissable">
-                                    <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-                                    <strong>Heads up!</strong> You\'re already logged in!
-                                </div>';
-    header('Location: ./');
 
-}
 ?>
