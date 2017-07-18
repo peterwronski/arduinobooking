@@ -1,6 +1,6 @@
 <?php
-
-if(!isset($_SESSION['userloggedin'])) {
+session_start();
+if(!isset($_SESSION['userloggedin']) && empty($_SESSION['userloggedin'])) {
     include('scripts/dbconnect.php');
 
 

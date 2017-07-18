@@ -1,5 +1,4 @@
 <?php
-
 include('scripts/header.php');
 if (isset($_SESSION['userloggedin'])){
 
