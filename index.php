@@ -47,7 +47,7 @@ foreach ($rules as $action => $rule) {
     if (preg_match('~^' . $rule . '$~i', $uri, $params)) {
         $_SESSION['lastcalledaction'] = $action;
         include(INCLUDE_DIR . $action . '.php');
-        session_regenerate_id(true);
+
         exit();
     }
 }

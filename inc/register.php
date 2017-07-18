@@ -83,7 +83,7 @@ if (($_POST['pass']!==$_POST['pass2'])) {// this checks to see if both password 
                                     <strong>Awesome!</strong>. Your account has been created. Check your email for an activation link which will enable you to login to your account.
                                 </div>';
                 header('Location: ./');
-                exit();
+
             }
 
 
@@ -100,7 +100,7 @@ if (($_POST['pass']!==$_POST['pass2'])) {// this checks to see if both password 
                                     <strong>Heads up!</strong>. This student ID is already registered.
                                 </div>';
         header('Location: ./');
-        exit();
+
     }
 } else {
         $_SESSION['msg'] = '<div class="alert alert-danger alert-dismissable">
@@ -108,7 +108,6 @@ if (($_POST['pass']!==$_POST['pass2'])) {// this checks to see if both password 
                                     <strong>Heads up!</strong>. You MUST use an RGU email address to make an account.
                                 </div>';
         header('Location: ./');
-        exit();
     }
 }
 ?>
