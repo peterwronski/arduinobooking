@@ -1,6 +1,7 @@
 <?php
 session_start();
 session_destroy();
-$_SESSION['msg'] = var_dump($_SESSION['userloggedin']);
+$user_dump = var_dump($_SESSION['userloggedin']);
+$_SESSION['msg'] = $user_dump;
 header('Location:./');
 ?>

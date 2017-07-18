@@ -29,11 +29,12 @@ if(!isset($_SESSION['userloggedin'])) {
             $_SESSION['userloggedin'] = $row['fname'];
             $_SESSION['studentid'] = $row['studentid'];
 
+            $user_dump = var_dump($_SESSION['userloggedin']);
 
             $_SESSION['msg'] = '<div class="alert alert-success alert-dismissable">
                                     <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
                                     <strong>Hi there ' . $_SESSION['userloggedin'] . '!</strong> <br/>
-                                    ' .var_dump($_SESSION['userloggedin']) .'
+                                    ' .$user_dump .'
                                 </div>';
             header('Location: ./');
 
