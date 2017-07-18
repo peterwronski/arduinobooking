@@ -59,6 +59,6 @@ if(!isset($_SESSION['userloggedin']) && empty($_SESSION['userloggedin'])) {
                                     <strong>Heads up!</strong> You\'re already logged in!
                                 </div>';
     header('Location: ./');
-    exit();
+
 }
 ?>
