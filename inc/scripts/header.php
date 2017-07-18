@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,7 +38,7 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <?php
-                if (isset($_SESSION['userloggedin'])&&(($_SESSION['userloggedin']) == true)) {
+                if (isset($_SESSION['userloggedin'])){
                 echo'<p class="navbar-text">Welcome ' .$_SESSION['userloggedin'] .'</p></li>
                 <li><a href="logout"><span class="glyphicon glyphicon-user"></span> Log out</a></li>';
                 }
