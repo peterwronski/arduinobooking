@@ -1,4 +1,5 @@
 <?php
+session_unset();
 session_start();
 if(!isset($_SESSION['userloggedin']) && empty($_SESSION['userloggedin'])) {
     include('scripts/dbconnect.php');
