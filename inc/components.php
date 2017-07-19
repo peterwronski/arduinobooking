@@ -28,7 +28,7 @@ $count = mysql_num_rows($query);
 if ($query->num_rows > 0) {
     // output data of each row
     while ($row = $query->fetch_assoc()) {
-        $img_link = ' "img/arduino_img/'.$row['comp_ref'] .'.jpg" ';
+        $img_link = ' "inc/img/arduino_img/'.$row['comp_ref'] .'.jpg" ';
         echo ' <li> Component name: ' .$row['comp_name'] .'<br/>
                 In stock: ' .$row['in_stock'] .'<br/>
                 Component image: <img src='.$img_link .' class="img-responsive" alt ="'.$row['comp_name'] .'"/> 
