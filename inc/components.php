@@ -30,7 +30,7 @@ if ($query->num_rows > 0) {
     while ($row = $query->fetch_assoc()) {
         echo ' <li> Component name: ' .$row['comp_name'] .'<br/>
                 In stock: ' .$row['in_stock'] .'<br/>
-                Component image: <img src="img/arduino_img/'.$row['comp_ref'] .'.jpg" /> 
+                Component image: <img src="img/arduino_img/'.$row['comp_ref'] .'.jpg" class="img-responsive" alt ="'.$row['comp_name'] .'"/> 
               </li>
               <hr/>';
     };
