@@ -127,7 +127,7 @@ tr{
     border: 1px solid #6c04d4;
 }
 
-tr:hover{
+tr.clickable-row:hover{
     background-color: #f7bcfa;
     cursor:pointer;
 }
