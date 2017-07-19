@@ -116,14 +116,12 @@ h2{
     font-size: 12px;
 }
 
-#componentlist{
-    display:flex;
-}
+
 
 .componentdiv{
     border: 1px solid black;
     text-align:center;
-    align-items:center;
+
 }
 
 .btn-basic{
