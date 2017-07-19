@@ -5,7 +5,7 @@
  * Date: 19/07/2017
  * Time: 15:56
  */
-include('scripts/header.php');
+include('scripts/header_2.php');
 $comp_ref = $params['comp_id'];
 if(isset($_SESSION['msg'])){
     echo $_SESSION['msg'];
