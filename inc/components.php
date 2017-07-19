@@ -9,7 +9,7 @@ $count = mysql_num_rows($query);
 ?>
 
 <div class="container" id="componentlist">
-    <div class="row align-items-center">
+    <div class="row">
         <div class="col-lg-8 col-lg-offset-2 componentdiv">
             <h1>Components</h1> <br/>
             <button type="button" class="btn btn-basic btn-block" data-toggle="collapse" data-target="#options">Options</button>
