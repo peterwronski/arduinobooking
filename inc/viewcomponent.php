@@ -16,9 +16,10 @@ include('scripts/dbconnect.php');
 $comp_ref = $params['comp_ref'];
 
 $query = "SELECT * FROM components where comp_ref = '$comp_ref'";
-$result = $db->query($sql);
 
-if ($query->num_rows > 0) {
+$count =  mysql_num_rows($query);
+
+if ($count > 0) {
     // output data of each row
     while ($row = $query->fetch_assoc()) {
         $comp_name = $row['comp_name'];
@@ -43,7 +44,7 @@ if ($query->num_rows > 0) {
                                 </div>';
     session_write_close();
     header('Location: components');
-}
+};
 
 include('scripts/footer.php');
 ?>

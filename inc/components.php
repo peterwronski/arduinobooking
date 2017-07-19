@@ -29,7 +29,7 @@ $count = mysql_num_rows($query);
 
 
 <?php
-if ($query->num_rows > 0) {
+if ($count > 0) {
     // output data of each row
     while ($row = $query->fetch_assoc()) {
         $comp_ref = $row['comp_ref'];
