@@ -8,12 +8,9 @@ if(isset($_SESSION['msg'])){
 
 include('scripts/dbconnect.php');
 
-$query = "SELECT * FROM components";
-$result = mysqli_query($query);
+
+$result = mysqli_query("SELECT * FROM components");
 $count = mysqli_num_rows($result);
-
-
-
 ?>
 
 
