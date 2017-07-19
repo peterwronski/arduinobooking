@@ -128,7 +128,7 @@ tr{
 }
 
 tr:hover{
-    background-color: lightgrey;
+    background-color: #f7bcfa;
     cursor:pointer;
 }
 .btn-basic{
