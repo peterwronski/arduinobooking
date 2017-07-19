@@ -6,7 +6,7 @@
  * Time: 15:56
  */
 include('scripts/header.php');
-$comp_ref = $params['comp_ref'];
+$comp_ref = $params['comp_id'];
 if(isset($_SESSION['msg'])){
     echo $_SESSION['msg'];
     unset($_SESSION['msg']);
