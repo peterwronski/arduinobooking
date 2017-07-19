@@ -118,6 +118,7 @@ h2{
 
 #componentdiv{
     border: 1px solid black;
+    text-align:center;
 }
 
 .btn-basic{
