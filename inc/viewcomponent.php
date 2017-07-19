@@ -49,7 +49,7 @@ if ($result->num_rows > 0) {
                                     <strong>Oh no!</strong>Component could not be found!
                                 </div>';
     session_write_close();
-    header('Location: components');
+    header('Location: ./');
 };
 
 include('scripts/footer.php');
