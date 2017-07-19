@@ -42,6 +42,7 @@ if ($result->num_rows > 0) {
         Quantity in stock: '.$in_stock .'
         </div>
         ';
+        exit();
     };
 } else {
     $_SESSION['msg'] = '<div class="alert alert-danger alert-dismissable">
