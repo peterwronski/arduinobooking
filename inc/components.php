@@ -45,6 +45,7 @@ if ($result->num_rows > 0) {
  <td><img src='.$img_link .' class="img-thumbnail" height="250px" width="250px" alt ="'.$row['comp_name'] .'"/> </td>
  <td>' .$row['comp_name'] .'</td>
  <td>' .$row['in_stock'] .'</td>
+ <hr/>
 </tr>
 ';
     };
