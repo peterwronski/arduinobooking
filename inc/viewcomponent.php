@@ -49,8 +49,8 @@ if ($result->num_rows > 0) {
                                     <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
                                     <strong>Oh no!</strong>Component could not be found!
                                 </div>';
-    session_write_close();
-    header('Location: ../components');
+
+    header('Location: ../../components');
 };
 
 include('scripts/footer.php');
