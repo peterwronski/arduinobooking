@@ -33,8 +33,8 @@ if ($query->num_rows > 0) {
     while ($row = $query->fetch_assoc()) {
         $img_link = ' "inc/img/arduino_img/'.$row['comp_ref'] .'.jpg" ';
         echo ' 
- <tr>
- <td><img src='.$img_link .' class="img-thumbnail" height="50px" width="50px" alt ="'.$row['comp_name'] .'"/> </td>
+ <tr class=\'clickable-row\' data-url="viewcomponent/{$comp_ref}"\'>
+ <td><img src='.$img_link .' class="img-thumbnail" height="250px" width="250px" alt ="'.$row['comp_name'] .'"/> </td>
  <td>' .$row['comp_name'] .'</td>
  <td>' .$row['in_stock'] .'</td>
 </tr>
