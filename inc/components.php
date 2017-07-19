@@ -7,13 +7,7 @@ $query = $conn->query("SELECT * FROM components");
 
 $count = mysql_num_rows($query);
 ?>
-<script>
-jQuery(document).ready(function($) {
-$(".clickable-row").click(function() {
-window.location = $(this).data("href");
-});
-});
-</script>
+
 
 <div class="container" id="componentlist">
     <div class="row">
@@ -48,6 +42,15 @@ if ($query->num_rows > 0) {
 </tr>
 ';
     };
+    ?>
+                <script>
+                    jQuery(document).ready(function($) {
+                        $(".clickable-row").click(function() {
+                            window.location = $(this).data("href");
+                        });
+                    });
+                </script>
+                <?php
 }else {
     echo "No components to show at this time";
 };
