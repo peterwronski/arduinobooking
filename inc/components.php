@@ -3,7 +3,7 @@ session_start();
 include('scripts/header.php');
 include('scripts/dbconnect.php');
 
-$query = $conn->query("SELECT * FROM components");
+$query = "SELECT * FROM components";
 $result = mysqli_query($query);
 $count = mysqli_num_rows($result);
 
