@@ -14,6 +14,7 @@ $count = mysql_num_rows($query);
             <h1>Components</h1> <br/>
             <button type="button" class="btn btn-basic btn-block" data-toggle="collapse" data-target="#options">Options</button>
             <div id="options" class="collapse">INSERT SORT OPTIONS HERE</div>
+            <hr/>
         </div>
     </div>
 </div>
