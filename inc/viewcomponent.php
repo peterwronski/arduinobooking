@@ -6,6 +6,7 @@
  * Time: 15:56
  */
 include('scripts/header.php');
+$comp_ref = $params['comp_ref'];
 if(isset($_SESSION['msg'])){
     echo $_SESSION['msg'];
     unset($_SESSION['msg']);
@@ -17,7 +18,7 @@ include('scripts/dbconnect.php');
 
 <?php
 
-$comp_ref = $params['comp_ref'];
+
 
 $query = "SELECT * FROM components where comp_ref = '$comp_ref'";
 $result = $conn->query($query);
