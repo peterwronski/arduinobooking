@@ -4,8 +4,11 @@ include('scripts/header.php');
 include('scripts/dbconnect.php');
 
 $query = $conn->query("SELECT * FROM components");
+$result = mysqli_query($query);
+$count = mysqli_num_rows($result);
 
-$count = mysql_num_rows($query);
+
+
 ?>
 
 
@@ -30,8 +33,8 @@ $count = mysql_num_rows($query);
 
 <?php
 if ($count > 0) {
-    // output data of each row
-    while ($row = $query->fetch_assoc()) {
+// output data of each row
+    while ($row = mysqli_fetch_array($result)) {
         $comp_ref = $row['comp_ref'];
         $img_link = ' "inc/img/arduino_img/'.$row['comp_ref'] .'.jpg" ';
         echo ' 
