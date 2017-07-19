@@ -42,7 +42,7 @@ if ($count > 0) {
 </tr>
 ';
     };
-    ?>
+    echo'
                 <script>
                     jQuery(document).ready(function($) {
                         $(".clickable-row").click(function() {
@@ -50,7 +50,8 @@ if ($count > 0) {
                         });
                     });
                 </script>
-                <?php
+                ';
+
 }else {
     echo "No components to show at this time";
 };

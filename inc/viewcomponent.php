@@ -16,12 +16,13 @@ include('scripts/dbconnect.php');
 $comp_ref = $params['comp_ref'];
 
 $query = "SELECT * FROM components where comp_ref = '$comp_ref'";
+$result = mysqli_query($query);
+$count = mysqli_num_rows($result);
 
-$count =  mysql_num_rows($query);
 
 if ($count > 0) {
     // output data of each row
-    while ($row = $query->fetch_assoc()) {
+    while ($row = mysqli_fetch_array($result)) {
         $comp_name = $row['comp_name'];
         $in_stock = $row['in_stock'];
         $img_link = ' "inc/img/arduino_img/'.$row['comp_ref'] .'.jpg" ';
