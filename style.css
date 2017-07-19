@@ -126,6 +126,11 @@ h2{
 tr{
     border: 1px solid #6c04d4;
 }
+
+tr:hover{
+    background-color: lightgrey;
+    cursor:pointer;
+}
 .btn-basic{
 
 }
