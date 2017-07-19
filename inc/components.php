@@ -22,18 +22,23 @@ $count = mysql_num_rows($query);
 <div class="container" id="componentlist">
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2 componentdiv">
-            <ul>
+            <table class="componenttable">
+                <th colspan="2">Component</th>
+                <th colspan="1">In stock</th>
+
 
 <?php
 if ($query->num_rows > 0) {
     // output data of each row
     while ($row = $query->fetch_assoc()) {
         $img_link = ' "inc/img/arduino_img/'.$row['comp_ref'] .'.jpg" ';
-        echo ' <li> Component name: ' .$row['comp_name'] .'<br/>
-                In stock: ' .$row['in_stock'] .'<br/>
-                Component image: <img src='.$img_link .' class="img-responsive" height="250px" width="250px" alt ="'.$row['comp_name'] .'"/> 
-              </li>
-              <hr/>';
+        echo ' 
+ <tr>
+ <td><img src='.$img_link .' class="img-thumbnail" height="50px" width="50px" alt ="'.$row['comp_name'] .'"/> </td>
+ <td>' .$row['comp_name'] .'</td>
+ <td>' .$row['in_stock'] .'</td>
+</tr>
+';
     };
 }else {
     echo "No components to show at this time";
