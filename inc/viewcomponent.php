@@ -6,6 +6,10 @@
  * Time: 15:56
  */
 include('scripts/header.php');
+if(isset($_SESSION['msg'])){
+    echo $_SESSION['msg'];
+    unset($_SESSION['msg']);
+};
 include('scripts/dbconnect.php');
 ?>
 <div class="container">
@@ -16,11 +20,11 @@ include('scripts/dbconnect.php');
 $comp_ref = $params['comp_ref'];
 
 $query = "SELECT * FROM components where comp_ref = '$comp_ref'";
-$result = mysqli_query($query);
-$count = mysqli_num_rows($result);
+$result = $conn->query($query);
 
 
-if ($count > 0) {
+
+if ($result->num_rows > 0) {
     // output data of each row
     while ($row = mysqli_fetch_array($result)) {
         $comp_name = $row['comp_name'];
