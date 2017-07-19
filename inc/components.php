@@ -41,7 +41,7 @@ if ($result->num_rows > 0) {
         $comp_ref = $row['comp_ref'];
         $img_link = ' "inc/img/arduino_img/'.$row['comp_ref'] .'.jpg" ';
         echo ' 
- <tr class=\'clickable-row\' data-href="viewcomponent/' .$comp_ref.'"\'>
+ <tr class="clickable-row" data-href="viewcomponent/'.$comp_ref.'">
  <td><img src='.$img_link .' class="img-thumbnail" height="150px" width="150px" alt ="'.$row['comp_name'] .'"/> </td>
  <td>' .$row['comp_name'] .'</td>
  <td>' .$row['in_stock'] .'</td>
