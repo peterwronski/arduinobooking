@@ -30,7 +30,7 @@ if ($result->num_rows > 0) {
     while ($row = mysqli_fetch_array($result)) {
         $comp_name = $row['comp_name'];
         $in_stock = $row['in_stock'];
-        $img_link = ' "inc/img/arduino_img/'.$row['comp_ref'] .'.jpg" ';
+        $img_link = ' "../inc/img/arduino_img/'.$row['comp_ref'] .'.jpg" ';
 
         echo '
         <div class="col-md-4">
@@ -49,7 +49,7 @@ if ($result->num_rows > 0) {
                                     <strong>Oh no!</strong>Component could not be found!
                                 </div>';
     session_write_close();
-    header('Location: ./');
+    header('Location: ./home');
 };
 
 include('scripts/footer.php');
