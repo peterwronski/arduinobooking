@@ -13,6 +13,7 @@ window.location = $(this).data("href");
 });
 });
 
+
 <div class="container" id="componentlist">
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2 componentdiv">
