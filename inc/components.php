@@ -7,12 +7,13 @@ $query = $conn->query("SELECT * FROM components");
 
 $count = mysql_num_rows($query);
 ?>
+<script>
 jQuery(document).ready(function($) {
 $(".clickable-row").click(function() {
 window.location = $(this).data("href");
 });
 });
-
+</script>
 
 <div class="container" id="componentlist">
     <div class="row">
