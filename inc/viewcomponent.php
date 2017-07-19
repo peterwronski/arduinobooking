@@ -44,3 +44,6 @@ if ($query->num_rows > 0) {
     session_write_close();
     header('Location: components');
 }
+
+include('scripts/footer.php');
+?>
