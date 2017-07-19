@@ -10,7 +10,7 @@ include('scripts/dbconnect.php');
 
 $query = "SELECT * FROM components";
 $result = $conn->query($query);
-$count = mysqli_num_rows($result);
+
 
 ?>
 
@@ -35,7 +35,7 @@ $count = mysqli_num_rows($result);
 
 
 <?php
-if ($count > 0) {
+if ($result->num_rows > 0) {
 // output data of each row
     while ($row = $result->fetch_array()) {
         $comp_ref = $row['comp_ref'];
