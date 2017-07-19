@@ -31,6 +31,7 @@ $count = mysql_num_rows($query);
 if ($query->num_rows > 0) {
     // output data of each row
     while ($row = $query->fetch_assoc()) {
+        $comp_ref = $row['comp_ref'];
         $img_link = ' "inc/img/arduino_img/'.$row['comp_ref'] .'.jpg" ';
         echo ' 
  <tr class=\'clickable-row\' data-url="viewcomponent/{$comp_ref}"\'>
