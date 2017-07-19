@@ -8,9 +8,10 @@ if(isset($_SESSION['msg'])){
 
 include('scripts/dbconnect.php');
 
-
-$result = mysqli_query("SELECT * FROM components");
+$query = "SELECT * FROM components";
+$result = $conn->query($query);
 $count = mysqli_num_rows($result);
+
 ?>
 
 
@@ -36,7 +37,7 @@ $count = mysqli_num_rows($result);
 <?php
 if ($count > 0) {
 // output data of each row
-    while ($row = mysqli_fetch_array($result)) {
+    while ($row = $result->fetch_array()) {
         $comp_ref = $row['comp_ref'];
         $img_link = ' "inc/img/arduino_img/'.$row['comp_ref'] .'.jpg" ';
         echo ' 
