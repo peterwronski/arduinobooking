@@ -62,5 +62,7 @@ if ($result->num_rows > 0) {
     echo "No components to show at this time";
 };
 ?>
+        </div>
+    </div>
 </div>
 <?php include('scripts/footer.php'); ?>

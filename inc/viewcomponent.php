@@ -51,6 +51,7 @@ if ($result->num_rows > 0) {
                                 </div>';
 
     header('Location: ../../components');
+    exit();
 };
 
 include('scripts/footer.php');
