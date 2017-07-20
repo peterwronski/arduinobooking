@@ -40,23 +40,24 @@ if(isset($_SESSION['userloggedin']) && !empty($_SESSION['userloggedin'])) {
 
                                 switch ($sort_method1) {
                                     case "name":
-                                        $query .= " ORDER BY comp_name ";
+                                        $sort_method1 = " ORDER BY comp_name";
                                         break;
 
                                     case "in_stock":
-                                        $query .= " ORDER BY in_stock ";
+                                        $sort_method1 = " ORDER BY in_stock";
                                     break;
                                 };
 
                                 switch ($sort_method2) {
                                     case "ascending":
-                                        $query .= " ASC";
+                                        $sort_method2 = " ASC";
                                         break;
                                     case "descending":
-                                        $query .= " DESC";
+                                        $sort_method2 = " DESC";
                                         break;
                                 };
-echo $query;
+                                $query = $query .$sort_method1 .$sort_method2;
+                                echo $query;
 
                                 }
                             }
