@@ -87,6 +87,3 @@
         </div>
     </div>
 </nav>
-<script>
-    $('a[href="' + this.location.pathname + '"]').parents('li,ul').addClass('active');
-</script>

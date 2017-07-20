@@ -11,6 +11,7 @@ if(isset($_SESSION['msg'])){
     echo $_SESSION['msg'];
     unset($_SESSION['msg']);
 };
+if (isset($_SESSION['userloggedin']) && !empty($_SESSION['userloggedin'])){
 include('scripts/dbconnect.php');
 ?>
 <div class="container">
@@ -50,9 +51,18 @@ if ($result->num_rows > 0) {
                                     <strong>Oh no!</strong>Component could not be found!
                                 </div>';
 
-    header('Location: ../../components');
+    header('Location: ../../');
     exit();
 };
+}else{
+    $_SESSION['msg'] = '<div class="alert alert-warning alert-dismissable">
+                                    <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+                                    <strong>Hold up!</strong>You have to be logged in to view this content
+                                </div>';
+
+    header('Location: ../../');
+    exit();
+}
 
 include('scripts/footer.php');
 ?>
