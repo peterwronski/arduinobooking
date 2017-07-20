@@ -87,8 +87,8 @@ if(isset($_SESSION['userloggedin']) && !empty($_SESSION['userloggedin'])) {
                     } else{
                         $query = "SELECT * FROM components";
                     }
-                    //$result = $conn->query($query);
-                    echo $query;
+                    $result = $conn->query($query);
+                    //echo $query;
 
                     if ($result->num_rows > 0) {
 // output data of each row
