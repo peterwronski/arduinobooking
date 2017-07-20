@@ -29,8 +29,9 @@ include('scripts/header.php');
         <div class="col-md-4">
             <img src="/inc/img/ard_about.png" alt="Arduino Board" class="img-responsive " style="margin-top: 20%"/>
         </div>
-        <hr/>
+
     </div>
+    <hr/>
     <div class="row">
         <div class="col-xs-12"><h2>Why Arduino?</h2>
             <p>Thanks to its simple and accessible user experience, Arduino has been used in thousands of different projects and applications.
@@ -45,7 +46,7 @@ include('scripts/header.php');
     </div>
 
     <div class="row">
-        <div class="col-md-6"> <p style="border-top: 2px solid #781d7d">There are many other microcontrollers and microcontroller platforms available for physical computing.
+        <div class="col-md-6"> <p>There are many other microcontrollers and microcontroller platforms available for physical computing.
             Parallax Basic Stamp, Netmedia's BX-24, Phidgets, MIT's Handyboard, and many others offer similar functionality.
             All of these tools take the messy details of microcontroller programming and wrap it up in an easy-to-use package.
             Arduino also simplifies the process of working with microcontrollers, but it offers some advantage for teachers, students,
