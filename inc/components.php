@@ -1,10 +1,6 @@
 <?php
 session_start();
 include('scripts/header.php');
-if(isset($_SESSION['msg'])){
-    echo $_SESSION['msg'];
-    unset($_SESSION['msg']);
-};
 if(isset($_SESSION['userloggedin']) && !empty($_SESSION['userloggedin'])) {
     include('scripts/dbconnect.php');
 
@@ -75,7 +71,7 @@ if(isset($_SESSION['userloggedin']) && !empty($_SESSION['userloggedin'])) {
                                 </div>';
 
     header('Location: ./');
-    exit();
+
 }
     include('scripts/footer.php');
  ?>
