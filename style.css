@@ -139,11 +139,11 @@ tr.clickable-row:hover{
 }
 
 hr {
-    size: 5px;
+
     width:80%;
     margin-top: 5%;
     margin-bottom: 5%;
-    color: #781d7d;
+    border: 1px solid #781d7d;
 }
 
 footer {
