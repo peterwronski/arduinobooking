@@ -87,8 +87,8 @@ if(isset($_SESSION['userloggedin']) && !empty($_SESSION['userloggedin'])) {
                     }
                     //$result = $conn->query($query);
                     echo $query;
-                    //unset($_SESSION['sort_method1']);
-                    //unset($_SESSION['sort_method2']);
+                    unset($_SESSION['sort_method1']);
+                    unset($_SESSION['sort_method2']);
                     if ($result->num_rows > 0) {
 // output data of each row
                         while ($row = $result->fetch_array()) {
