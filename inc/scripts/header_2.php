@@ -46,7 +46,7 @@
                                     <div class="alert alert-info">
                                         <strong>Heads up!</strong>This system is currently not connected to the RGU network, therefore your existing RGU credentials won\'t work unless you create a new account on this system.
                                     </div>
-                                    <form action="login" method="POST">
+                                    <form action="../../login" method="POST">
                                         <input type="text" name="email" placeholder="Email" aria-required="true" required>
                                         <input type="password" name="pass" placeholder="Password" aria-required ="true" required>
                                         <input type="submit" name="login" class="login loginmodal-submit" value="Login">
@@ -68,7 +68,7 @@
                                 <div class="alert alert-info">
                                     <strong>Heads up!</strong>This system is designed for RGU students only. You will have to use an RGU email to make an account.
                                 </div>
-                                <form action="register" method="POST">
+                                <form action="../../register" method="POST">
                                     <input type="text" name="studentid" placeholder="Student ID" aria-required="true" required>
                                     <input type="text" name="fname" placeholder="First name" aria-required="true" required>
                                     <input type="text" name="sname" placeholder="Surname" aria-required="true" required>
