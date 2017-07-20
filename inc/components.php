@@ -70,7 +70,10 @@ if(isset($_SESSION['userloggedin']) && !empty($_SESSION['userloggedin'])) {
                                     <strong>Hold up!</strong>You have to be logged in to view this content
                                 </div>';
 
-    header('Location: ./');
+    if(isset($_SESSION['msg'])){
+        echo $_SESSION['msg'];
+        unset($_SESSION['msg']);
+    };
 
 }
     include('scripts/footer.php');

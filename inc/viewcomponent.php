@@ -7,10 +7,7 @@
  */
 include('scripts/header_2.php');
 $comp_ref = $params['comp_id'];
-if(isset($_SESSION['msg'])){
-    echo $_SESSION['msg'];
-    unset($_SESSION['msg']);
-};
+
 if (isset($_SESSION['userloggedin']) && !empty($_SESSION['userloggedin'])){
 include('scripts/dbconnect.php');
 ?>
@@ -50,9 +47,11 @@ if ($result->num_rows > 0) {
                                     <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
                                     <strong>Oh no!</strong>Component could not be found!
                                 </div>';
+    if(isset($_SESSION['msg'])){
+        echo $_SESSION['msg'];
+        unset($_SESSION['msg']);
+    };
 
-    header('Location: ../../');
-    exit();
 };
 }else{
     $_SESSION['msg'] = '<div class="alert alert-warning alert-dismissable">
@@ -60,7 +59,11 @@ if ($result->num_rows > 0) {
                                     <strong>Hold up!</strong>You have to be logged in to view this content
                                 </div>';
 
-    header('Location: ../../');
+    if(isset($_SESSION['msg'])){
+        echo $_SESSION['msg'];
+        unset($_SESSION['msg']);
+    };
+
 
 }
 
