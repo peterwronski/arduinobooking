@@ -132,6 +132,10 @@ tr.clickable-row:hover{
 
 }
 
+#componentlist{
+    margin-bottom: 5%;
+}
+
 hr {
     size: 5px;
     width:80%;
