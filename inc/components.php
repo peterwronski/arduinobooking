@@ -35,8 +35,8 @@ if(isset($_SESSION['userloggedin']) && !empty($_SESSION['userloggedin'])) {
                         ';
                     }  elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-                            $_SESSION['sort_method1'] = $_POST['sort_method1'];
-                            $_SESSION['sort_method2'] = $_POST['sort_method2'];
+                            $sort_method1 = $_POST['sort_method1'];
+                            $sort_method2 = $_POST['sort_method2'];
 
                                 switch ($sort_method1) {
                                     case "name":
