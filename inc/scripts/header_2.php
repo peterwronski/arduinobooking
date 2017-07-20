@@ -25,9 +25,9 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="../../">Home</a></li>
-                <li><a href="../../about">About Arduino</a></li>
-                <li><a href="../../components">Components</a></li>
+                <li class="<%= 'active' if params[:controller] == '../../' %>"> <a href="../../">Home</a> </li>
+                <li class="<%= 'active' if params[:controller] == 'about' %>"> <a href="../../about">About Arduino</a> </li>
+                <li class="<%= 'active' if params[:controller] == 'components' %>"><a href="../../components">Components</a></li>
                 <li><a href="http://campusmoodle.rgu.ac.uk">CampusNoodle</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
