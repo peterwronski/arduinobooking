@@ -50,7 +50,9 @@ include('scripts/header.php');
             Parallax Basic Stamp, Netmedia's BX-24, Phidgets, MIT's Handyboard, and many others offer similar functionality.
             All of these tools take the messy details of microcontroller programming and wrap it up in an easy-to-use package.
             Arduino also simplifies the process of working with microcontrollers, but it offers some advantage for teachers, students,
-                and interested amateurs over other systems:</p></div>
+                and interested amateurs over other systems:</p>
+        <hr/>
+        <p style="color: #BDB6B5">Content sourced from <a href="https://www.arduino.cc/">Arduino.cc</a></p></div>
 
         <div class="col-md-6">
             <ul>
