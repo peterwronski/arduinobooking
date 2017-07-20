@@ -44,7 +44,7 @@ include('scripts/header.php');
                 or sharing ideas online with other members of the Arduino community.</p>
         </div>
     </div>
-
+<hr/>
     <div class="row">
         <div class="col-md-6"> <p>There are many other microcontrollers and microcontroller platforms available for physical computing.
             Parallax Basic Stamp, Netmedia's BX-24, Phidgets, MIT's Handyboard, and many others offer similar functionality.
