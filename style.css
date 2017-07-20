@@ -124,15 +124,22 @@ h2{
 
 }
 tr{
-    border: 1px solid #6c04d4;
+    border: 1px solid #;
 }
 
 tr.clickable-row:hover{
-    background-color: #f7bcfa;
+    background-color: #c6e7ea;
     cursor:pointer;
 }
 .btn-basic{
 
+}
+
+hr {
+    size: 5px;
+    width:80%;
+    margin-top: 5%;
+    margin-bottom: 5%;
 }
 
 footer {
