@@ -44,8 +44,22 @@ include('scripts/header.php');
         </div>
     </div>
     <div class="row">
-        <div class="col-md-6"></div>
-        <div class="col-md-6"></div>
+        <div class="col-md-6"> <p style="border: 1px solid #781d7d">There are many other microcontrollers and microcontroller platforms available for physical computing.
+            Parallax Basic Stamp, Netmedia's BX-24, Phidgets, MIT's Handyboard, and many others offer similar functionality.
+            All of these tools take the messy details of microcontroller programming and wrap it up in an easy-to-use package.
+            Arduino also simplifies the process of working with microcontrollers, but it offers some advantage for teachers, students,
+                and interested amateurs over other systems:</p></div>
+
+        <div class="col-md-6">
+            <ul>
+                <li><b>Inexpensive</b> - Arduino boards are relatively inexpensive compared to other microcontroller platforms. The least expensive version of the Arduino module can be assembled by hand, and even the pre-assembled Arduino modules cost less than $50</li>
+                <li><b>Cross-platform</b> - The Arduino Software (IDE) runs on Windows, Macintosh OSX, and Linux operating systems. Most microcontroller systems are limited to Windows</li>
+                <li><b>Simple, clear programming environment</b> - The Arduino Software (IDE) is easy-to-use for beginners, yet flexible enough for advanced users to take advantage of as well. For teachers, it's conveniently based on the Processing programming environment, so students learning to program in that environment will be familiar with how the Arduino IDE works.</li>
+                <li><b>Open source and extensible software</b> - The Arduino software is published as open source tools, available for extension by experienced programmers. The language can be expanded through C++ libraries, and people wanting to understand the technical details can make the leap from Arduino to the AVR C programming language on which it's based. Similarly, you can add AVR-C code directly into your Arduino programs if you want to.</li>
+                <li><b>Open source and extensible hardware</b> - The plans of the Arduino boards are published under a Creative Commons license, so experienced circuit designers can make their own version of the module, extending it and improving it. Even relatively inexperienced users can build the breadboard version of the module in order to understand how it works and save money.</li>
+            </ul>
+
+        </div>
     </div>
 </div>
 
