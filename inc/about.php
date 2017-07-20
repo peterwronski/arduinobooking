@@ -53,7 +53,7 @@ include('scripts/header.php');
                 and interested amateurs over other systems:</p></div>
 
         <div class="col-md-6">
-            <ul style="border-left: 2px solid #781d7d">
+            <ul>
                 <li><b>Inexpensive</b> - Arduino boards are relatively inexpensive compared to other microcontroller platforms. The least expensive version of the Arduino module can be assembled by hand, and even the pre-assembled Arduino modules cost less than $50</li>
                 <li><b>Cross-platform</b> - The Arduino Software (IDE) runs on Windows, Macintosh OSX, and Linux operating systems. Most microcontroller systems are limited to Windows</li>
                 <li><b>Simple, clear programming environment</b> - The Arduino Software (IDE) is easy-to-use for beginners, yet flexible enough for advanced users to take advantage of as well. For teachers, it's conveniently based on the Processing programming environment, so students learning to program in that environment will be familiar with how the Arduino IDE works.</li>
