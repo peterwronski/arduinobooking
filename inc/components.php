@@ -19,12 +19,12 @@ if(isset($_SESSION['userloggedin']) && !empty($_SESSION['userloggedin'])) {
 
 
                         echo' <form action="components" method="post">
-                                Sort by: <select name="sort_method1" class="selectpicker">
+                                Sort by: <select name="sort_method1" class="btn-new">
                                             <option value="name">Name</option>
                                             <option value = "in_stock">In stock</option>
                                          </select>
                                          
-                                         <select name="sort_method2" class="selectpicker">
+                                         <select name="sort_method2" class="btn-new">
                                             <option value="ascending">Ascending</option>
                                             <option value="descending"> Descending</option>
                                          </select>
