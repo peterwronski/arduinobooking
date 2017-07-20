@@ -70,7 +70,7 @@ if(isset($_SESSION['userloggedin']) && !empty($_SESSION['userloggedin'])) {
             </div>
         </div>
     </div>
-
+   <?php echo $query; ?>
     <div class="container" id="componentlist">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 componentdiv">
@@ -80,7 +80,7 @@ if(isset($_SESSION['userloggedin']) && !empty($_SESSION['userloggedin'])) {
 
 
                     <?php
-                    echo $query;
+
                     //$result = $conn->query($query);
                     if ($result->num_rows > 0) {
 // output data of each row
