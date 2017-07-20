@@ -44,14 +44,14 @@ include('scripts/header.php');
         </div>
     </div>
     <div class="row">
-        <div class="col-md-6"> <p style="border-right: 2px solid #781d7d">There are many other microcontrollers and microcontroller platforms available for physical computing.
+        <div class="col-md-6"> <p>There are many other microcontrollers and microcontroller platforms available for physical computing.
             Parallax Basic Stamp, Netmedia's BX-24, Phidgets, MIT's Handyboard, and many others offer similar functionality.
             All of these tools take the messy details of microcontroller programming and wrap it up in an easy-to-use package.
             Arduino also simplifies the process of working with microcontrollers, but it offers some advantage for teachers, students,
                 and interested amateurs over other systems:</p></div>
 
         <div class="col-md-6">
-            <ul>
+            <ul style="border-left: 2px solid #781d7d">
                 <li><b>Inexpensive</b> - Arduino boards are relatively inexpensive compared to other microcontroller platforms. The least expensive version of the Arduino module can be assembled by hand, and even the pre-assembled Arduino modules cost less than $50</li>
                 <li><b>Cross-platform</b> - The Arduino Software (IDE) runs on Windows, Macintosh OSX, and Linux operating systems. Most microcontroller systems are limited to Windows</li>
                 <li><b>Simple, clear programming environment</b> - The Arduino Software (IDE) is easy-to-use for beginners, yet flexible enough for advanced users to take advantage of as well. For teachers, it's conveniently based on the Processing programming environment, so students learning to program in that environment will be familiar with how the Arduino IDE works.</li>
