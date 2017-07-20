@@ -4,7 +4,7 @@ include('scripts/header.php');
 if(isset($_SESSION['userloggedin']) && !empty($_SESSION['userloggedin'])) {
     include('scripts/dbconnect.php');
 
-    $query = "SELECT * FROM components";
+
 
     ?>
 
@@ -35,25 +35,25 @@ if(isset($_SESSION['userloggedin']) && !empty($_SESSION['userloggedin'])) {
                         ';
                     }  elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         if(isset($POST_['sort_method1']) && isset($POST_['sort_method2'])){
-                            $sort_method1 = $POST_['sort_method1'];
-                            $sort_method2 = $POST_['sort_method2'];
+                            $_SESSION['sort_method1'] = $POST_['sort_method1'];
+                            $_SESSION['sort_method2'] = $POST_['sort_method2'];
 
                                 switch ($sort_method1) {
                                     case "name":
-                                        $sort_method1 = " ORDER BY comp_name";
+                                        $_SESSION['sort_method1'] = " ORDER BY comp_name";
                                         break;
 
                                     case "in_stock":
-                                        $sort_method1 = " ORDER BY in_stock";
+                                        $_SESSION['sort_method1'] = " ORDER BY in_stock";
                                     break;
                                 };
 
                                 switch ($sort_method2) {
                                     case "ascending":
-                                        $sort_method2 = " ASC";
+                                        $_SESSION['sort_method2'] = " ASC";
                                         break;
                                     case "descending":
-                                        $sort_method2 = " DESC";
+                                        $_SESSION['sort_method2'] = " DESC";
                                         break;
                                 };
                                 $query = $query .$sort_method1 .$sort_method2;
@@ -70,7 +70,7 @@ if(isset($_SESSION['userloggedin']) && !empty($_SESSION['userloggedin'])) {
             </div>
         </div>
     </div>
-   <?php echo $query; ?>
+
     <div class="container" id="componentlist">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 componentdiv">
@@ -80,8 +80,12 @@ if(isset($_SESSION['userloggedin']) && !empty($_SESSION['userloggedin'])) {
 
 
                     <?php
-
-                    //$result = $conn->query($query);
+                    if(isset($_SESSION['sort_method1']) && isset($_SESSION['sort_method2'])){
+                        $query = "SELECT * FROM components" .$_SESSION['sort_method1'] .$_SESSION['sort_method2'];
+                    } else{
+                        $query = "SELECT * FROM components";
+                    }
+                    $result = $conn->query($query);
                     if ($result->num_rows > 0) {
 // output data of each row
                         while ($row = $result->fetch_array()) {
