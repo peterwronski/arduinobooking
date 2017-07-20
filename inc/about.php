@@ -4,7 +4,7 @@ include('scripts/header.php');
 
 ?>
 
-<div class="container">
+<div class="container" style="margin-bottom:20%;">
     <div class="row">
         <div class="col-md-8">
         <h2>What is Arduino?</h2>
