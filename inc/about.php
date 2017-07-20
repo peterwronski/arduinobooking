@@ -25,6 +25,7 @@ include('scripts/header.php');
                 The software, too, is open-source, and it is growing through the contributions of users worldwide.</p>
 
         </div>
+        <hr/>
         <div class="col-md-4">
             <img src="/inc/img/ard_about.png" alt="Arduino Board" class="img-responsive " style="margin-top: 20%"/>
         </div>
