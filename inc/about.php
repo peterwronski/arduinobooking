@@ -43,9 +43,9 @@ include('scripts/header.php');
                 or sharing ideas online with other members of the Arduino community.</p>
         </div>
     </div>
-    <hr/>
+
     <div class="row">
-        <div class="col-md-6"> <p>There are many other microcontrollers and microcontroller platforms available for physical computing.
+        <div class="col-md-6" style="border-top: 2px solid #781d7d"> <p>There are many other microcontrollers and microcontroller platforms available for physical computing.
             Parallax Basic Stamp, Netmedia's BX-24, Phidgets, MIT's Handyboard, and many others offer similar functionality.
             All of these tools take the messy details of microcontroller programming and wrap it up in an easy-to-use package.
             Arduino also simplifies the process of working with microcontrollers, but it offers some advantage for teachers, students,
