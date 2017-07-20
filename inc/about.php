@@ -26,7 +26,7 @@ include('scripts/header.php');
 
         </div>
         <div class="col-md-4">
-            <img src="img/ard_about.png" alt="Arduino Board" />
+            <img src="/inc/img/ard_about.png" alt="Arduino Board" />
         </div>
     </div>
     <div class="row">
