@@ -50,13 +50,13 @@ if(isset($_SESSION['userloggedin']) && !empty($_SESSION['userloggedin'])) {
 
                                 switch ($sort_method2) {
                                     case "ascending":
-                                        $query .= " ASCENDING";
+                                        $query .= " ASC";
                                         break;
                                     case "descending":
-                                        $query .= " DESCENDING";
+                                        $query .= " DESC";
                                         break;
                                 };
-
+echo $query;
 
                                 }
                             }
