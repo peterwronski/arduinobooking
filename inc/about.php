@@ -26,7 +26,7 @@ include('scripts/header.php');
 
         </div>
         <div class="col-md-4">
-            <img src="/inc/img/ard_about.png" alt="Arduino Board" class="img-responsive " style="margin-top: 10%"/>
+            <img src="/inc/img/ard_about.png" alt="Arduino Board" class="img-responsive " style="margin-top: 50%"/>
         </div>
     </div>
     <div class="row">
