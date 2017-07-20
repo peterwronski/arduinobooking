@@ -40,11 +40,11 @@ if(isset($_SESSION['userloggedin']) && !empty($_SESSION['userloggedin'])) {
 
                                 switch ($sort_method1) {
                                     case "name":
-                                        $_SESSION['sort_method1'] = " ORDER BY comp_name";
+                                        $_SESSION['sort_method1'] = " comp_name";
                                         break;
 
                                     case "in_stock":
-                                        $_SESSION['sort_method1'] = " ORDER BY in_stock";
+                                        $_SESSION['sort_method1'] = " in_stock";
                                     break;
                                 };
 
@@ -81,7 +81,7 @@ if(isset($_SESSION['userloggedin']) && !empty($_SESSION['userloggedin'])) {
 
                     <?php
                     if(isset($_SESSION['sort_method1']) && isset($_SESSION['sort_method2'])){
-                        $query = "SELECT * FROM components" .$_SESSION['sort_method1'] .$_SESSION['sort_method2'];
+                        $query = "SELECT * FROM components ORDER BY" .$_SESSION['sort_method1'] .$_SESSION['sort_method2'];
                     } else{
                         $query = "SELECT * FROM components";
                     }
