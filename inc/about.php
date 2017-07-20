@@ -16,7 +16,7 @@ include('scripts/header.php');
                 Over the years Arduino has been the brain of thousands of projects, from everyday objects to complex scientific instruments.
                 A worldwide community of makers - students, hobbyists, artists, programmers, and professionals - has gathered around this open-source platform,
                 their contributions have added up to an incredible amount of accessible knowledge that can be of great help to novices and experts alike.
-                <br/>
+                <br/><br/>
                 Arduino was born at the Ivrea Interaction Design Institute as an easy tool for fast prototyping,
                 aimed at students without a background in electronics and programming.
                 As soon as it reached a wider community, the Arduino board started changing to adapt to new needs and challenges,
