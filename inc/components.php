@@ -82,13 +82,14 @@ if(isset($_SESSION['userloggedin']) && !empty($_SESSION['userloggedin'])) {
                     <?php
                     if(isset($_SESSION['sort_method1']) && isset($_SESSION['sort_method2'])){
                         $query = "SELECT * FROM components ORDER BY" .$_SESSION['sort_method1'] .$_SESSION['sort_method2'];
+                        unset($_SESSION['sort_method1']);
+                        unset($_SESSION['sort_method2']);
                     } else{
                         $query = "SELECT * FROM components";
                     }
                     //$result = $conn->query($query);
                     echo $query;
-                    unset($_SESSION['sort_method1']);
-                    unset($_SESSION['sort_method2']);
+
                     if ($result->num_rows > 0) {
 // output data of each row
                         while ($row = $result->fetch_array()) {
