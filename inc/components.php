@@ -29,7 +29,7 @@ if(isset($_SESSION['userloggedin']) && !empty($_SESSION['userloggedin'])) {
                                             <option value="descending"> Descending</option>
                                          </select>
                                          
-                                         <input type="submit" name="sort_submit"> Sort </input>
+                                         <input type="submit" name="sort_submit">  </input>
                                          </form>
                         
                         ';
@@ -64,7 +64,7 @@ if(isset($_SESSION['userloggedin']) && !empty($_SESSION['userloggedin'])) {
 
 
                         ?>
-                    }</div>
+                    </div>
                 <hr/>
             </div>
         </div>
