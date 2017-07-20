@@ -17,7 +17,7 @@ if(isset($_SESSION['userloggedin']) && !empty($_SESSION['userloggedin'])) {
                 </button>
                 <div id="options" class="collapse"><?
 
-                    if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+
                         echo' <form action="components" method="post">
                                 Sort by: <select name="sort_method1">
                                             <option value="name">Name</option>
@@ -33,7 +33,7 @@ if(isset($_SESSION['userloggedin']) && !empty($_SESSION['userloggedin'])) {
                                          </form>
                         
                         ';
-                    }  elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                   if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                             $sort_method1 = $_POST['sort_method1'];
                             $sort_method2 = $_POST['sort_method2'];
@@ -56,13 +56,7 @@ if(isset($_SESSION['userloggedin']) && !empty($_SESSION['userloggedin'])) {
                                         $_SESSION['sort_method2'] = " DESC";
                                         break;
                                 };
-
-
-
-                                }
-
-
-
+                    }
 
                         ?>
                     </div>
