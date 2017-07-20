@@ -52,7 +52,7 @@ include('scripts/header.php');
             Arduino also simplifies the process of working with microcontrollers, but it offers some advantage for teachers, students,
                 and interested amateurs over other systems:</p>
         <hr/>
-        <p style="color: #BDB6B5">Content sourced from <a href="https://www.arduino.cc/">Arduino.cc</a></p></div>
+            <p style="color: #BDB6B5"><i>Content sourced from <a href="https://www.arduino.cc/">Arduino.cc</a></i></p></div>
 
         <div class="col-md-6">
             <ul>
