@@ -5,11 +5,8 @@ if(isset($_SESSION['userloggedin']) && !empty($_SESSION['userloggedin'])) {
     include('scripts/dbconnect.php');
 
     $query = "SELECT * FROM components";
-    $result = $conn->query($query);
-
 
     ?>
-
 
     <div class="container" id="componentlist">
         <div class="row">
@@ -18,7 +15,56 @@ if(isset($_SESSION['userloggedin']) && !empty($_SESSION['userloggedin'])) {
                 <button type="button" class="btn btn-basic btn-block" data-toggle="collapse" data-target="#options">
                     Options
                 </button>
-                <div id="options" class="collapse">INSERT SORT OPTIONS HERE</div>
+                <div id="options" class="collapse"><?
+
+                    if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+                        echo' <form action="components" method="post">
+                                Sort by: <select name="sort_method1">
+                                            <option value="name">Name</option>
+                                            <option value = "in_stock">In stock</option>
+                                         </select>
+                                         
+                                         <select name="sort_method2">
+                                            <option value="ascending">Ascending</option>
+                                            <option value="descending"> Descending</option>
+                                         </select>
+                                         
+                                         <input type="submit" name="sort_submit"> Sort </input>
+                                         </form>
+                        
+                        ';
+                    }  elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                        if(isset($POST_['sort_method1']) && isset($POST_['sort_method2'])){
+                            $sort_method1 = $POST_['sort_method1'];
+                            $sort_method2 = $POST_['sort_method2'];
+
+                                switch ($sort_method1) {
+                                    case "name":
+                                        $query .= " ORDER BY comp_name ";
+                                        break;
+
+                                    case "in_stock":
+                                        $query .= " ORDER BY in_stock ";
+                                    break;
+                                };
+
+                                switch ($sort_method2) {
+                                    case "ascending":
+                                        $query .= " ASCENDING";
+                                        break;
+                                    case "descending":
+                                        $query .= " DESCENDING";
+                                        break;
+                                };
+
+
+                                }
+                            }
+
+
+
+                        ?>
+                    }</div>
                 <hr/>
             </div>
         </div>
@@ -33,6 +79,8 @@ if(isset($_SESSION['userloggedin']) && !empty($_SESSION['userloggedin'])) {
 
 
                     <?php
+
+                    $result = $conn->query($query);
                     if ($result->num_rows > 0) {
 // output data of each row
                         while ($row = $result->fetch_array()) {
