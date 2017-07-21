@@ -12,7 +12,7 @@ if(isset($_SESSION['userloggedin']) && !empty($_SESSION['userloggedin'])) {
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 componentdiv">
                 <h1>Components</h1> <br/>
-                <button type="button" class="btn btn-basic btn-block" data-toggle="collapse" data-target="#options">
+                <button type="button" class="btn btn-info btn-block" data-toggle="collapse" data-target="#options">
                     Options
                 </button>
                 <div id="options" class="collapse"><?

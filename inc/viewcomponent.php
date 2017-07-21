@@ -38,6 +38,14 @@ if ($result->num_rows > 0) {
         <div class="col-md-4">
         <h2>'.$comp_name.'</h2><br/>
         Quantity in stock: '.$in_stock .'
+        <br/>
+        <br/>
+         <div class="col-md-4 col-md-offset-4">
+        <p><b>Create a booking</b></p><hr/>
+        <form action="makebooking" method="POST">
+        <input type="number" min="1" max="' .$in_stock .'"
+        <button type="button" class="btn btn-info">
+        </form>
         </div>
         ';
         exit();
