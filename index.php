@@ -27,7 +27,7 @@ $rules = array(
     'login' => "/login",
     'register' => "/register",
     'verify' => "/verify",
-    'cart' => "/cart?(?'action'[\w\_&?=]+)(&'comp_id'[\w\_&?=]+)",
+    'cart' => "/cart?(?'action'[\w\_&?=]&'comp_id'[\w\_&?=]+)",
     'viewcart' => "/viewcart",
 
     'viewuser' => "/viewuser",
