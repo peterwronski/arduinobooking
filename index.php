@@ -27,6 +27,7 @@ $rules = array(
     'login' => "/login",
     'register' => "/register",
     'verify' => "/verify",
+    'cart' => "/cart",
 
     'viewuser' => "/viewuser",
     'logout' => "/logout",
