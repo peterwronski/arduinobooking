@@ -19,6 +19,7 @@ if(isset($_SESSION['userloggedin']) && !empty($_SESSION['userloggedin'])) {
 
 
                         echo' <form action="components" method="post">
+                                <!--Source: https://bootsnipp.com/snippets/GXagX -->
                                 Sort by: <a class="btn btn-info btn-select">
                                                 <input type="hidden" class="btn-select-input" name="sort_method1"/>
                                                     <span class="btn-select-value">Select a value</span>
