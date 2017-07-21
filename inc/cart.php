@@ -1,7 +1,10 @@
 <?php
 include('scripts/dbconnect.php');
 //Source: http://phppot.com/php/simple-php-shopping-cart/
-if(isset($_GET['action']) && isset($_GET['comp_id'])) {
+
+$action = $params['action'];
+$comp_ref = $params['comp_id'];
+/*if(isset($_GET['action']) && isset($_GET['comp_id'])) {
     switch ($_GET['action']) {
         case "add":
             $query = $conn->query('SELECT * FROM components WHERE comp_ref = "' . $_GET['comp_id'] . '"');
@@ -11,7 +14,12 @@ if(isset($_GET['action']) && isset($_GET['comp_id'])) {
 
 } else {
     echo "Action or comp_id aren't set";
-}
+}*/
+echo $action;
+echo ' // ';
+echo $comp_ref;
+
+?>
 
 
 
