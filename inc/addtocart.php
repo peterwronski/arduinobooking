@@ -1,11 +1,12 @@
 <?php
 //Source: http://phppot.com/php/simple-php-shopping-cart/
-if (isset($_GET["action"]) && isset($_GET["comp_id"]) && $_GET["action"] == "add") {
+$comp_ref = $params['comp_id'];
+if (isset($comp_ref)) {
     if (!empty($_POST["quantity"])) {
-        $compByCode = $conn->query("SELECT * FROM components WHERE comp_ref='" . $_GET["comp_id"] . "'");
+        $compByCode = $conn->query("SELECT * FROM components WHERE comp_ref='" . $comp_ref . "'");
         $itemArray = array($compByCode[0]["comp_id"] =>
                         array('comp_name' => $compByCode[0]["comp_name"],
-                            'comp_id' => $productByCode[0]["code"],
+                            'comp_id' => $productByCode[0]["comp_ref"],
                             'quantity' => $_POST["quantity"]));
 
         if (!empty($_SESSION["cart_item"])) {
