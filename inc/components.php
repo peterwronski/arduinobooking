@@ -19,36 +19,7 @@ if(isset($_SESSION['userloggedin']) && !empty($_SESSION['userloggedin'])) {
 
 
                         echo' <form action="components" method="post">
-                                <!--Source: https://bootsnipp.com/snippets/GXagX -->
-                                Sort by: <a class="btn btn-info btn-select">
-                                                <input type="hidden" class="btn-select-input" name="sort_method1"/>
-                                                    <span class="btn-select-value">Select a value</span>
-                                                    <span class="btn - select - arrow glyphicon glyphicon - chevron - down"></span>
-                                                <ul>
-                                                    <li>Name</li>
-                                                    <li>In stock</li>
-                                                </ul>
-                                         </a>
-                                         
-                                         <a class="btn btn-info btn-select">
-                                                <input type="hidden" class="btn-select-input" name="sort_method2"/>
-                                                    <span class="btn-select-value">Select a value</span>
-                                                    <span class="btn - select - arrow glyphicon glyphicon - chevron - down"></span>
-                                                <ul>
-                                                    <li>Ascending</li>
-                                                    <li>Descending</li>
-                                                </ul>
-                                         </a>
-                                         
-                                         <input type="submit" name="sort_submit">  </input>
-                                         </form>
-                                         
-                                         
-                        
-                        ';
-
-                    //SORTING FORM - CONFIRMED WORKING
-                    /*<select name="sort_method1" class="btn-new">
+                                Sort by: <select name="sort_method1" class="btn-new">
                                         <option value="name">Name</option>
                                         <option value = "in_stock">In stock</option>
                                      </select>
@@ -56,27 +27,34 @@ if(isset($_SESSION['userloggedin']) && !empty($_SESSION['userloggedin'])) {
                                      <select name="sort_method2" class="btn-new">
                                         <option value="ascending">Ascending</option>
                                         <option value="descending"> Descending</option>
-                                     </select>*/
+                                     </select>
+                                         
+                                         <input type="submit" name="sort_submit">  </input>
+                                         </form>
+                        ';
+
+
+
                    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                             $sort_method1 = $_POST['sort_method1'];
                             $sort_method2 = $_POST['sort_method2'];
 
                                 switch ($sort_method1) {
-                                    case "Name":
+                                    case "name":
                                         $_SESSION['sort_method1'] = " comp_name";
                                         break;
 
-                                    case "In stock":
+                                    case "in_stock":
                                         $_SESSION['sort_method1'] = " in_stock";
                                     break;
                                 };
 
                                 switch ($sort_method2) {
-                                    case "Ascending":
+                                    case "ascending":
                                         $_SESSION['sort_method2'] = " ASC";
                                         break;
-                                    case "Descending":
+                                    case "descending":
                                         $_SESSION['sort_method2'] = " DESC";
                                         break;
                                 };
