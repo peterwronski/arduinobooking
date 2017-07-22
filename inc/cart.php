@@ -4,8 +4,8 @@ include('scripts/dbconnect.php');
 
 $action = $params['action'];
 $comp_ref = $params['comp_id'];
-/*if(isset($_GET['action']) && isset($_GET['comp_id'])) {
-    switch ($_GET['action']) {
+if(isset($action) && isset($comp_id)) {
+    switch ($action) {
         case "add":
             $query = $conn->query('SELECT * FROM components WHERE comp_ref = "' . $_GET['comp_id'] . '"');
             echo $query;
@@ -14,10 +14,7 @@ $comp_ref = $params['comp_id'];
 
 } else {
     echo "Action or comp_id aren't set";
-}*/
-echo $action;
-echo ' // ';
-echo $comp_ref;
+}
 
 ?>
 
