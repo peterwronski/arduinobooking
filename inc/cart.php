@@ -4,7 +4,7 @@ include('scripts/dbconnect.php');
 
 $action = $params['action'];
 $comp_ref = $params['comp_id'];
-if(isset($action) && isset($comp_id)) {
+if(isset($action) && isset($comp_ref)) {
     switch ($action) {
         case "add":
             $query = $conn->query('SELECT * FROM components WHERE comp_ref = "' . $_GET['comp_id'] . '"');
