@@ -8,7 +8,7 @@ if(isset($action) && isset($comp_ref)) {
     switch ($action) {
         case "add":
             $query = $conn->query('SELECT * FROM components WHERE comp_ref = "' . $_GET['comp_id'] . '"');
-            echo $query;
+            var_dump ($query);
             break;
     }
 
