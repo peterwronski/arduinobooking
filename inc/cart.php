@@ -9,7 +9,8 @@ if(isset($action) && isset($comp_ref)) {
         case "add":
             $sql = 'SELECT * FROM components WHERE comp_ref = "' . $comp_ref . '"';
             $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
+            $result_count = $result->num_rows;
+            if ($result_count > 0) {
 
             while ($row = $result->fetch_assoc()) {
                 var_dump($row);
@@ -21,12 +22,12 @@ if(isset($action) && isset($comp_ref)) {
                                     <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
                                     <strong>Oh no!</strong>Component not found.
                                 </div>';
-                if(isset($_SESSION['msg'])){
+
                     include('scripts/header_2.php');
                     echo $_SESSION['msg'];
 
                     include('scripts/footer.php');
-                };
+
             }
             break;
     }
