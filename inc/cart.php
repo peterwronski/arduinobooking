@@ -24,7 +24,7 @@ if(isset($action) && isset($comp_ref)) {
                 if(isset($_SESSION['msg'])){
                     include('scripts/header_2.php');
                     echo $_SESSION['msg'];
-                    unset($_SESSION['msg']);
+
                     include('scripts/footer.php');
                 };
             }
