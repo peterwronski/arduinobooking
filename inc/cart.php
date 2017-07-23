@@ -21,7 +21,7 @@ if(isset($action) && isset($comp_ref)) {
                                     <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
                                     <strong>Item added!</strong>Click \'Your Cart\' to check out, or add more items
                                 </div>';
-                header("Location: ../components");
+                header("Location: ../../components");
                 //var_dump($row);
                 //echo '<br/>' . $_POST['quantity'];
             };
