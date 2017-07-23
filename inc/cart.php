@@ -7,9 +7,10 @@ $comp_ref = $params['comp_id'];
 if(isset($action) && isset($comp_ref)) {
     switch ($action) {
         case "add":
-            $query = mysqli_query('SELECT * FROM components WHERE comp_ref = "' . $comp_ref . '"');
-            while($row = mysqli_fetch_row($query)){
-                echo $row;
+            $sql = 'SELECT * FROM components WHERE comp_ref = "' . $comp_ref . '"';
+            $result = $conn->query($sql);
+            while($row = $result->fetch_assoc()){
+                var_dump($row);
                 echo '<br/>'.$_POST['quantity'];
             }
 
