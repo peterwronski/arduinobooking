@@ -9,6 +9,7 @@ if(isset($action) && isset($comp_ref)) {
         case "add":
             $query = $conn->query('SELECT * FROM components WHERE comp_ref = "' . $_GET['comp_id'] . '"');
             var_dump ($query);
+            echo '<br/>'.$_POST['quantity'];
             break;
     }
 
