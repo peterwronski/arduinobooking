@@ -41,6 +41,7 @@ if(isset($action) && isset($comp_ref)) {
             break;
 
         case "view":
+            echo ' IS THIS THING WORKING';
             foreach($_SESSION['cart'] as $key=>$value){
                 echo 'Key: ' .$key .' // Value: ' .$value;
             }
