@@ -9,11 +9,19 @@ if(isset($action) && isset($comp_ref)) {
         case "add":
             $sql = 'SELECT * FROM components WHERE comp_ref = "' . $comp_ref . '"';
             $result = $conn->query($sql);
-            while($row = $result->fetch_assoc()){
+            if ($result->num_rows() > 0) {
+
+            while ($row = $result->fetch_assoc()) {
                 var_dump($row);
-                echo '<br/>'.$_POST['quantity'];
+                echo '<br/>' . $_POST['quantity'];
             }
 
+    } else {
+                $_SESSION['msg'] = '<div class="alert alert-warning alert-dismissable">
+                                    <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+                                    <strong>Oh no!</strong>Component not found.
+                                </div>';
+            }
             break;
     }
 
