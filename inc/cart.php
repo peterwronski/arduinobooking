@@ -4,6 +4,8 @@ include('scripts/dbconnect.php');
 
 $action = $params['action'];
 $comp_ref = $params['comp_id'];
+$quantity = $_POST['quantity'];
+$cart_array = array();
 if(isset($action) && isset($comp_ref)) {
     switch ($action) {
         case "add":
@@ -13,8 +15,11 @@ if(isset($action) && isset($comp_ref)) {
             if ($result_count > 0) {
 
             while ($row = $result->fetch_assoc()) {
-                var_dump($row);
-                echo '<br/>' . $_POST['quantity'];
+                array_push($cart_array, $row, $quantity);
+                $_SESSION['cart'] = $cart_array;
+                var_dump ($cart_array);
+                //var_dump($row);
+                //echo '<br/>' . $_POST['quantity'];
             };
 
     } else {
