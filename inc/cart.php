@@ -15,16 +15,16 @@ if(isset($action) && isset($comp_ref)) {
             while ($row = $result->fetch_assoc()) {
                 var_dump($row);
                 echo '<br/>' . $_POST['quantity'];
-            }
+            };
 
     } else {
-                $_SESSION['msg'] = '<div class="alert alert-warning alert-dismissable">
+
+
+                    include('scripts/header_2.php');
+                    echo '<div class="alert alert-warning alert-dismissable">
                                     <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
                                     <strong>Oh no!</strong>Component not found.
                                 </div>';
-
-                    include('scripts/header_2.php');
-                    echo $_SESSION['msg'];
 
                     include('scripts/footer.php');
 
