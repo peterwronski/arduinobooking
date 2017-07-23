@@ -8,7 +8,7 @@ if(isset($_SESSION['userloggedin']) && !empty($_SESSION['userloggedin'])) {
 
     if(isset($_SESSION['msg'])){
         echo $_SESSION['msg'];
-        unset($_SESSION['msg']);
+
     };
 
     ?>
