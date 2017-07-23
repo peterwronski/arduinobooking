@@ -21,7 +21,10 @@ if(isset($action) && isset($comp_ref)) {
                                     <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
                                     <strong>Oh no!</strong>Component not found.
                                 </div>';
-                header('Location: ../../');
+                if(isset($_SESSION['msg'])){
+                    echo $_SESSION['msg'];
+                    unset($_SESSION['msg']);
+                };
             }
             break;
     }
