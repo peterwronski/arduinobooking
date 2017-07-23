@@ -22,8 +22,10 @@ if(isset($action) && isset($comp_ref)) {
                                     <strong>Oh no!</strong>Component not found.
                                 </div>';
                 if(isset($_SESSION['msg'])){
+                    include('scripts/header.php');
                     echo $_SESSION['msg'];
                     unset($_SESSION['msg']);
+                    include('scripts/footer.php');
                 };
             }
             break;
