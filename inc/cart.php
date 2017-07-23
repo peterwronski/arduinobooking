@@ -39,6 +39,12 @@ if(isset($action) && isset($comp_ref)) {
 
             }
             break;
+
+        case "view":
+            foreach($_SESSION['cart'] as $key=>$value){
+                echo 'Key: ' .$key .' // Value: ' .$value;
+            }
+            break;
     }
 
 } else {
