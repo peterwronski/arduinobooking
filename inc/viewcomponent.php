@@ -43,7 +43,7 @@ if ($result->num_rows > 0) {
          <div>
         <p><b>Create a booking</b></p><hr/>
         <form action="../../cart/add/' .$comp_ref .'" method="POST">
-        Quantity: <input type="number" min="1" max="' .$in_stock .'" name="quantity"/>
+        Quantity: <input type="number" min="1" max="' .$in_stock .'" name="quantity" value="1"/>
         <button type="submit" class="btn btn-info">Create</button>
         </form>
         </div>
