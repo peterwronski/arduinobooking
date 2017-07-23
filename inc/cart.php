@@ -21,6 +21,7 @@ if(isset($action) && isset($comp_ref)) {
                                     <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
                                     <strong>Oh no!</strong>Component not found.
                                 </div>';
+                header('Location: ../../');
             }
             break;
     }
