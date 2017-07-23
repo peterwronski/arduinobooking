@@ -8,8 +8,11 @@ if(isset($action) && isset($comp_ref)) {
     switch ($action) {
         case "add":
             $query = mysqli_query('SELECT * FROM components WHERE comp_ref = "' . $_GET['comp_id'] . '"');
-            var_dump ($query);
-            echo '<br/>'.$_POST['quantity'];
+            while($row = mysqli_fetch_assoc($query)){
+                echo $row;
+                echo '<br/>'.$_POST['quantity'];
+            }
+
             break;
     }
 
