@@ -9,7 +9,7 @@ if(isset($action) && isset($comp_ref)) {
         case "add":
             $sql = 'SELECT * FROM components WHERE comp_ref = "' . $comp_ref . '"';
             $result = $conn->query($sql);
-            if ($result->num_rows() > 0) {
+            if ($result->num_rows > 0) {
 
             while ($row = $result->fetch_assoc()) {
                 var_dump($row);
