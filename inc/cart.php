@@ -22,8 +22,8 @@ if(isset($action) && isset($comp_ref)) {
                                     <strong>Item added!</strong>Click \'Your Cart\' to check out, or add more items
                                 </div>';
                 //header("Location: ../../components");
-                var_dump($row);
-                echo '<br/>' . $_POST['quantity'];
+                var_dump($_SESSION['cart']);
+
             };
 
     } else {
