@@ -14,7 +14,7 @@ if(isset($action)) {
 	$row=$result->fetch_array();
 
         $itemArray = array($row[0]["comp_ref"]=>array('comp_name'=>$row[0]["comp_name"], 'comp_ref'=>$row[0]["comp_ref"], 'quantity'=>$_POST["quantity"]));
-        echo 'IS THIS THING WORKING 1';
+        //echo 'IS THIS THING WORKING 1';
         if(!empty($_SESSION["cart"])) {
             //echo 'IS THIS THING WORKING 2';
             if(in_array($row[0]["comp_ref"],array_keys($_SESSION["cart"]))) {
@@ -24,20 +24,20 @@ if(isset($action)) {
                         //echo 'IS THIS THING WORKING 4';
                         if(empty($_SESSION["cart"][$k]["quantity"])) {
                             $_SESSION["cart"][$k]["quantity"] = 0;
-                            var_dump($_SESSION["cart"]);
+                            print_r($_SESSION["cart"]);
                         }
                         $_SESSION["cart"][$k]["quantity"] += $_POST["quantity"];
                         //echo 'IS THIS THING WORKING 6';
-                        var_dump($_SESSION["cart"]);
+                        print_r($_SESSION["cart"]);
                     }
                 }
             } else {
                 $_SESSION["cart"] = array_merge($_SESSION["cart"],$itemArray);
-                var_dump($_SESSION["cart"]);
+                print_r($_SESSION["cart"]);
             }
         } else {
             $_SESSION["cart"] = $itemArray;
-            var_dump($_SESSION["cart"]);
+            print_r($_SESSION["cart"]);
         }
 
             break;
