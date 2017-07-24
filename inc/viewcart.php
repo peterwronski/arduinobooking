@@ -17,7 +17,9 @@ echo'
                 <table class="table-condensed componenttable" width="100%">
                     <th colspan="2">Component</th>
                     <th colspan="1">Quantity</th>
-                    <th colspan="1"><a href="cart/remove/all">Clear Cart</a></th>';
+                    <th colspan="1"><form action="../../cart/remove/all" method="POST">
+                           <input type="submit" class="btn-xs btn-danger" value="Clear Cart">
+                           </form></th>';
                     foreach ($_SESSION["cart"] as $key => $value) {
                         $img_link = ' "inc/img/arduino_img/' . $key . '.jpg" ';
         echo '<tr class="clickable-row" data-href="viewcomponent/' . $key . '">
