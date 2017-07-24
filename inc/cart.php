@@ -11,7 +11,7 @@ if(isset($action) && isset($comp_ref)) {
     switch ($action) {
             case "add":
 	$result = $conn->query("SELECT * FROM components WHERE comp_ref = '" .$comp_ref ."'");
-	$row=$result->fetch_assoc;
+	$row=$result->fetch_array();
 
         $itemArray = array($row[0]["comp_ref"]=>array('comp_name'=>$row[0]["comp_name"], 'comp_ref'=>$row[0]["comp_ref"], 'quantity'=>$_POST["quantity"]));
         echo 'IS THIS THING WORKING 1';
