@@ -24,7 +24,9 @@ echo'
                             <td><img src=' . $img_link . ' class="img-thumbnail" height="50px" width="50px" alt ="' . $value['comp_name'] . '"/> </td>
                            <td>' . $value['comp_name'] . '</td>
                            <td>'.$value['quantity'].'</td>
-                           <td><a href="cart/remove/'.$key .'">Remove Item</a></td>
+                           <td><form action="../../cart/remove/' .$key .'" method="POST">
+                           <input type="submit" class="btn-xs btn-warning" value="Remove item">
+                           </form></td>
               </tr>';
     }
     echo '      </table>
