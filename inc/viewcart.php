@@ -13,7 +13,7 @@ echo'
                     <th colspan="2"><a href="cart/remove/all">Clear Cart</a></th>';
                     foreach ($_SESSION["cart"] as $key => $value) {
         echo '<tr>
-                           <td>' . $key . '</td><td>' . $value['comp_name'] . '</td><td>'.$value['quantity'].'</td><a href="cart/remove/'.$key .'">Remove Item</a></td>
+                           <td>' . $key . '</td><td>' . $value['comp_name'] . '</td><td>'.$value['quantity'].'</td><td><a href="cart/remove/'.$key .'">Remove Item</a></td>
               </tr>';
     }
     echo '</table>';
