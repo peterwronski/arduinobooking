@@ -70,6 +70,7 @@ if(isset($action)) {
                     if(empty($_SESSION["cart"])) unset($_SESSION["cart"]);
                 }
             }
+            header("Location:../../viewcart");
             break;
 
     }
