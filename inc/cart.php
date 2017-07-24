@@ -20,7 +20,7 @@ function displayArray()
 if(isset($action)) {
     switch ($action) {
             case "add":
-	/*$result = $conn->query("SELECT * FROM components WHERE comp_ref = '" .$comp_ref ."'");
+	$result = $conn->query("SELECT * FROM components WHERE comp_ref = '" .$comp_ref ."'");
 	$row=$result->fetch_array();
 
         $itemArray = array(
@@ -55,8 +55,7 @@ if(isset($action)) {
             displayArray();
 
         }
-*/
-	unset($_SESSION['cart']);
+
             break;
             case "view":
                 echo 'IS THIS THING WORKING view';
