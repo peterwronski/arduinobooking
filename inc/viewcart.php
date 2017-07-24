@@ -8,7 +8,7 @@ echo'
 <div class="container" id="componentlist">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 componentdiv">
-                <h1>Your cart</h1> <hr/>
+                <h1>Your Cart</h1> <hr/>
             </div>
         </div>
 
