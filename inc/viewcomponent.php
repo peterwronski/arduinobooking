@@ -7,7 +7,7 @@
  * Time: 15:56
  */
 include('scripts/header_2.php');
-$comp_ref = $params['comp_id'];
+$comp_ref = $params['comp_ref'];
 
 if (isset($_SESSION['userloggedin']) && !empty($_SESSION['userloggedin'])){
 include('scripts/dbconnect.php');
