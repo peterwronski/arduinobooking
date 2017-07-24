@@ -10,7 +10,8 @@ $quantity = $_POST['quantity'];
 if(isset($action) && isset($comp_ref)) {
     switch ($action) {
             case "add":
-	if(!empty($_POST["quantity"])) {
+	$result = $conn->query("SELECT * FROM components WHERE comp_ref = '" .$comp_ref ."'");
+	$row=$result->fetch_assoc;
 
         $itemArray = array($row[0]["comp_ref"]=>array('comp_name'=>$row[0]["comp_name"], 'comp_ref'=>$row[0]["comp_ref"], 'quantity'=>$_POST["quantity"]));
         echo 'IS THIS THING WORKING 1';
@@ -37,8 +38,7 @@ if(isset($action) && isset($comp_ref)) {
             $_SESSION["cart"] = $itemArray;
             echo 'IS THIS THING WORKING 8';
         }
-    }
-    var_dump($_SESSION["cart"]);
+
 
                    /* include('scripts/header_2.php');
                     echo '<div class="alert alert-warning alert-dismissable">
