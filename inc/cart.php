@@ -1,4 +1,5 @@
 <?php
+session_start();
 include('scripts/dbconnect.php');
 //Source: http://phppot.com/php/simple-php-shopping-cart/
 //comment
