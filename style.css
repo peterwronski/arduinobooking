@@ -144,6 +144,7 @@ tr.clickable-row:hover{
 }
 th{
     text-align:center;
+    border-bottom: 1px solid #781d7d;
 }
 
 hr {
