@@ -8,7 +8,7 @@ echo'
 <div class="container" id="componentlist">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 componentdiv">
-                <h1>Components</h1> <hr/>
+                <h1>Your cart</h1> <hr/>
             </div>
         </div>
 
@@ -17,10 +17,14 @@ echo'
                 <table class="componenttable" width="100%">
                     <th colspan="2">Component</th>
                     <th colspan="1">Quantity</th>
-                    <th colspan="2"><a href="cart/remove/all">Clear Cart</a></th>';
+                    <th colspan="1"><a href="cart/remove/all">Clear Cart</a></th>';
                     foreach ($_SESSION["cart"] as $key => $value) {
+                        $img_link = ' "inc/img/arduino_img/' . $key . '.jpg" ';
         echo '<tr class="clickable-row" data-href="viewcomponent/' . $key . '">
-                           <td>' . $key . '</td><td>' . $value['comp_name'] . '</td><td>'.$value['quantity'].'</td><td><a href="cart/remove/'.$key .'">Remove Item</a></td>
+                            <td><img src=' . $img_link . ' class="img-thumbnail" height="50px" width="50px" alt ="' . $value['comp_name'] . '"/> </td>
+                           <td>' . $value['comp_name'] . '</td>
+                           <td>'.$value['quantity'].'</td>
+                           <td><a href="cart/remove/'.$key .'">Remove Item</a></td>
               </tr>';
     }
     echo '      </table>
