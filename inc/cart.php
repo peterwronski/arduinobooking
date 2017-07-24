@@ -7,15 +7,16 @@ $action = $params['action'];
 $comp_ref = $params['comp_ref'];
 $quantity = $_POST['quantity'];
 
-function displayCart()
-{
-    echo '<table> <th>Key</th><th>Component name</th><th>Quantity</th>';
-    foreach ($_SESSION["cart"] as $key => $value) {
-        echo '<tr>
-                           <td>' . $key . '</td><td>' . $value['comp_name'] . '</td><td>'.$value['quantity'].'</td>';
-    }
-    echo '</table>';
-};
+function itemAdded(){
+    $_SESSION['msg'] = '<div class="alert alert-success alert-dismissable">
+                                    <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+                                    <strong>Yeee boi!</strong> Item added to cart!
+                                </div>';
+
+    header('Location: ../../components');
+}
+
+
 
 if(isset($action)) {
     switch ($action) {
@@ -36,18 +37,19 @@ if(isset($action)) {
                         if(empty($_SESSION["cart"][$k]["quantity"])) {
                             $_SESSION["cart"][$k]["quantity"] = 0;
                             //print_r($_SESSION["cart"]);
-                            displayCart();
+                            //displayCart();
                         }
                         $_SESSION["cart"][$k]["quantity"] += $_POST["quantity"];
                         //echo 'IS THIS THING WORKING 6';
                         //print_r($_SESSION["cart"]);
-                        displayCart();
+                        //displayCart();
                     }
                 }
             } else {
                 $_SESSION["cart"] = array_merge($_SESSION["cart"],$itemArray);
                 //print_r($_SESSION["cart"]);
-                displayCart();
+                //displayCart();
+
             }
         } else {
             $_SESSION["cart"] = $itemArray;
