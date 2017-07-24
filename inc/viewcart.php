@@ -2,7 +2,9 @@
 session_start();
 include ('scripts/header.php');
 
-
+if(isset($_COOKIE['cookie_cart'])){
+    $_SESSION['cart'] = $_COOKIE['cookie_cart'];
+};
 echo'
 
 <div class="container" id="componentlist">

@@ -90,7 +90,7 @@ if(isset($action)) {
 
 
     }
-
+    setcookie("cart_cookie", $_SESSION["cart"], time() + (86400 * 30), "/");
 } else {
     echo "Action or comp_id aren't set";
 }
