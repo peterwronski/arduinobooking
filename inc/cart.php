@@ -3,26 +3,35 @@ include('scripts/dbconnect.php');
 //Source: http://phppot.com/php/simple-php-shopping-cart/
 
 $action = $params['action'];
-$comp_ref = $params['comp_id'];
+$comp_ref = $params['comp_ref'];
 $quantity = $_POST['quantity'];
 
 if(isset($action) && isset($comp_ref)) {
     switch ($action) {
-        case "add":
-            $sql = 'SELECT * FROM components WHERE comp_ref = "' . $comp_ref . '"';
-            $result = $conn->query($sql);
-            $result_count = $result->num_rows;
-            if ($result_count > 0) {
+            case "add":
+	if(!empty($_POST["quantity"])) {
 
-            while ($row = $result->fetch_assoc()) {
-                array_push($cart_array, $row, $quantity);
-                $_SESSION['cart'] = $cart_array;
-                $_SESSION['msg'] = '<div class="alert alert-success alert-dismissable">
-                                    <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-                                    <strong>Item added!</strong>Click \'Your Cart\' to check out, or add more items
-                                </div>';
-                //header("Location: ../../components");
-                var_dump($_SESSION['cart']);
+        $itemArray = array($row[0]["comp_ref"]=>array('comp_name'=>$row[0]["comp_name"], 'comp_ref'=>$row[0]["comp_ref"], 'quantity'=>$_POST["quantity"]));
+
+        if(!empty($_SESSION["cart"])) {
+            if(in_array($row[0]["comp_ref"],array_keys($_SESSION["cart"]))) {
+                foreach($_SESSION["cart"] as $k => $v) {
+                    if($row[0]["comp_ref"] == $k) {
+                        if(empty($_SESSION["cart"][$k]["quantity"])) {
+                            $_SESSION["cart"][$k]["quantity"] = 0;
+                        }
+                        $_SESSION["cart"][$k]["quantity"] += $_POST["quantity"];
+                    }
+                }
+            } else {
+                $_SESSION["cart"] = array_merge($_SESSION["cart"],$itemArray);
+            }
+        } else {
+            $_SESSION["cart"] = $itemArray;
+        }
+    }
+    echo $_SESSION["cart"];
+break;
 
             };
 
