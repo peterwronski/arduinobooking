@@ -39,6 +39,7 @@ if(isset($action) && isset($comp_ref)) {
             //echo 'IS THIS THING WORKING 8';
         }
 
+            break;
 
                    /* include('scripts/header_2.php');
                     echo '<div class="alert alert-warning alert-dismissable">
@@ -47,11 +48,11 @@ if(isset($action) && isset($comp_ref)) {
                                 </div>';
 
                     include('scripts/footer.php'); */
+
+
+            case "view":
+                echo 'IS THIS THING WORKING view';
             break;
-
-        case "view":
-            echo ' IS THIS THING WORKING view';
-
     }
 
 } else {
