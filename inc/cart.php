@@ -24,7 +24,7 @@ if(isset($action)) {
 	$row=$result->fetch_array();
 
         $itemArray = array(
-                            array('comp_ref'=>$row["comp_ref"], 'comp_name'=>$row["comp_name"], 'quantity'=>$_POST["quantity"]));
+                           $row['comp_ref'] => array('comp_name'=>$row["comp_name"], 'quantity'=>$_POST["quantity"]));
         //echo 'IS THIS THING WORKING 1';
         if(!empty($_SESSION["cart"])) {
             //echo 'IS THIS THING WORKING 2';
