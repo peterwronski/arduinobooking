@@ -142,6 +142,9 @@ tr.clickable-row:hover{
 .componenttable{
     margin-bottom: 50%;
 }
+th{
+    text-align:center;
+}
 
 hr {
 
