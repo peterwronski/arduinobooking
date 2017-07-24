@@ -17,7 +17,7 @@ $rules = array(
 
     'about' => "/about",
     'components' => "/components",
-    'viewcomponent' => "/viewcomponent/?(?'comp_ref'[\w\-]+)",
+    'viewcomponent' => "/viewcomponent/(?'comp_ref'[\w\-]+)",
     'bookings' => "/bookings",
     'booking' => "/booking/(?'bookingID'[\w\-]+)",
 
@@ -27,7 +27,7 @@ $rules = array(
     'login' => "/login",
     'register' => "/register",
     'verify' => "/verify",
-    'cart' => "/cart/(?'action'[\w\_&?=]+)/(?'comp_ref'[\w\_&?=]+)?",
+    'cart' => "/cart/(?'action'[\w\_&?=]+)/?(?'comp_ref'[\w\_&?=]+)",
 
 
 
