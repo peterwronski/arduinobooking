@@ -7,7 +7,7 @@ $action = $params['action'];
 $comp_ref = $params['comp_ref'];
 $quantity = $_POST['quantity'];
 
-function displayArray()
+function displayCart()
 {
     echo '<table> <th>Key</th><th>Component name</th><th>Quantity</th>';
     foreach ($_SESSION["cart"] as $key => $value) {
@@ -36,29 +36,30 @@ if(isset($action)) {
                         if(empty($_SESSION["cart"][$k]["quantity"])) {
                             $_SESSION["cart"][$k]["quantity"] = 0;
                             //print_r($_SESSION["cart"]);
-                            displayArray();
+                            displayCart();
                         }
                         $_SESSION["cart"][$k]["quantity"] += $_POST["quantity"];
                         //echo 'IS THIS THING WORKING 6';
                         //print_r($_SESSION["cart"]);
-                        displayArray();
+                        displayCart();
                     }
                 }
             } else {
                 $_SESSION["cart"] = array_merge($_SESSION["cart"],$itemArray);
                 //print_r($_SESSION["cart"]);
-                displayArray();
+                displayCart();
             }
         } else {
             $_SESSION["cart"] = $itemArray;
             //print_r($_SESSION["cart"]);
-            displayArray();
+            displayCart();
 
         }
 
             break;
             case "view":
-                echo 'IS THIS THING WORKING view';
+                displayCart();
+                //echo 'IS THIS THING WORKING view';
             break;
     }
 
