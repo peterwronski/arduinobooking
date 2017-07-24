@@ -1,7 +1,7 @@
 <?php
 include('scripts/dbconnect.php');
 //Source: http://phppot.com/php/simple-php-shopping-cart/
-
+//comment
 $action = $params['action'];
 $comp_ref = $params['comp_ref'];
 $quantity = $_POST['quantity'];
@@ -31,22 +31,22 @@ if(isset($action) && isset($comp_ref)) {
         }
     }
     echo $_SESSION["cart"];
-break;
-
-            };
-
-    } else {
 
 
-                    include('scripts/header_2.php');
+
+
+
+
+
+                   /* include('scripts/header_2.php');
                     echo '<div class="alert alert-warning alert-dismissable">
                                     <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
                                     <strong>Oh no!</strong>Component not found.
                                 </div>';
 
-                    include('scripts/footer.php');
+                    include('scripts/footer.php'); */
 
-            }
+
             break;
 
         case "view":
