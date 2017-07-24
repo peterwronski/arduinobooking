@@ -77,6 +77,9 @@ if(isset($action)) {
 
             header("Location:../../viewcart");
             break;
+        case "clear":
+            unset($_SESSION["cart"]);
+            break;
 
     }
 
