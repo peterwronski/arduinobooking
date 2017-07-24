@@ -38,7 +38,7 @@ if(isset($action) && isset($comp_ref)) {
             echo 'IS THIS THING WORKING 8';
         }
     }
-    echo $_SESSION["cart"];
+    var_dump($_SESSION["cart"]);
 
                    /* include('scripts/header_2.php');
                     echo '<div class="alert alert-warning alert-dismissable">
