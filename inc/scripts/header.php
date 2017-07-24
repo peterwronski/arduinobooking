@@ -15,6 +15,20 @@
 
 <body>
 
+<script>
+    //PREVENT SESSION FROM DYING
+    var refreshTime = 600000; // every 10 minutes in milliseconds
+    window.setInterval( function() {
+        $.ajax({
+            cache: false,
+            type: "GET",
+            url: "../refreshSession.php",
+            success: function(data) {
+            }
+        });
+    }, refreshTime );
+</script>
+
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
