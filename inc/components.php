@@ -6,10 +6,7 @@ include('scripts/header.php');
 if(isset($_SESSION['userloggedin']) && !empty($_SESSION['userloggedin'])) {
     include('scripts/dbconnect.php');
 
-    if(isset($_SESSION['msg'])){
-        echo $_SESSION['msg'];
 
-    };
 
     ?>
 
