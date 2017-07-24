@@ -12,11 +12,19 @@ echo'
                     <th colspan="1">Quantity</th>
                     <th colspan="2"><a href="cart/remove/all">Clear Cart</a></th>';
                     foreach ($_SESSION["cart"] as $key => $value) {
-        echo '<tr>
+        echo '<tr class="clickable-row" data-href="viewcomponent/' . $key . '">
                            <td>' . $key . '</td><td>' . $value['comp_name'] . '</td><td>'.$value['quantity'].'</td><td><a href="cart/remove/'.$key .'">Remove Item</a></td>
               </tr>';
     }
-    echo '</table>';
+    echo '</table>
+
+<script>
+                    jQuery(document).ready(function($) {
+                        $(".clickable-row").click(function() {
+                            window.location = $(this).data("href");
+                        });
+                    });
+                </script>';
 
 
 include ('scripts/footer.php');
