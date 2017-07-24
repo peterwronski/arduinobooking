@@ -63,6 +63,14 @@ if(isset($action)) {
         }
 
             break;
+        case "remove":
+            if(!empty($_SESSION["cart"])) {
+                foreach($_SESSION["cart"] as $key => $value) {
+                    if($comp_ref == $k)	unset($_SESSION["cart"][$key]);
+                    if(empty($_SESSION["cart"])) unset($_SESSION["cart"]);
+                }
+            }
+            break;
 
     }
 
