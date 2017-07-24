@@ -28,10 +28,10 @@ if(isset($action)) {
         //echo 'IS THIS THING WORKING 1';
         if(!empty($_SESSION["cart"])) {
             //echo 'IS THIS THING WORKING 2';
-            if(in_array($row[0]["comp_ref"],array_keys($_SESSION["cart"]))) {
+            if(in_array($row["comp_ref"],array_keys($_SESSION["cart"]))) {
                 //echo 'IS THIS THING WORKING 3';
                 foreach($_SESSION["cart"] as $k => $v) {
-                    if($row[0]["comp_ref"] == $k) {
+                    if($row["comp_ref"] == $k) {
                         //echo 'IS THIS THING WORKING 4';
                         if(empty($_SESSION["cart"][$k]["quantity"])) {
                             $_SESSION["cart"][$k]["quantity"] = 0;
