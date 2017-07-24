@@ -7,7 +7,7 @@ $action = $params['action'];
 $comp_ref = $params['comp_ref'];
 $quantity = $_POST['quantity'];
 
-if(isset($action) && isset($comp_ref)) {
+if(isset($action)) {
     switch ($action) {
             case "add":
 	$result = $conn->query("SELECT * FROM components WHERE comp_ref = '" .$comp_ref ."'");
