@@ -7,6 +7,16 @@ $action = $params['action'];
 $comp_ref = $params['comp_ref'];
 $quantity = $_POST['quantity'];
 
+function displayArray()
+{
+    echo '<table> <th>Key</th><th>Value</th>';
+    foreach ($_SESSION["cart"] as $key => $value) {
+        echo '<tr>
+                           <td>' . $key . '</td><td>' . $value . '</td>';
+    }
+    echo '</table>';
+};
+
 if(isset($action)) {
     switch ($action) {
             case "add":
@@ -24,20 +34,25 @@ if(isset($action)) {
                         //echo 'IS THIS THING WORKING 4';
                         if(empty($_SESSION["cart"][$k]["quantity"])) {
                             $_SESSION["cart"][$k]["quantity"] = 0;
-                            print_r($_SESSION["cart"]);
+                            //print_r($_SESSION["cart"]);
+                            displayArray();
                         }
                         $_SESSION["cart"][$k]["quantity"] += $_POST["quantity"];
                         //echo 'IS THIS THING WORKING 6';
-                        print_r($_SESSION["cart"]);
+                        //print_r($_SESSION["cart"]);
+                        displayArray();
                     }
                 }
             } else {
                 $_SESSION["cart"] = array_merge($_SESSION["cart"],$itemArray);
-                print_r($_SESSION["cart"]);
+                //print_r($_SESSION["cart"]);
+                displayArray();
             }
         } else {
             $_SESSION["cart"] = $itemArray;
-            print_r($_SESSION["cart"]);
+            //print_r($_SESSION["cart"]);
+            displayArray();
+
         }
 
             break;
