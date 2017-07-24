@@ -14,13 +14,11 @@ $rules = array(
     //
     //main pages
     //
-
     'about' => "/about",
     'components' => "/components",
     'viewcomponent' => "/viewcomponent/(?'comp_ref'[\w\-]+)",
     'bookings' => "/bookings",
     'booking' => "/booking/(?'bookingID'[\w\-]+)",
-
     //
     //Admin Pages
     //
@@ -28,8 +26,7 @@ $rules = array(
     'register' => "/register",
     'verify' => "/verify",
     'cart' => "/cart/(?'action'[\w\_&?=]+)/?(?'comp_ref'[\w\_&?=]+)",
-
-
+    'viewcart' => "/viewcart",
 
     'viewuser' => "/viewuser",
     'logout' => "/logout",
