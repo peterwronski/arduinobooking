@@ -36,6 +36,7 @@ if(isset($action)) {
                         //echo 'IS THIS THING WORKING 4';
                         if(empty($_SESSION["cart"][$k]["quantity"])) {
                             $_SESSION["cart"][$k]["quantity"] = 0;
+                            itemAdded();
                             //print_r($_SESSION["cart"]);
                             //displayCart();
                         }
@@ -43,26 +44,26 @@ if(isset($action)) {
                         //echo 'IS THIS THING WORKING 6';
                         //print_r($_SESSION["cart"]);
                         //displayCart();
+                        itemAdded();
                     }
                 }
             } else {
                 $_SESSION["cart"] = array_merge($_SESSION["cart"],$itemArray);
                 //print_r($_SESSION["cart"]);
                 //displayCart();
+                itemAdded();
 
             }
         } else {
             $_SESSION["cart"] = $itemArray;
             //print_r($_SESSION["cart"]);
-            displayCart();
+            //displayCart();
+            itemAdded();
 
         }
 
             break;
-            case "view":
-                displayCart();
-                //echo 'IS THIS THING WORKING view';
-            break;
+
     }
 
 } else {
