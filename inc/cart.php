@@ -79,6 +79,13 @@ if(isset($action)) {
             break;
         case "clear":
             unset($_SESSION["cart"]);
+
+            $_SESSION['msg'] = '<div class="alert alert-info alert-dismissable">
+                                    <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+                                    <strong>Yeee boi!</strong> Cart cleared!
+                                </div>';
+
+            header("Location:../../components");
             break;
 
     }
