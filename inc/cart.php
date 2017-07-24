@@ -9,10 +9,10 @@ $quantity = $_POST['quantity'];
 
 function displayArray()
 {
-    echo '<table> <th>Key</th><th>Value</th>';
+    echo '<table> <th>Key</th><th>Component name</th><th>Quantity</th>';
     foreach ($_SESSION["cart"] as $key => $value) {
         echo '<tr>
-                           <td>' . $key . '</td><td>' . $value . '</td>';
+                           <td>' . $key . '</td><td>' . $value['comp_name'] . '</td><td>'.$value['quantity'].'</td>';
     }
     echo '</table>';
 };
