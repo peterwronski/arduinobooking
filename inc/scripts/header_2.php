@@ -34,7 +34,7 @@
                 <?php
                 if (isset($_SESSION['userloggedin'])){
                     echo'<p class="navbar-text">Welcome ' .$_SESSION['userloggedin'] .'</p></li>
-                <li><a href="viewcart"><span class="glyphicon glyphicon-shopping-cart"></span> Your Cart</a></li>0
+                <li><a href="viewcart"><span class="glyphicon glyphicon-shopping-cart"></span> Your Cart</a></li>
                 <li><a href="logout"><span class="glyphicon glyphicon-user"></span> Log out</a></li>';
                 }
                 else {
