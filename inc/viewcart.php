@@ -4,7 +4,14 @@ include ('scripts/header.php');
 
 
 echo'
+
 <div class="container" id="componentlist">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 componentdiv">
+                <h1>Components</h1> <hr/>
+            </div>
+        </div>
+
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 componentdiv">
                 <table class="componenttable" width="100%">
@@ -16,7 +23,10 @@ echo'
                            <td>' . $key . '</td><td>' . $value['comp_name'] . '</td><td>'.$value['quantity'].'</td><td><a href="cart/remove/'.$key .'">Remove Item</a></td>
               </tr>';
     }
-    echo '</table>
+    echo '      </table>
+            </div>
+        </div>
+</div>
 
 <script>
                     jQuery(document).ready(function($) {
