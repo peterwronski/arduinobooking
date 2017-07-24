@@ -15,7 +15,8 @@ echo'
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 componentdiv">
                 <table class="table-condensed componenttable" width="100%">
-                    <th colspan="2">Component</th>
+                    <th></th>
+                    <th colspan="1">Component</th>
                     <th colspan="1">Quantity</th>
                     <th colspan="1"><form action="../../cart/remove/all" method="POST">
                            <input type="submit" class="btn-xs btn-danger" value="Clear Cart">
