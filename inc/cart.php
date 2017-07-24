@@ -39,7 +39,7 @@ if(isset($action) && isset($comp_ref)) {
         }
     }
     echo $_SESSION["cart"];
-    echo 'IS THIS THING WORKING 9';
+
                    /* include('scripts/header_2.php');
                     echo '<div class="alert alert-warning alert-dismissable">
                                     <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
