@@ -41,7 +41,7 @@ if ($result->num_rows > 0) {
         Quantity in stock: '.$in_stock .'
         <br/>
         <br/>
-         <div>
+         <div style="margin-bottom:10%">
         <hr/>
         <form action="../../cart/add/' .$comp_ref .'" method="POST">';
 
