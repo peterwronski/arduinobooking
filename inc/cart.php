@@ -36,6 +36,7 @@ if(isset($action)) {
                         //echo 'IS THIS THING WORKING 4';
                         if(empty($_SESSION["cart"][$k]["quantity"])) {
                             $_SESSION["cart"][$k]["quantity"] = 0;
+                            setcookie("cart_cookie", $_SESSION["cart"], time() + (86400 * 30), "/");
                             itemAdded();
                             //print_r($_SESSION["cart"]);
                             //displayCart();
@@ -44,6 +45,7 @@ if(isset($action)) {
                         //echo 'IS THIS THING WORKING 6';
                         //print_r($_SESSION["cart"]);
                         //displayCart();
+                        setcookie("cart_cookie", $_SESSION["cart"], time() + (86400 * 30), "/");
                         itemAdded();
                     }
                 }
@@ -51,6 +53,7 @@ if(isset($action)) {
                 $_SESSION["cart"] = array_merge($_SESSION["cart"],$itemArray);
                 //print_r($_SESSION["cart"]);
                 //displayCart();
+                setcookie("cart_cookie", $_SESSION["cart"], time() + (86400 * 30), "/");
                 itemAdded();
 
             }
@@ -58,14 +61,16 @@ if(isset($action)) {
             $_SESSION["cart"] = $itemArray;
             //print_r($_SESSION["cart"]);
             //displayCart();
+            setcookie("cart_cookie", $_SESSION["cart"], time() + (86400 * 30), "/");
             itemAdded();
 
         }
-                setcookie("cart_cookie", $_SESSION["cart"], time() + (86400 * 30), "/");
+
             break;
         case "remove":
             if($comp_ref === "all"){
                 unset($_SESSION["cart"]);
+                setcookie("cart_cookie", $_SESSION["cart"], time() + (86400 * 30), "/");
                 $_SESSION['msg'] = '<div class="alert alert-info alert-dismissable">
                                     <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
                                     <strong>Yeee boi!</strong> Cart cleared!
@@ -77,6 +82,7 @@ if(isset($action)) {
                     foreach ($_SESSION["cart"] as $key => $value) {
                         if ($comp_ref == $key) unset($_SESSION["cart"][$key]);
                         if (empty($_SESSION["cart"])) unset($_SESSION["cart"]);
+                        setcookie("cart_cookie", $_SESSION["cart"], time() + (86400 * 30), "/");
                     }
                 }
                 $_SESSION['msg'] = '<div class="alert alert-info alert-dismissable">
