@@ -2,7 +2,7 @@
 session_start();
 include('scripts/dbconnect.php');
 //Source: http://phppot.com/php/simple-php-shopping-cart/
-//comment
+//comment2
 $action = $params['action'];
 $comp_ref = $params['comp_ref'];
 $quantity = $_POST['quantity'];
@@ -36,30 +36,31 @@ if(isset($action)) {
         //echo 'IS THIS THING WORKING 1';
         if(!empty($_SESSION["cart"])) {
             //echo 'IS THIS THING WORKING 2';
-            if(in_array($row["comp_ref"],array_keys($_SESSION["cart"]))) {
+            if (in_array($row["comp_ref"], array_keys($_SESSION["cart"]))) {
                 //echo 'IS THIS THING WORKING 3';
-                foreach($_SESSION["cart"] as $k => $v) {
-                    if($row["comp_ref"] == $k) {
+                foreach ($_SESSION["cart"] as $k => $v) {
+                    if ($row["comp_ref"] == $k) {
                         //echo 'IS THIS THING WORKING 4';
-                        if(empty($_SESSION["cart"][$k]["quantity"])) {
-                            if($row['in_stock']>=$k["quantity"]){
-                                if($row['in_stock']>=$k["quantity"]){
-                            $_SESSION["cart"][$k]["quantity"] = 0;
-                            setcookie("cart_cookie", $_SESSION["cart"], time() + (86400 * 30), "/");
-                            itemAdded();}
-                            //print_r($_SESSION["cart"]);
-                            //displayCart();
+                        if (empty($_SESSION["cart"][$k]["quantity"])) {
+                            if ($row['in_stock'] >= $k["quantity"]) {
+                                if ($row['in_stock'] >= $k["quantity"]) {
+                                    $_SESSION["cart"][$k]["quantity"] = 0;
+                                    setcookie("cart_cookie", $_SESSION["cart"], time() + (86400 * 30), "/");
+                                    itemAdded();
+                                }
+                                //print_r($_SESSION["cart"]);
+                                //displayCart();
+                            }
+                            if ($row['in_stock'] >= $k["quantity"]) {
+                                $_SESSION["cart"][$k]["quantity"] += $_POST["quantity"];
+                                //echo 'IS THIS THING WORKING 6';
+                                //print_r($_SESSION["cart"]);
+                                //displayCart();
+                                setcookie("cart_cookie", $_SESSION["cart"], time() + (86400 * 30), "/");
+                                itemAdded();
+                            }
                         }
-                            if($row['in_stock']>=$k["quantity"]){
-                        $_SESSION["cart"][$k]["quantity"] += $_POST["quantity"];
-                        //echo 'IS THIS THING WORKING 6';
-                        //print_r($_SESSION["cart"]);
-                        //displayCart();
-                        setcookie("cart_cookie", $_SESSION["cart"], time() + (86400 * 30), "/");
-                        itemAdded();
-                    }
-                }
-            } else {
+                    } else {
 
                         if ($row['in_stock'] >= $k["quantity"]) {
                             $_SESSION["cart"] = array_merge($_SESSION["cart"], $itemArray);
@@ -69,19 +70,21 @@ if(isset($action)) {
                             itemAdded();
                         }
 
-                        }
                     }
-        } else {
-                    if($row['in_stock']>=$k["quantity"]) {
+                }
+            } else {
+                if ($row['in_stock'] >= $k["quantity"]) {
 
-                        $_SESSION["cart"] = $itemArray;
-                        //print_r($_SESSION["cart"]);
-                        //displayCart();
-                        setcookie("cart_cookie", $_SESSION["cart"], time() + (86400 * 30), "/");
-                        itemAdded();
-                    }
+                    $_SESSION["cart"] = $itemArray;
+                    //print_r($_SESSION["cart"]);
+                    //displayCart();
+                    setcookie("cart_cookie", $_SESSION["cart"], time() + (86400 * 30), "/");
+                    itemAdded();
+                }
+            }
 
         }
+
 
             break;
         case "remove":
