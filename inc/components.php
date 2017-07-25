@@ -96,13 +96,22 @@ if(isset($_SESSION['userloggedin']) && !empty($_SESSION['userloggedin'])) {
                         while ($row = $result->fetch_array()) {
                             $comp_ref = $row['comp_ref'];
                             $img_link = ' "inc/img/arduino_img/' . $row['comp_ref'] . '.jpg" ';
+                            if($row['in_stock']>0){
                             echo ' 
  <tr class="clickable-row" data-href="viewcomponent/' . $comp_ref . '">
  <td><img src=' . $img_link . ' class="img-thumbnail" height="150px" width="150px" alt ="' . $row['comp_name'] . '"/> </td>
  <td>' . $row['comp_name'] . '</td>
  <td>' . $row['in_stock'] . '</td>
 </tr>
+';} else {
+                                echo ' 
+ <tr class="clickable-row" data-href="viewcomponent/' . $comp_ref . '">
+ <td><img src=' . $img_link . ' class="img-thumbnail" height="150px" width="150px" alt ="' . $row['comp_name'] . '"/> </td>
+ <td>' . $row['comp_name'] . ' // <p style="color:red">OUT OF STOCK</p></td>
+ <td>' . $row['in_stock'] . '</td>
+</tr>
 ';
+                            }
                         };
                         echo '
                 <script>
