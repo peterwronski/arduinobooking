@@ -25,11 +25,11 @@ echo'
                         if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])){
                             echo'
                                 <form action="../../cart/remove/all" method="POST">
-                                <button type="submit" class="btn-xs btn-danger" value="Clear Cart">
+                                <button type="submit" class="btn btn-xs btn-danger" value="Clear Cart">
                                 </form></th>';
                         } elseif(empty($_SESSION['cart'])) {
                             echo'    <form action="#" method="POST">
-                                    <button type="submit" class="btn-xs btn-danger disabled" value="Clear Cart">
+                                    <button type="submit" class="btn btn-xs btn-danger disabled" value="Clear Cart">
                            </form></th>';
                         };
 
