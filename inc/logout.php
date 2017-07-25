@@ -1,6 +1,5 @@
 <?php
-session_start();
-session_destroy();
+
 if(isset($_SESSION['cart'])){
     foreach ($_SESSION["cart"] as $key => $value) {
         $get_inStock = $conn->query('SELECT in_stock FROM components WHERE comp_ref ="' .$key .'"');
@@ -9,6 +8,8 @@ if(isset($_SESSION['cart'])){
     }
     unset($_SESSION["cart"]);
 }
+session_start();
+session_destroy();
 header('Location:./');
 exit();
 
