@@ -7,10 +7,12 @@ $action = $params['action'];
 $comp_ref = $params['comp_ref'];
 $quantity = $_POST['quantity'];
 $get_inStock = $conn->query('SELECT in_stock FROM components WHERE comp_ref="' .$comp_ref .'"');
-$updated_inStock = $get_inStock - $quantity;
+$update_add = $get_inStock - $quantity;
 
-function update_inStock(){
-    $conn->query('UPDATE components SET in_stock = '.$updated_inStock .' WHERE comp_ref="' .$comp_ref .'"');
+
+
+function updateStock_add(){
+    $conn->query('UPDATE components SET in_stock = '.$update_add .' WHERE comp_ref="' .$comp_ref .'"');
 };
 
 function itemAdded(){
@@ -18,7 +20,7 @@ function itemAdded(){
                                     <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
                                     <strong>Yeee boi!</strong> Item added to cart!
                                 </div>';
-    update_inStock();
+    updateStock_add();
 
     header('Location: ../../components');
 };
@@ -76,6 +78,10 @@ if(isset($action)) {
             break;
         case "remove":
             if($comp_ref === "all"){
+                foreach ($_SESSION["cart"] as $key => $value) {
+                    $update_remove = $get_inStock + $value['quantity'];
+                    $conn->query('UPDATE components SET in_stock =' .$update_remove .' WHERE comp_ref ="' .$key .'"');
+                }
                 unset($_SESSION["cart"]);
                 setcookie("cart_cookie", $_SESSION["cart"], time() + (86400 * 30), "/");
                 $_SESSION['msg'] = '<div class="alert alert-info alert-dismissable">
@@ -83,10 +89,13 @@ if(isset($action)) {
                                     <strong>Yeee boi!</strong> Cart cleared!
                                 </div>';
 
+
                 header("Location:../../components");
             } else {
                 if (!empty($_SESSION["cart"])) {
                     foreach ($_SESSION["cart"] as $key => $value) {
+                        $update_remove = $get_inStock + $value['quantity'];
+                        $conn->query('UPDATE components SET in_stock =' .$update_remove .' WHERE comp_ref ="' .$key .'"');
                         if ($comp_ref == $key) unset($_SESSION["cart"][$key]);
                         if (empty($_SESSION["cart"])) unset($_SESSION["cart"]);
                         setcookie("cart_cookie", $_SESSION["cart"], time() + (86400 * 30), "/");
