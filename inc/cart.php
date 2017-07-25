@@ -16,7 +16,7 @@ function itemAdded(){
 
     $get_inStock = $conn->query('SELECT in_stock FROM components WHERE comp_ref="' .$comp_ref .'"');
     $update_add = $get_inStock - $quantity;
-    $conn->query('UPDATE components SET in_stock = '.$update_add .' WHERE comp_ref="' .$comp_ref .'"');
+    $conn->query('UPDATE components SET in_stock = "'.$update_add .'" WHERE comp_ref="' .$comp_ref .'"');
 
     header('Location: ../../components');
 };
@@ -76,7 +76,7 @@ if(isset($action)) {
             if($comp_ref === "all"){
                 foreach ($_SESSION["cart"] as $key => $value) {
                     $update_remove = $get_inStock + $value['quantity'];
-                    $conn->query('UPDATE components SET in_stock =' .$update_remove .' WHERE comp_ref ="' .$key .'"');
+                    $conn->query('UPDATE components SET in_stock ="' .$update_remove .'" WHERE comp_ref ="' .$key .'"');
                 }
                 unset($_SESSION["cart"]);
                 setcookie("cart_cookie", $_SESSION["cart"], time() + (86400 * 30), "/");
@@ -91,7 +91,7 @@ if(isset($action)) {
                 if (!empty($_SESSION["cart"])) {
                     foreach ($_SESSION["cart"] as $key => $value) {
                         $update_remove = $get_inStock + $value['quantity'];
-                        $conn->query('UPDATE components SET in_stock =' .$update_remove .' WHERE comp_ref ="' .$key .'"');
+                        $conn->query('UPDATE components SET in_stock ="' .$update_remove .'" WHERE comp_ref ="' .$key .'"');
                         if ($comp_ref == $key) unset($_SESSION["cart"][$key]);
                         if (empty($_SESSION["cart"])) unset($_SESSION["cart"]);
                         setcookie("cart_cookie", $_SESSION["cart"], time() + (86400 * 30), "/");
