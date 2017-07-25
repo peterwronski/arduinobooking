@@ -20,13 +20,16 @@ echo'
                     <th></th>
                     <th colspan="1">Component</th>
                     <th colspan="1">Quantity</th>
-                    <th colspan="1"><form action="../../cart/remove/all" method="POST">';
+                    <th colspan="1">';
 
                         if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])){
-                            echo'<button type="submit" class="btn-xs btn-danger" value="Clear Cart">
-                           </form></th>';
+                            echo'
+                                <form action="../../cart/remove/all" method="POST">
+                                <button type="submit" class="btn-xs btn-danger" value="Clear Cart">
+                                </form></th>';
                         } else {
-                            echo'<button type="submit" class="btn-xs btn-danger disabled" value="Clear Cart">
+                            echo'    <form action="#" method="POST">
+                                    <button type="submit" class="btn-xs btn-danger disabled" value="Clear Cart">
                            </form></th>';
                         }
 
