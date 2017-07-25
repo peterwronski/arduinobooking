@@ -56,6 +56,7 @@ if ($result->num_rows > 0) {
 
        echo' </form>
         </div>';
+        include('scripts/footer.php');
         exit();
     };
 } else {
@@ -82,6 +83,6 @@ if ($result->num_rows > 0) {
 
 
 }
-
 include('scripts/footer.php');
+
 ?>
