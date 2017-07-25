@@ -23,10 +23,10 @@ echo'
                     <th colspan="1"><form action="../../cart/remove/all" method="POST">';
 
                         if (!empty($_SESSION['cart'])){
-                            echo'<input type="submit" class="btn-xs btn-danger" value="Clear Cart">
+                            echo'<button type="submit" class="btn-xs btn-danger" value="Clear Cart">
                            </form></th>';
                         } else {
-                            echo'<input type="submit" class="btn-xs btn-danger disabled" value="Clear Cart">
+                            echo'<button type="submit" class="btn-xs btn-danger disabled" value="Clear Cart">
                            </form></th>';
                         }
 
