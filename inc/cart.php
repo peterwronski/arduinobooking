@@ -18,7 +18,7 @@ function itemAdded(){
     $row = $get_inStock->fetch_row();
 
 
-    $conn->query('UPDATE components SET in_stock = "'.$row['in_stock'] - $quantity .'" WHERE comp_ref="' .$comp_ref .'"');
+    $conn->query('UPDATE components SET in_stock = "'.($row['in_stock'] - $quantity) .'" WHERE comp_ref="' .$comp_ref .'"');
 
     header('Location: ../../components');
 };
@@ -77,8 +77,9 @@ if(isset($action)) {
         case "remove":
             if($comp_ref === "all"){
                 foreach ($_SESSION["cart"] as $key => $value) {
-
-                    $conn->query('UPDATE components SET in_stock ="' .$get_inStock + $value['quantity'] .'" WHERE comp_ref ="' .$key .'"');
+                    $get_inStock = $conn->query('SELECT in_stock FROM components WHERE comp_ref ="' .$key .'"');
+                    $row = $get_inStock->fetch_row();
+                    $conn->query('UPDATE components SET in_stock ="' .($row['in_stock'] + $value['quantity']) .'" WHERE comp_ref ="' .$key .'"');
                 }
                 unset($_SESSION["cart"]);
                 setcookie("cart_cookie", $_SESSION["cart"], time() + (86400 * 30), "/");
