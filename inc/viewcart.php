@@ -20,9 +20,16 @@ echo'
                     <th></th>
                     <th colspan="1">Component</th>
                     <th colspan="1">Quantity</th>
-                    <th colspan="1"><form action="../../cart/remove/all" method="POST">
-                           <input type="submit" class="btn-xs btn-danger" value="Clear Cart">
+                    <th colspan="1"><form action="../../cart/remove/all" method="POST">';
+
+                        if (!empty($_SESSION['cart'])){
+                            echo'<input type="submit" class="btn-xs btn-danger" value="Clear Cart">
                            </form></th>';
+                        } else {
+                            echo'<input type="submit" class="btn-xs btn-danger disabled" value="Clear Cart">
+                           </form></th>';
+                        }
+
                     foreach ($_SESSION["cart"] as $key => $value) {
                         $img_link = ' "inc/img/arduino_img/' . $key . '.jpg" ';
         echo '<tr class="clickable-row" data-href="viewcomponent/' . $key . '">
