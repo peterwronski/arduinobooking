@@ -42,7 +42,7 @@ if(isset($action)) {
                     if ($row["comp_ref"] == $k) {
                         //echo 'IS THIS THING WORKING 4';
                         if (empty($_SESSION["cart"][$k]["quantity"])) {
-                            if ($row['in_stock'] >= $k["quantity"]) {
+
                                 if ($row['in_stock'] >= $k["quantity"]) {
                                     $_SESSION["cart"][$k]["quantity"] = 0;
                                     setcookie("cart_cookie", $_SESSION["cart"], time() + (86400 * 30), "/");
@@ -60,6 +60,7 @@ if(isset($action)) {
                                 itemAdded();
                             }
                         }
+                }
                     } else {
 
                         if ($row['in_stock'] >= $k["quantity"]) {
@@ -72,7 +73,7 @@ if(isset($action)) {
 
                     }
                 }
-            } else {
+             else {
                 if ($row['in_stock'] >= $k["quantity"]) {
 
                     $_SESSION["cart"] = $itemArray;
@@ -83,7 +84,7 @@ if(isset($action)) {
                 }
             }
 
-        }
+
 
 
             break;
