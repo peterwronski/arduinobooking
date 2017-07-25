@@ -40,7 +40,7 @@ echo'
                            <td>' . $value['comp_name'] . '</td>
                            <td>'.$value['quantity'].'</td>
                            <td><form action="../../cart/remove/' .$key .'" method="POST">
-                           <input type="submit" class="btn-xs btn-warning" value="Remove item">
+                           <button type="submit" class="btn-xs btn-warning">Remove item</button>
                            </form></td>
               </tr>';
     }
