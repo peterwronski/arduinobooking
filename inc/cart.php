@@ -6,15 +6,22 @@ include('scripts/dbconnect.php');
 $action = $params['action'];
 $comp_ref = $params['comp_ref'];
 $quantity = $_POST['quantity'];
+$get_inStock = $conn->query('SELECT in_stock FROM components WHERE comp_ref="' .$comp_ref .'"');
+$updated_inStock = $get_inStock - $quantity;
+
+function update_inStock(){
+    $conn->query('UPDATE components SET in_stock = '.$updated_inStock .' WHERE comp_ref="' .$comp_ref .'"');
+};
 
 function itemAdded(){
     $_SESSION['msg'] = '<div class="alert alert-success alert-dismissable">
                                     <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
                                     <strong>Yeee boi!</strong> Item added to cart!
                                 </div>';
+    update_inStock();
 
     header('Location: ../../components');
-}
+};
 
 
 
