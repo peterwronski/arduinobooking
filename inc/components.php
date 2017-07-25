@@ -34,7 +34,7 @@ if(isset($_SESSION['userloggedin']) && !empty($_SESSION['userloggedin'])) {
                                         <option value="descending"> Descending</option>
                                      </select>
                                          
-                                         <input type="submit" class="btn-xs btn-info" name="sort_submit">  </input>
+                                         <input type="submit" class="btn-xs btn-info" name="sort_submit" value="Sort">  </input>
                                          </form>
                         ';
 
