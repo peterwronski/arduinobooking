@@ -22,7 +22,7 @@ echo'
                     <th colspan="1">Quantity</th>
                     <th colspan="1"><form action="../../cart/remove/all" method="POST">';
 
-                        if (!empty($_SESSION['cart'])){
+                        if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])){
                             echo'<button type="submit" class="btn-xs btn-danger" value="Clear Cart">
                            </form></th>';
                         } else {
