@@ -107,7 +107,7 @@ if(isset($_SESSION['userloggedin']) && !empty($_SESSION['userloggedin'])) {
                                 echo ' 
  <tr class="clickable-row" data-href="viewcomponent/' . $comp_ref . '">
  <td><img src=' . $img_link . ' class="img-thumbnail" height="150px" width="150px" alt ="' . $row['comp_name'] . '"/> </td>
- <td>' . $row['comp_name'] . ' // <p style="color:red">OUT OF STOCK</p></td>
+ <td>' . $row['comp_name'] . ' <br/><p style="color:red">(OUT OF STOCK)</p></td>
  <td>' . $row['in_stock'] . '</td>
 </tr>
 ';
