@@ -42,12 +42,12 @@ if ($result->num_rows > 0) {
         <br/>
         <br/>
          <div>
-        <p><b>Create a booking</b></p><hr/>
+        <hr/>
         <form action="../../cart/add/' .$comp_ref .'" method="POST">';
 
         if($row['in_stock']>0){
         echo'Quantity: <input type="number" min="1" max="' .$in_stock .'" name="quantity" value="1"/>
-        <button type="submit" class="btn btn-info">Create</button>';}
+        <button type="submit" class="btn btn-info">Add to cart</button>';}
         else{
         echo'Quantity: <input type="number" class="disabled" min="1" max="' .$in_stock .'" name="quantity" value="1"/>
         <button type="submit" class="btn btn-info disabled">Out of Stock</button>';}
