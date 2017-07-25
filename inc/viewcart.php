@@ -27,11 +27,11 @@ echo'
                                 <form action="../../cart/remove/all" method="POST">
                                 <button type="submit" class="btn-xs btn-danger" value="Clear Cart">
                                 </form></th>';
-                        } else {
+                        } elseif(empty($_SESSION['cart'])) {
                             echo'    <form action="#" method="POST">
                                     <button type="submit" class="btn-xs btn-danger disabled" value="Clear Cart">
                            </form></th>';
-                        }
+                        };
 
                     foreach ($_SESSION["cart"] as $key => $value) {
                         $img_link = ' "inc/img/arduino_img/' . $key . '.jpg" ';
