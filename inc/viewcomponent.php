@@ -8,6 +8,8 @@
  */
 include('scripts/header_2.php');
 $comp_ref = $params['comp_ref'];
+date_default_timezone_set('Europe/London');
+$date_now = date('D-M-Y');
 
 if (isset($_SESSION['userloggedin']) && !empty($_SESSION['userloggedin'])){
 include('scripts/dbconnect.php');
@@ -52,6 +54,7 @@ if ($result->num_rows > 0) {
         else{
         echo'<form action="#" method="POST">
         Quantity: <input type="number"  min ="1" max="' .$in_stock .'" name="quantity" value="1" readonly/>
+        Booking from:(Also date now: ' .$date_now .'<input type="date" name="date_from" min="2000-01-02">
         <button type="button" class="btn btn-info disabled">Out of Stock</button>';}
 
 
