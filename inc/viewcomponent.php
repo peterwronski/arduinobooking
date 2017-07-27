@@ -52,7 +52,7 @@ if ($result->num_rows > 0) {
         else{
         echo'<form action="#" method="POST">
         Quantity: <input type="number"  min ="1" max="' .$in_stock .'" name="quantity" value="1" readonly/>
-        <button type="submit" class="btn btn-info disabled">Out of Stock</button>';}
+        <button type="button" class="btn btn-info disabled">Out of Stock</button>';}
 
 
 
