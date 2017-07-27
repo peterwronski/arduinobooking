@@ -9,7 +9,7 @@
 include('scripts/header_2.php');
 $comp_ref = $params['comp_ref'];
 date_default_timezone_set('Europe/London');
-$date_now = (new DateTime())->format('d-m-y');
+$date_now = (new DateTime())->format('Y-m-d');
 
 if (isset($_SESSION['userloggedin']) && !empty($_SESSION['userloggedin'])){
 include('scripts/dbconnect.php');
