@@ -49,8 +49,9 @@ if ($result->num_rows > 0) {
 
         if($row['in_stock']>0){
         echo'<form action="../../cart/add/' .$comp_ref .'" method="POST">
-        Quantity: <input type="number" min="1" max="' .$in_stock .'" name="quantity" value="1"/>
-        Booking from: (Also date now: // ' .$date_now .' //  <input type="date" name="date_from" min="'.$date_now .'">
+        Quantity: <input type="number" min="1" max="' .$in_stock .'" name="quantity" value="1"/> <br/>
+        Booking from: <input type="date" name="date_from" min="'.$date_now .'"> // 
+        Returning on: <input type="date" name="date_to" ><br/>
         <button type="submit" class="btn btn-info">Add to cart</button>';}
         else{
         echo'<form action="#" method="POST">
