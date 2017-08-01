@@ -17,8 +17,7 @@ $rules = array(
     'about' => "/about",
     'components' => "/components",
     'viewcomponent' => "/viewcomponent/(?'comp_ref'[\w\-]+)",
-    'bookings' => "/bookings",
-    'booking' => "/booking/(?'bookingID'[\w\-]+)",
+    'booking' => "/booking/(?'action'[\w\_&?=]+)",
     //
     //Admin Pages
     //
