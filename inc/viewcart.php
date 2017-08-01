@@ -45,8 +45,8 @@ echo'
               </tr>';
     }
     echo '      
-      <tr><td>Booking from: <input type="date" name="date_from" min="'.$date_now .'"> <br/></td>
-        <td>Returning on: <input type="date" name="date_to" ></td></tr></table>
+      <tr><td colspan="3">Booking from: <input type="date" name="date_from" min="'.$date_now .'">
+        Returning on: <input type="date" name="date_to" ></td></tr></table>
       
             </div>
         </div>
