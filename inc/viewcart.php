@@ -44,13 +44,13 @@ echo'
                            </form></td>
               </tr>';
     }
-    echo '      
+    echo '
+      <form action="../../booking/add" method="POST">
       <tr><td colspan="2">Booking from: <input type="date" name="date_from" min="'.$date_now .'">
-        Returning on: <input type="date" name="date_to">
-        <button type="submit" class="btn btn-xs btn-success">Create booking</button>
-        </td>
-        
+        Returning on: <input type="date" name="date_to"></td>
+        <td><button type="submit" class="btn btn-xs btn-success">Create booking</button></td>
         </tr>
+        </form>
         </table>
       
             </div>
