@@ -44,6 +44,7 @@ echo'
                            </form></td>
               </tr>';
     }
+    if (!empty($_SESSION['cart'])){
     echo '
       <form action="../../booking/add" method="POST">
       <tr><td colspan="3">Booking from: <input type="date" name="date_from" min="'.$date_now .'">
@@ -51,9 +52,19 @@ echo'
         <td><button type="submit" class="btn btn-xs btn-success">Create booking</button></td>
         </tr>
         </form>
-        </table>
+        </table>';
+                    } else {
+        echo '
+      <form action="#" method="POST">
+      <tr><td colspan="3">Booking from: <input type="date" name="date_from" min="'.$date_now .'" disabled>
+        Returning on: <input type="date" name="date_to" disabled></td>
+        <td><button type="submit" class="btn btn-xs btn-success disabled">Create booking</button></td>
+        </tr>
+        </form>
+        </table>';
+    }
       
-            </div>
+     echo'       </div>
         </div>
 </div>
 
