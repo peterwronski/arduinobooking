@@ -5,6 +5,11 @@ include ('scripts/header.php');
 if(isset($_COOKIE['cart_cookie'])){
     $_SESSION['cart'] = $_COOKIE['cart_cookie'];
 };
+
+if(isset($_SESSION['msg'])){
+    echo $_SESSION['msg'];
+    unset ($_SESSION['msg']);
+};
 echo'
 
 <div class="container" id="componentlist">
