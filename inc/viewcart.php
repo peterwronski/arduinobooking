@@ -51,7 +51,7 @@ echo'
     }
     if (!empty($_SESSION['cart'])){
     echo '
-      <form action="../../booking/confirm" method="POST">
+      <form action="../../booking/add" method="POST">
       <tr><td colspan="3">Booking from: <input type="date" name="date_from" min="'.$date_now .'" required>
         Returning on: <input type="date" name="date_to" required></td>
         <td><button type="submit" class="btn btn-xs btn-success">Create booking</button></td>

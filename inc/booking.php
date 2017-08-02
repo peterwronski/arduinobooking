@@ -14,6 +14,7 @@ if(isset($action)) {
                 $result=$conn->query($query);
                 if($result){
                     $addSuccess .= $value['comp_name'] .', ' .$value['quantity'].'<br/>';
+                    unset($_SESSION['cart'][$key]);
                 } else{
                     $_SESSION['msg'] = '<div class="alert alert-danger alert-dismissable">
                                     <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
@@ -25,27 +26,10 @@ if(isset($action)) {
             };
             $_SESSION['msg'] = $addSuccess .'Your booking is now created. Check the progress under \'Your Bookings\' ';
             break;
-        case "confirm":
-            foreach ($_SESSION["cart"] as $key => $value) {
 
-            $query = 'SELECT quantity FROM components WHERE comp_ref ="' . $key . '"';
-            $result = $conn->query($query);
-            if($result){
-                $row = mysqli_fetch_array($result);
-                if ($row['quantity'] > $value['quantity']){
-                    header("Location: ../../booking/add");
-            }
-            } else {
-                $_SESSION['msg'] = '<div class="alert alert-danger alert-dismissable">
-                                    <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-                                    <strong>Oh no!</strong> One or more items in your cart aren\'t available at the moment! (Sent from Confirm)
-                                </div>';
-                header("Location:../../viewcart");
-            }
-}
+        default:
+            header("Location: 404.php");
             break;
-
-
     }
 
 }
