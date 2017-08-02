@@ -31,12 +31,10 @@ if(isset($action)) {
             $query = 'SELECT quantity FROM components WHERE comp_ref ="' . $key . '"';
             $result = $conn->query($query);
             if($result){
-
+                $row = mysqli_fetch_array($result);
+                if ($row['quantity'] > $value['quantity']){
+                    header("Location: ../../booking/add");
             }
-
-            $row = mysqli_fetch_array($result);
-            if ($row['quantity'] > $value['quantity']){
-                header("Location: ../../booking/add");
             } else {
                 $_SESSION['msg'] = '<div class="alert alert-danger alert-dismissable">
                                     <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
