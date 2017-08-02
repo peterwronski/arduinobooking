@@ -5,7 +5,9 @@ include('scripts/dbconnect.php');
 $action = $params['action'];
 $dateTo = $_POST['date_to'];
 $dateFrom = $_POST['date_from'];
-$addSuccess = "Items added successfully: <br/>";
+$addSuccess = "<div class=\"alert alert-success alert-dismissable\">
+                                    <a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">×</a>
+                                    <strong>Items added!</strong>";
 if(isset($action)) {
     switch ($action) {
         case "add":
@@ -24,7 +26,7 @@ if(isset($action)) {
                 }
 
             };
-            $_SESSION['msg'] = $addSuccess .'Your booking is now created. Check the progress under \'Your Bookings\' ';
+            $_SESSION['msg'] = $addSuccess .'Your booking is now created. Check the progress under \'Your Bookings\' </div>';
             break;
 
         default:
