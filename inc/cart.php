@@ -8,20 +8,7 @@ $comp_ref = $params['comp_ref'];
 $quantity = $_POST['quantity'];
 
 
-function itemAdded(){
-    $_SESSION['msg'] = '<div class="alert alert-success alert-dismissable">
-                                    <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-                                    <strong>Yeee boi!</strong> Item added to cart!
-                                </div>';
-    global $conn, $comp_ref, $quantity, $row;
-    $get_inStock = $conn->query('SELECT in_stock FROM components WHERE comp_ref ="' .$comp_ref .'"');
-    $row = $get_inStock->fetch_array();
 
-
-    $conn->query('UPDATE components SET in_stock = "'.($row['in_stock'] - $quantity) .'" WHERE comp_ref="' .$comp_ref .'"');
-
-    header('Location: ../../components');
-};
 
 
 
@@ -45,8 +32,8 @@ if(isset($action)) {
 
                                 if ($row['in_stock'] >= $k["quantity"]) {
                                     $_SESSION["cart"][$k]["quantity"] = 0;
-                                    setcookie("cart_cookie", $_SESSION["cart"], time() + (86400 * 30), "/");
-                                    itemAdded();
+
+
                                 }
                                 //print_r($_SESSION["cart"]);
                                 //displayCart();
@@ -56,8 +43,7 @@ if(isset($action)) {
                                 //echo 'IS THIS THING WORKING 6';
                                 //print_r($_SESSION["cart"]);
                                 //displayCart();
-                                setcookie("cart_cookie", $_SESSION["cart"], time() + (86400 * 30), "/");
-                                itemAdded();
+
                             }
                         }
                 }
@@ -67,8 +53,7 @@ if(isset($action)) {
                             $_SESSION["cart"] = array_merge($_SESSION["cart"], $itemArray);
                             //print_r($_SESSION["cart"]);
                             //displayCart();
-                            setcookie("cart_cookie", $_SESSION["cart"], time() + (86400 * 30), "/");
-                            itemAdded();
+
                         }
 
                     }
@@ -79,8 +64,7 @@ if(isset($action)) {
                     $_SESSION["cart"] = $itemArray;
                     //print_r($_SESSION["cart"]);
                     //displayCart();
-                    setcookie("cart_cookie", $_SESSION["cart"], time() + (86400 * 30), "/");
-                    itemAdded();
+
                 }
             }
 

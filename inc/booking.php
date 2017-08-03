@@ -8,6 +8,15 @@ $dateFrom = $_POST['date_from'];
 $addSuccess = "<div class=\"alert alert-success alert-dismissable\">
                                     <a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">×</a>
                                     <strong>Items added!</strong>";
+
+function itemAdded(){
+
+    global $conn, $quantity, $row;
+
+
+
+};
+
 if(isset($action)) {
     switch ($action) {
         case "add":
@@ -15,16 +24,17 @@ if(isset($action)) {
                 $query = 'INSERT INTO booking VALUES ("' . $_SESSION['studentid'] . '", "' . $key . '" , "' . $value['quantity'] . '", "' . $key . '", "' . $dateFrom . '", "' . $dateTo . '")';
                 $result=$conn->query($query);
                 if($result){
-                    $addSuccess .= $value['comp_name'] .', ' .$value['quantity'].'<br/>';
-                    unset($_SESSION['cart'][$key]);
-                } else{
-                    $_SESSION['msg'] = '<div class="alert alert-danger alert-dismissable">
-                                    <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-                                    <strong>Oh no!</strong> One or more items in your cart aren\'t available at the moment! (Sent from Add)
-                                </div>';
-                    header("Location:../../viewcart");
-                }
 
+                    $get_inStock = $conn->query('SELECT in_stock FROM components WHERE comp_ref ="' .$_SESSION['cart'][$key] .'"');
+                    $row = $get_inStock->fetch_array();
+
+
+                    $conn->query('UPDATE components SET in_stock = "'.($row['in_stock'] - $quantity) .'" WHERE comp_ref="' .$comp_ref .'"');
+
+                    unset($_SESSION['cart'][$key]);
+
+
+                }
             };
             $_SESSION['msg'] = $addSuccess .'Your booking is now created. Check the progress under \'Your Bookings\' </div>';
             break;
