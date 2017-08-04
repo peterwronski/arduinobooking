@@ -39,7 +39,7 @@ if(isset($action)) {
 
                                 if ($row['in_stock'] >= $k["quantity"]) {
                                     $_SESSION["cart"][$k]["quantity"] = 0;
-
+                                    itemAdded();
 
                                 }
                                 //print_r($_SESSION["cart"]);
