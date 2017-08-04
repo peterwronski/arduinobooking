@@ -9,8 +9,8 @@ $dateFrom = $_POST['date_from'];
 
 
 
-$dateToFormatted = $dateTo->format('Y/m/d');
-$dateFromFormatted = $dateTo->format('Y/m/d');
+$dateToFormatted = $dateTo->format('Y-m-d');
+$dateFromFormatted = $dateTo->format('Y-m-d');
 
 
 
