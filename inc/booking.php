@@ -5,38 +5,49 @@ include('scripts/dbconnect.php');
 $action = $params['action'];
 $dateTo = $_POST['date_to'];
 $dateFrom = $_POST['date_from'];
-$addSuccess = "<div class=\"alert alert-success alert-dismissable\">
-                                    <a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">×</a>
-                                    <strong>Items added!</strong>";
-
-function itemAdded(){
-
-    global $conn, $quantity, $row;
 
 
 
-};
+
+$dateToFormatted = $dateTo->format('Y/m/d');
+$dateFromFormatted = $dateTo->format('Y/m/d');
+
+
+
 
 if(isset($action)) {
     switch ($action) {
         case "add":
-            foreach ($_SESSION["cart"] as $key => $value) {
-                $query = 'INSERT INTO booking VALUES ("' . $_SESSION['studentid'] . '", "' . $key . '" , "' . $value['quantity'] . '", "' . $key . '", "' . $dateFrom . '", "' . $dateTo . '")';
+            echo 'Date To: ' .$dateToFormatted .' <br/>Date From: ' .$dateFromFormatted;
+            /*foreach ($_SESSION["cart"] as $key => $value) {
+
+
+
+                $query = 'INSERT INTO booking (studentid, comp_ref, quantity, date_from, date_to) VALUES ("' . $_SESSION['studentid'] . '", "' . $key . '" , "' . $value['quantity'] . '", "' .$dateFromFormatted . '", "' . $dateToFormatted . '")';
                 $result=$conn->query($query);
                 if($result){
 
                     $get_inStock = $conn->query('SELECT in_stock FROM components WHERE comp_ref ="' .$_SESSION['cart'][$key] .'"');
                     $row = $get_inStock->fetch_array();
+                    if($row['in_stock'] >= $value['quantity']) {
+                        $conn->query('UPDATE components SET in_stock = "' . ($row['in_stock'] - $value['quantity']) . '" WHERE comp_ref="' . $key . '"');
 
-
-                    $conn->query('UPDATE components SET in_stock = "'.($row['in_stock'] - $quantity) .'" WHERE comp_ref="' .$comp_ref .'"');
-
-                    unset($_SESSION['cart'][$key]);
+                        unset($_SESSION['cart'][$key]);
+                    }
 
 
                 }
             };
-            $_SESSION['msg'] = $addSuccess .'Your booking is now created. Check the progress under \'Your Bookings\' </div>';
+
+            $_SESSION['msg'] = '<div class="alert alert-success alert-dismissable">
+                                    <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+                                    <strong>Yeee boi!</strong> Booking created!
+                                </div>';
+
+
+            header("Location:../../viewcart");
+*/
+
             break;
 
         default:

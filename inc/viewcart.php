@@ -1,6 +1,7 @@
 <?php
 session_start();
 include ('scripts/header.php');
+$date_now = (new DateTime())->format('Y-m-d');
 
 if(isset($_COOKIE['cart_cookie'])){
     $_SESSION['cart'] = $_COOKIE['cart_cookie'];
