@@ -39,6 +39,7 @@ if(isset($action)) {
                                 if ($row['in_stock'] >= $k["quantity"]) {
                                     $_SESSION["cart"][$k]["quantity"] = 0;
                                     setcookie("cart_cookie", $_SESSION["cart"], time() + (86400 * 30), "/");
+                                    echo 'IS THIS THING WORKING 4.1';
                                     itemAdded();
                                 }
                                 echo 'IS THIS THING WORKING 5';
