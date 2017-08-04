@@ -16,8 +16,8 @@ $dateFrom = $_POST['date_from'];
 if(isset($action)) {
     switch ($action) {
         case "add":
-            echo 'Date To: ' . $dateTo . ' <br/>Date From: ' . $dateFrom;
-            /*foreach ($_SESSION["cart"] as $key => $value) {
+            //echo 'Date To: ' . $dateTo . ' <br/>Date From: ' . $dateFrom;
+            foreach ($_SESSION["cart"] as $key => $value) {
 
 
 
@@ -44,7 +44,7 @@ if(isset($action)) {
 
 
             header("Location:../../viewcart");
-*/
+
 
             break;
 
