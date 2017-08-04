@@ -8,7 +8,7 @@
  */
 include('scripts/header_2.php');
 $comp_ref = $params['comp_ref'];
-date_default_timezone_set('Europe/London');
+
 
 
 if (isset($_SESSION['userloggedin']) && !empty($_SESSION['userloggedin'])){

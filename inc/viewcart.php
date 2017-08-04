@@ -1,6 +1,7 @@
 <?php
 session_start();
 include ('scripts/header.php');
+date_default_timezone_set('Europe/London');
 $date_now = (new DateTime())->format('Y-m-d');
 
 if(isset($_COOKIE['cart_cookie'])){
