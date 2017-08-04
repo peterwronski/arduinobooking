@@ -23,17 +23,15 @@ if(isset($action)) {
 
                 $query = 'INSERT INTO booking (studentid, comp_ref, quantity, date_from, date_to) VALUES ("' . $_SESSION['studentid'] . '", "' . $key . '" , "' . $value['quantity'] . '", "' .$dateFrom. '", "' . $dateTo . '")';
                 $result=$conn->query($query);
-                if($result){
 
-                    $get_inStock = $conn->query('SELECT in_stock FROM components WHERE comp_ref ="' .$_SESSION['cart'][$key] .'"');
+
+                    $get_inStock = $conn->query('SELECT in_stock, comp_ref FROM components WHERE comp_ref ="' .$_SESSION['cart'][$key] .'"');
                     $row = $get_inStock->fetch_array();
                     if($row['in_stock'] >= $value['quantity']) {
                         $conn->query('UPDATE components SET in_stock = "' . ($row['in_stock'] - $value['quantity']) . '" WHERE comp_ref="' . $key . '"');
 
-                        unset($_SESSION['cart'][$key]);
-                    }
-
-
+                        if ($row['comp_ref'] == $key) unset($_SESSION["cart"][$key]);
+                        if (empty($_SESSION["cart"])) unset($_SESSION["cart"]);
                 }
             };
 
