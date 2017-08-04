@@ -8,7 +8,14 @@ $comp_ref = $params['comp_ref'];
 $quantity = $_POST['quantity'];
 
 
+function itemAdded(){
+    $_SESSION['msg'] = '<div class="alert alert-success alert-dismissable">
+                                    <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+                                    <strong>Yeee boi!</strong> Item added to your cart!
+                                </div>';
+    header("Location: ../../components");
 
+}
 
 
 
@@ -37,13 +44,14 @@ if(isset($action)) {
                                 }
                                 //print_r($_SESSION["cart"]);
                                 //displayCart();
+                            itemAdded();
                             }
                             if ($row['in_stock'] >= $k["quantity"]) {
                                 $_SESSION["cart"][$k]["quantity"] += $_POST["quantity"];
                                 //echo 'IS THIS THING WORKING 6';
                                 //print_r($_SESSION["cart"]);
                                 //displayCart();
-
+                                itemAdded();
                             }
                         }
                 }
@@ -53,7 +61,7 @@ if(isset($action)) {
                             $_SESSION["cart"] = array_merge($_SESSION["cart"], $itemArray);
                             //print_r($_SESSION["cart"]);
                             //displayCart();
-
+                            itemAdded();
                         }
 
                     }
@@ -64,7 +72,7 @@ if(isset($action)) {
                     $_SESSION["cart"] = $itemArray;
                     //print_r($_SESSION["cart"]);
                     //displayCart();
-
+                    itemAdded();
                 }
             }
 
