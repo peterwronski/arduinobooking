@@ -21,7 +21,7 @@ if(isset($action)) {
 
 
 
-                $query = 'INSERT INTO booking (studentid, comp_ref, quantity, date_from, date_to) VALUES ("' . $_SESSION['studentid'] . '", "' . $key . '" , "' . $value['quantity'] . '", "' .$dateFromFormatted . '", "' . $dateToFormatted . '")';
+                $query = 'INSERT INTO booking (studentid, comp_ref, quantity, date_from, date_to) VALUES ("' . $_SESSION['studentid'] . '", "' . $key . '" , "' . $value['quantity'] . '", "' .$dateFrom. '", "' . $dateTo . '")';
                 $result=$conn->query($query);
                 if($result){
 
