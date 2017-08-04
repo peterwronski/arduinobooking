@@ -18,7 +18,7 @@ $dateFromFormatted = $dateTo->format('Y/m/d');
 if(isset($action)) {
     switch ($action) {
         case "add":
-            echo 'Date To: ' .$dateToFormatted .' <br/>Date From: ' .$dateFromFormatted;
+            echo 'Date To: ' . $dateToFormatted . ' <br/>Date From: ' . $dateFromFormatted;
             /*foreach ($_SESSION["cart"] as $key => $value) {
 
 
@@ -55,4 +55,6 @@ if(isset($action)) {
             break;
     }
 
+} else {
+    header("Location: 404.php");
 }
