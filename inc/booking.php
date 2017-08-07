@@ -23,14 +23,14 @@ if(isset($action)) {
 
                     $get_inStock = $conn->query('SELECT in_stock FROM components WHERE comp_ref ="' .$_SESSION['cart'][$key] .'"');
                     $row = $get_inStock->fetch_array();
-                    echo $row['in_stock'] .' ' .$value['quantity'];
+                    print $row['in_stock'] .' ' .$value['quantity'];
                     /*$quantity = $row['in_stock'] - $value['quantity'];
 
                     $in_stockUpdate = $conn->query('UPDATE components SET in_stock = "' . $quantity . '" WHERE comp_ref="' . $key . '"');
 
-
-                unset ($_SESSION['cart'][$key]);
 */
+                unset ($_SESSION['cart'][$key]);
+
 
             };
 
@@ -40,7 +40,7 @@ if(isset($action)) {
                                 </div>';
 
 
-            header("Location:../../viewcart");
+            //header("Location:../../viewcart");
 
 
             break;
