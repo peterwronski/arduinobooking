@@ -21,7 +21,7 @@ if(isset($action)) {
                 $query = 'INSERT INTO booking (studentid, comp_ref, quantity, date_from, date_to) VALUES ("' . $_SESSION['studentid'] . '", "' . $key . '" , "' . $value['quantity'] . '", "' .$dateFrom. '", "' . $dateTo . '")';
                 $result=$conn->query($query);
 
-                    $get_inStock = $conn->query('SELECT in_stock FROM components WHERE comp_ref ="' .$_SESSION['cart'][$key] .'"');
+                    $get_inStock = $conn->query('SELECT in_stock FROM components WHERE comp_ref ="' .$key .'"');
                     $row = $get_inStock->fetch_array();
                     print $row['in_stock'] .' ' .$value['quantity'];
                     /*$quantity = $row['in_stock'] - $value['quantity'];
