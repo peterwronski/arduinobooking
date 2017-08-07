@@ -23,7 +23,7 @@ if(isset($action)) {
 
                     $get_inStock = $conn->query('SELECT in_stock, comp_ref FROM components WHERE comp_ref ="' .$_SESSION['cart'][$key] .'"');
                     $row = $get_inStock->fetch_array();
-                    $quantity = $value['quantity'];
+                    $quantity = ($row['in_stock'] - $value['quantity']);
 
                     $in_stockUpdate = $conn->query('UPDATE components SET in_stock = "' . $quantity . '" WHERE comp_ref="' . $key . '"');
 
