@@ -7,6 +7,7 @@
  * Time: 16:29
  */
 
+//comment
 
 
 define('INCLUDE_DIR', dirname(__FILE__) . '/inc/');
