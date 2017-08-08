@@ -11,16 +11,12 @@
 
 define('INCLUDE_DIR', dirname(__FILE__) . '/inc/');
 $rules = array(
-    //
-    //main pages
-    //
+
     'about' => "/about",
     'components' => "/components",
     'viewcomponent' => "/viewcomponent/(?'comp_ref'[\w\-]+)",
-    'booking' => "/booking/(?'action'[\w\_&?=]+)",
-    //
-    //Admin Pages
-    //
+    'bookings' => "/bookings",
+
     'login' => "/login",
     'register' => "/register",
     'verify' => "/verify",
