@@ -50,9 +50,9 @@
                 <?php
                 if (isset($_SESSION['userloggedin'])){
                     $cart_count = count($_SESSION["cart"]);
-                echo'<p class="navbar-text">Welcome ' .$_SESSION['userloggedin'] .' // </p></li>
-                <li><a href="bookings"><span class="glyphicon glyphicon-barcode"></span> Bookings</a> // </li>
-                <li><a href="viewcart"><span class="glyphicon glyphicon-shopping-cart"></span> Your Cart ('.$cart_count .')</a> // </li>
+                echo'<p class="navbar-text">Welcome ' .$_SESSION['userloggedin'] .'</p></li>
+                <li><a href="bookings"><span class="glyphicon glyphicon-barcode"></span> Bookings</a></li>
+                <li><a href="viewcart"><span class="glyphicon glyphicon-shopping-cart"></span> Your Cart ('.$cart_count .')</a></li>
                 <li><a href="logout"><span class="glyphicon glyphicon-user"></span> Log out</a></li>';
                 }
                 else {
