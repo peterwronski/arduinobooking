@@ -15,7 +15,8 @@ booking.quantity,
 booking.date_from, 
 booking.date_to 
 FROM booking, components 
-WHERE booking.studentid = "'.$SESSION['studentid'] .'" AND booking.comp_ref = components.comp_ref';
+WHERE booking.studentid = "'.$SESSION['studentid'] .'" 
+AND booking.comp_ref = components.comp_ref;';
 $result = $conn -> query($query);
 echo '
  <div class="container" id="componentlist">
