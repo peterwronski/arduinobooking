@@ -39,14 +39,15 @@ echo '
                 </tr>
 ';
 while ($row = $result->fetch_array()) {
-
+$dateFrom = date_format($row['date_from'], 'd-m-Y');
+$dateTo = date_format($row['date_to'], 'd-m-Y');
     echo'
     <tr>
         <td>' .$row['booking_id'] .'</td>
         <td>' .$row['comp_name'] .'</td>
         <td>' .$row['quantity'] .'</td>
-        <td>' .$row['date_from'].'</td>
-        <td>' .$row['date_to'].'</td>
+        <td>' .$dateFrom.'</td>
+        <td>' .$dateTo.'</td>
     </tr>
     ';
 }
