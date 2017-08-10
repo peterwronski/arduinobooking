@@ -45,8 +45,8 @@ while ($row = $result->fetch_array()) {
         <td>' .$row['booking_id'] .'</td>
         <td>' .$row['comp_name'] .'</td>
         <td>' .$row['quantity'] .'</td>
-        <td>' . date_format($row['date_from'], 'd-m-Y') .'</td>
-        <td>' .date_format($row['date_to'], 'd-m-Y') .'</td>
+        <td>' .$row['date_from'].'</td>
+        <td>' .$row['date_to'].'</td>
     </tr>
     ';
 }
