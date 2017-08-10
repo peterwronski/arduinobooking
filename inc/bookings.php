@@ -8,6 +8,11 @@
 include('scripts/header.php');
 include('scripts/dbconnect.php');
 
+if(isset($_SESSION['msg'])){
+    echo $_SESSION['msg'];
+    unset ($_SESSION['msg']);
+};
+
 if(isset($_SESSION['userloggedin']) && !empty($_SESSION['userloggedin'])) {
 $query = 'SELECT booking.booking_id, 
 components.comp_name,  
@@ -48,7 +53,8 @@ $dateTo = date("d-m-Y", strtotime($row['date_to']));
         <td>' .$row['quantity'] .'</td>
         <td>' .$dateFrom.'</td>
         <td>' .$dateTo.'</td>
-        <td><form action="../../booking/remove/' . $row['booking_id'] . '" method="POST">
+        <td><form action="../../cancelbooking/' .$row['booking_id'] .'" method="POST">
+        
                 <button type="submit" class="btn btn-xs btn-warning">Cancel Booking</button>
             </form>
         </td>

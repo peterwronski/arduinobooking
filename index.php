@@ -16,7 +16,8 @@ $rules = array(
     'about' => "/about",
     'components' => "/components",
     'viewcomponent' => "/viewcomponent/(?'comp_ref'[\w\-]+)",
-    'booking' => "/booking/(?'action'[\w\-]+)/(?'booking_id'[\w\-]+)?",
+    'cancelbooking' => "/cancelbooking/(?'booking_id'[\w\-]+)",
+    'booking' => "/booking",
     'bookings' => "/bookings",
 
 

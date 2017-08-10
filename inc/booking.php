@@ -46,19 +46,7 @@ if(isset($_SESSION['userloggedin']) && !empty($_SESSION['userloggedin'])) {
 
                 break;
 
-            case "remove":
-                    $delete = 'DELETE * FROM booking WHERE booking_id ="'.$booking_id .'" AND studentid = "'.$_SESSION['studentid'] .'";';
-                $conn->query($delete);
 
-                $_SESSION['msg'] = '<div class="alert alert-success alert-dismissable">
-                                    <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-                                    <strong>Yeee boi!</strong> Booking cancelled!
-                                </div>';
-
-
-                header("Location:../../bookings");
-
-                break;
 
             default:
                 header("Location: 404.php");
