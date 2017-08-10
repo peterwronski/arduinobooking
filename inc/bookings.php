@@ -32,13 +32,15 @@ echo '
                 </tr>
 ';
 while ($row = $result->fetch_array()) {
+    $dateFrom = ($row['date_from'])->format('d-m-Y');
+    $dateTo = ($row['date_to'])->format('d-m-Y');
     echo'
     <tr>
         <td>' .$row['booking_id'] .'</td>
         <td>' .$row['comp_ref'] .'</td>
         <td>' .$row['quantity'] .'</td>
-        <td>' .$row['date_from'] .'</td>
-        <td>' .$row['date_to'] .'</td>
+        <td>' .$dateFrom .'</td>
+        <td>' .$dateTo .'</td>
     </tr>
     ';
 }
