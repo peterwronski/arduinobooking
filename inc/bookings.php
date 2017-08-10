@@ -25,13 +25,25 @@ echo '
                 <table class="componenttable" width="100%">
                     <th>Booking ID</th>
                     <th>Component ID</th>
-                    <th>Student ID</th>
+                    
                     <th>From</th>
                     <th>To</th>
 ';
 while ($row = $result->fetch_array()) {
-
+    echo'
+        <td>' .$row['booking_id'] .'</td>
+        <td>' .$row['comp_ref'] .'</td>
+        <td>' .$row['date_from'] .'</td>
+        <td>' .$row['date_to'] .'</td>
+    ';
 }
+
+echo '
+                </table>
+            </div>
+        </div>    
+';
+
 } else {
     header('Location: 404.php');
 }
