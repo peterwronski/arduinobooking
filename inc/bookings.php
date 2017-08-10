@@ -23,19 +23,23 @@ echo '
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 componentdiv">
                 <table class="componenttable" width="100%">
+                <tr>
                     <th>Booking ID</th>
                     <th>Component ID</th>
                     <th>Quantity</th>
                     <th>From</th>
                     <th>To</th>
+                </tr>
 ';
 while ($row = $result->fetch_array()) {
     echo'
+    <tr>
         <td>' .$row['booking_id'] .'</td>
         <td>' .$row['comp_ref'] .'</td>
         <td>' .$row['quantity'] .'</td>
         <td>' .$row['date_from'] .'</td>
         <td>' .$row['date_to'] .'</td>
+    </tr>
     ';
 }
 
