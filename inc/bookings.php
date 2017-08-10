@@ -9,7 +9,13 @@ include('scripts/header.php');
 include('scripts/dbconnect.php');
 
 if(isset($_SESSION['userloggedin']) && !empty($_SESSION['userloggedin'])) {
-$query = 'SELECT * FROM booking WHERE studentid = "' .$_SESSION['studentid'] .'"';
+$query = 'SELECT booking.booking_id, 
+components.comp_name,  
+booking.quantity, 
+booking.date_from, 
+booking.date_to 
+FROM booking, components 
+WHERE booking.studentid = "'.$SESSION['studentid'] .'" AND booking.comp_ref = components.comp_ref';
 $result = $conn -> query($query);
 echo '
  <div class="container" id="componentlist">
@@ -25,22 +31,21 @@ echo '
                 <table class="componenttable" width="100%">
                 <tr>
                     <th>Booking ID</th>
-                    <th>Component ID</th>
+                    <th>Component Name</th>
                     <th>Quantity</th>
                     <th>From</th>
                     <th>To</th>
                 </tr>
 ';
 while ($row = $result->fetch_array()) {
-    $dateFrom = ($row['date_from'])->format('d-m-Y');
-    $dateTo = ($row['date_to'])->format('d-m-Y');
+
     echo'
     <tr>
         <td>' .$row['booking_id'] .'</td>
-        <td>' .$row['comp_ref'] .'</td>
+        <td>' .$row['comp_name'] .'</td>
         <td>' .$row['quantity'] .'</td>
-        <td>' .$dateFrom .'</td>
-        <td>' .$dateTo .'</td>
+        <td>' .$row['date_from'] .'</td>
+        <td>' .$row['date_to'] .'</td>
     </tr>
     ';
 }
