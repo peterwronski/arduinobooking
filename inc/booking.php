@@ -3,6 +3,7 @@ session_start();
 include('scripts/dbconnect.php');
 
 $action = $params['action'];
+$booking_id = $params['booking_id'];
 $dateTo = $_POST['date_to'];
 $dateFrom = $_POST['date_from'];
 
@@ -42,6 +43,20 @@ if(isset($_SESSION['userloggedin']) && !empty($_SESSION['userloggedin'])) {
 
                 header("Location:../../viewcart");
 
+
+                break;
+
+            case "remove":
+                    $delete = 'DELETE * FROM booking WHERE booking_id ="'.$booking_id .'" AND studentid = "'.$_SESSION['studentid'] .'";';
+                $conn->query($delete);
+
+                $_SESSION['msg'] = '<div class="alert alert-success alert-dismissable">
+                                    <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+                                    <strong>Yeee boi!</strong> Booking cancelled!
+                                </div>';
+
+
+                header("Location:../../bookings");
 
                 break;
 

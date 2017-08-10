@@ -48,6 +48,10 @@ $dateTo = date("d-m-Y", strtotime($row['date_to']));
         <td>' .$row['quantity'] .'</td>
         <td>' .$dateFrom.'</td>
         <td>' .$dateTo.'</td>
+        <td><form action="../../booking/remove/' . $row['booking_id'] . '" method="POST">
+                <button type="submit" class="btn btn-xs btn-warning">Cancel Booking</button>
+            </form>
+        </td>
     </tr>
     ';
 }
