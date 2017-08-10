@@ -1,5 +1,5 @@
 <?php
-include('scripts/header.php'); ?>
+include('scripts/header_2.php'); ?>
 
 
 <div class="alert alert-warning">
