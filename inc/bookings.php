@@ -27,7 +27,7 @@ echo '
  <div class="container" id="componentlist">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 componentdiv">
-                <h1>Components</h1> <br/>
+                <h1>Your Bookings</h1> <br/>
                 </div>
                 </div>
                 
