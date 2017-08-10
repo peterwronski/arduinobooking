@@ -9,7 +9,7 @@ include('scripts/header.php');
 include('scripts/dbconnect.php');
 
 if(isset($_SESSION['userloggedin']) && !empty($_SESSION['userloggedin'])) {
-$query = 'SELECT * FROM bookings WHERE studentid = "' .$_SESSION['studentid'] .'"';
+$query = 'SELECT * FROM booking WHERE studentid = "' .$_SESSION['studentid'] .'"';
 $result = $conn -> query($query);
 echo '
  <div class="container" id="componentlist">
