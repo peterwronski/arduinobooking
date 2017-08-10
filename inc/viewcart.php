@@ -4,15 +4,13 @@ include ('scripts/header.php');
 date_default_timezone_set('Europe/London');
 $date_now = (new DateTime())->format('Y-m-d');
 
-if(isset($_COOKIE['cart_cookie'])){
-    $_SESSION['cart'] = $_COOKIE['cart_cookie'];
-};
+if(isset($_SESSION['userloggedin']) && !empty($_SESSION['userloggedin'])) {
 
-if(isset($_SESSION['msg'])){
-    echo $_SESSION['msg'];
-    unset ($_SESSION['msg']);
-};
-echo'
+    if (isset($_SESSION['msg'])) {
+        echo $_SESSION['msg'];
+        unset ($_SESSION['msg']);
+    };
+    echo '
 
 <div class="container" id="componentlist">
         <div class="row">
@@ -29,49 +27,49 @@ echo'
                     <th colspan="1">Quantity</th>
                     <th colspan="1">';
 
-                        if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])){
-                            echo'
+    if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
+        echo '
                                 <form action="../../cart/remove/all" method="POST">
                                 <button type="submit" class="btn btn-xs btn-danger">Clear cart </button>
                                 </form></th>';
-                        } elseif(empty($_SESSION['cart'])) {
-                            echo'    <form action="#" method="POST">
+    } elseif (empty($_SESSION['cart'])) {
+        echo '    <form action="#" method="POST">
                                     <button type="submit" class="btn btn-xs btn-danger disabled">Clear Cart</button>
                            </form></th>';
-                        };
+    };
 
-                    foreach ($_SESSION["cart"] as $key => $value) {
-                        $img_link = ' "inc/img/arduino_img/' . $key . '.jpg" ';
+    foreach ($_SESSION["cart"] as $key => $value) {
+        $img_link = ' "inc/img/arduino_img/' . $key . '.jpg" ';
         echo '<tr class="clickable-row" data-href="viewcomponent/' . $key . '">
                             <td><img src=' . $img_link . ' class="img-thumbnail" height="50px" width="50px" alt ="' . $value['comp_name'] . '"/> </td>
                            <td>' . $value['comp_name'] . '</td>
-                           <td>'.$value['quantity'].'</td>
-                           <td><form action="../../cart/remove/' .$key .'" method="POST">
+                           <td>' . $value['quantity'] . '</td>
+                           <td><form action="../../cart/remove/' . $key . '" method="POST">
                            <button type="submit" class="btn btn-xs btn-warning">Remove item</button>
                            </form></td>
               </tr>';
     }
-    if (!empty($_SESSION['cart'])){
-    echo '
+    if (!empty($_SESSION['cart'])) {
+        echo '
       <form action="../../booking/add" method="POST">
-      <tr><td colspan="3">Booking from: <input type="date" name="date_from" min="'.$date_now .'" required>
+      <tr><td colspan="3">Booking from: <input type="date" name="date_from" min="' . $date_now . '" required>
         Returning on: <input type="date" name="date_to" required></td>
         <td><button type="submit" class="btn btn-xs btn-success">Create booking</button></td>
         </tr>
         </form>
         </table>';
-                    } else {
+    } else {
         echo '
       <form action="#" method="POST">
-      <tr><td colspan="3">Booking from: <input type="date" name="date_from" min="'.$date_now .'" disabled>
+      <tr><td colspan="3">Booking from: <input type="date" name="date_from" min="' . $date_now . '" disabled>
         Returning on: <input type="date" name="date_to" disabled></td>
         <td><button type="submit" class="btn btn-xs btn-success disabled">Create booking</button></td>
         </tr>
         </form>
         </table>';
     }
-      
-     echo'       </div>
+
+    echo '       </div>
         </div>
 </div>
 
@@ -83,5 +81,15 @@ echo'
                     });
                 </script>';
 
+} else {
+    $_SESSION['msg'] = '<div class="alert alert-warning alert-dismissable">
+                                    <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+                                    <strong>Hold up!</strong>You have to be logged in to view this content
+                                </div>';
 
+    if(isset($_SESSION['msg'])){
+        echo $_SESSION['msg'];
+        unset($_SESSION['msg']);
+    };
+}
 include ('scripts/footer.php');
