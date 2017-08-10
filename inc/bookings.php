@@ -39,8 +39,8 @@ echo '
                 </tr>
 ';
 while ($row = $result->fetch_array()) {
-$dateFrom = date_format($row['date_from'],"d-m-Y");
-$dateTo = date_format($row['date_to'], "d-m-Y");
+$dateFrom = date("d-m-Y", strtotime($row['date_from']));
+$dateTo = date("d-m-Y", strtotime($row['date_to']));
     echo'
     <tr>
         <td>' .$row['booking_id'] .'</td>
