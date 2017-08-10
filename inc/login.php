@@ -41,7 +41,20 @@ session_start();
             header('Location: ./');
 
 
-        } else {
+        } elseif($activated == 2) {
+            $_SESSION['userloggedin'] = $row['fname'];
+            $_SESSION['email'] = $row['email'];
+            $_SESSION['studentid'] = $row['studentid'];
+            $_SESSION['admin'] == true;
+
+
+            $_SESSION['msg'] = '<div class="alert alert-success alert-dismissable">
+                                    <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+                                    <strong>Hi there ' . $_SESSION['userloggedin'] . ' as admin!</strong>
+                                </div>';
+            session_write_close();
+            header('Location: ./');
+        }elseif($activated == 0){
             header('Location: verify');
 
         }
