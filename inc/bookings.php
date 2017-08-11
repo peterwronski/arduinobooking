@@ -54,9 +54,9 @@ $dateTo = date("d-m-Y", strtotime($row['date_to']));
         <td>' .$row['quantity'] .'</td>
         <td>' .$dateFrom.'</td>
         <td>' .$dateTo.'</td>
-        <td>'; if($row['approved'] == true){
+        <td>'; if($row['approved'] == 0){
         echo '<span class="glyphicon glyphicon-remove"></span>';
-    } else {
+    } elseif($row['approved'] == 1) {
         echo '<span class="glyphicon glyphicon-ok"></span>';
     };
         echo '</td>
