@@ -19,7 +19,7 @@ if(isset($_SESSION['userloggedin']) && !empty($_SESSION['userloggedin'])) {
             case "add":
                 //echo 'Date To: ' . $dateTo . ' <br/>Date From: ' . $dateFrom;
                 foreach ($_SESSION["cart"] as $key => $value) {
-                    $query = 'INSERT INTO booking (studentid, comp_ref, quantity, date_from, date_to) VALUES ("' . $_SESSION['studentid'] . '", "' . $key . '" , "' . $value['quantity'] . '", "' . $dateFrom . '", "' . $dateTo . '")';
+                    $query = 'INSERT INTO booking (studentid, comp_ref, quantity, date_from, date_to, approved) VALUES ("' . $_SESSION['studentid'] . '", "' . $key . '" , "' . $value['quantity'] . '", "' . $dateFrom . '", "' . $dateTo . '", "0")';
                     $result = $conn->query($query);
 
                     $get_inStock = $conn->query('SELECT in_stock FROM components WHERE comp_ref ="' . $key . '"');
