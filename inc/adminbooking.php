@@ -42,7 +42,7 @@ if(isset($_SESSION['userloggedin']) && $_SESSION['admin'] == TRUE){
                 while ($row = $result->fetch_array()) {
                         echo '
 
-    <tr style="text-align:center; border-bottom: 1px solid rgba(243, 48, 249, 0.33) !important;">
+    <tr style="text-align:center; border-bottom: 1px solid rgba(243, 48, 249, 0.33) !important;" class="clickable-row" data-href="adminbooking/view/' . $row['booking_id'] . '">
         <td>' . $row['booking_id'] . '</td>
         <td>' . $row['comp_name'] . '</td>
         <td>' . $row['studentid'] . '</td>
