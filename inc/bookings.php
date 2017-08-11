@@ -41,6 +41,7 @@ echo '
                     <th>Quantity</th>
                     <th>From</th>
                     <th>To</th>
+                    <th>Approved</th>
                 </tr>
 ';
 while ($row = $result->fetch_array()) {
@@ -53,6 +54,12 @@ $dateTo = date("d-m-Y", strtotime($row['date_to']));
         <td>' .$row['quantity'] .'</td>
         <td>' .$dateFrom.'</td>
         <td>' .$dateTo.'</td>
+        <td>'; if($row['approved'] == true){
+        echo '<span class="glyphicon glyphicon-remove"></span>';
+    } else {
+        echo '<span class="glyphicon glyphicon-ok"></span>';
+    };
+        echo '</td>
         <td><form action="../../cancelbooking/' .$row['booking_id'] .'" method="POST">
         
                 <button type="submit" class="btn btn-xs btn-warning">Cancel Booking</button>
