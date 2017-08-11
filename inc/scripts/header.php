@@ -16,7 +16,7 @@
 <body>
 
 <script>
-    //PREVENT SESSION FROM DYING
+    //PREVENT SESSION FROM DYING  --DOESN'T SEEM TO BE WORKING AS OF 11/08/2017
     var refreshTime = 600000; // every 10 minutes in milliseconds
     window.setInterval( function() {
         $.ajax({

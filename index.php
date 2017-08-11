@@ -13,22 +13,24 @@
 define('INCLUDE_DIR', dirname(__FILE__) . '/inc/');
 $rules = array(
 
+    //USER PAGES
     'about' => "/about",
     'components' => "/components",
     'viewcomponent' => "/viewcomponent/(?'comp_ref'[\w\-]+)",
     'cancelbooking' => "/cancelbooking/(?'booking_id'[\w\-]+)",
     'booking' => "/booking/(?'action'[\w\-]+)",
     'bookings' => "/bookings",
-
-
     'login' => "/login",
     'register' => "/register",
     'verify' => "/verify",
     'cart' => "/cart/(?'action'[\w\_&?=]+)/?(?'comp_ref'[\w\_&?=]+)",
     'viewcart' => "/viewcart",
-
-    'viewuser' => "/viewuser",
     'logout' => "/logout",
+
+    //ADMIN PAGES//
+    'user' => "/user/(?'action'[\w\_&?=]+)/?(?'user_id'[\w\_&?=]+)",
+    'adminbooking' => "/adminbooking/(?'action'[\w\_&?=]+)/?(?'booking_id'[\w\_&?=]+)",
+
     //
     // Home Page
     //

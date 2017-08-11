@@ -48,10 +48,18 @@ echo '
 ';
 if($count > 0) {
     while ($row = $result->fetch_array()) {
-        if ($row['approved'] == false) {
-            $approved = '<span class="glyphicon glyphicon-remove"></span>';
-        } elseif ($row['approved'] == true) {
-            $approved = '<span class="glyphicon glyphicon-ok"></span>';
+        switch ($row['approved']){
+            case "1":
+                $approved = '<span class="glyphicon glyphicon-remove"></span>';
+                break;
+
+            case "2":
+                $approved = '<span class="glyphicon glyphicon-ok"></span>';
+                break;
+
+            default:
+                $approved = '<span class="glyphicon glyphicon-time"></span>';
+                break;
         };
         $dateFrom = date("d-m-Y", strtotime($row['date_from']));
         $dateTo = date("d-m-Y", strtotime($row['date_to']));
