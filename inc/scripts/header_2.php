@@ -32,7 +32,7 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <?php
-                if (isset($_SESSION['admin']) && $_SESSION['admin'] == TRUE){
+                if (isset($_SESSION['admin']) && !empty($_SESSION['admin'])){
                     echo'  <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">ADMIN MENU
                     <span class="caret"></span></a>
