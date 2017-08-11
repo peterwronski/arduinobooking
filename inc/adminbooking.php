@@ -42,7 +42,7 @@ if(isset($_SESSION['userloggedin']) && $_SESSION['admin'] == TRUE){
                 while ($row = $result->fetch_array()) {
                         echo '
 
-    <tr>
+    <tr class="allbookings">
         <td>' . $row['booking_id'] . '</td>
         <td>' . $row['comp_name'] . '</td>
         <td>' . $row['studentid'] . '</td>

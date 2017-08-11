@@ -142,10 +142,12 @@ tr.clickable-row:hover{
 .componenttable{
     margin-bottom: 50%;
 }
-th{
+th, tr.allbookings{
     text-align:center;
     border-bottom: 1px solid #781d7d !important;
 }
+
+
 
 hr {
 
