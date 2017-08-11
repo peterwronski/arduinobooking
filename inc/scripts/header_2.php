@@ -32,6 +32,17 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <?php
+                if (isset($_SESSION['admin']) && $_SESSION['admin'] == TRUE){
+                    echo'  <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">ADMIN MENU
+                    <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="user/view/all"><span class="glyphicon glyphicon-user"></span> Users</a></li>
+          <li><a href="adminbooking/view/all"><span class="glyphicon glyphicon-shopping-cart"></span>Bookings</span></a></li>
+          
+        </ul>
+      </li>';
+                }
                 if (isset($_SESSION['userloggedin'])){
                     $cart_count = count($_SESSION["cart"]);
                     echo'
