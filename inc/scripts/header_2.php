@@ -38,7 +38,7 @@
                     <span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="user/view/all"><span class="glyphicon glyphicon-user"></span> Users</a></li>
-          <li><a href="adminbooking/view/all"><span class="glyphicon glyphicon-shopping-cart"></span>Bookings</span></a></li>
+          <li><a href="adminbooking/view/all"><span class="glyphicon glyphicon-barcode"></span>Bookings</span></a></li>
           
         </ul>
       </li>';
