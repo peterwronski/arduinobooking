@@ -46,6 +46,11 @@ echo '
                 </tr>
 ';
 while ($row = $result->fetch_array()) {
+    if($row['approved'] = false){
+        $approved = '<span class="glyphicon glyphicon-remove"></span>';
+    } elseif($row['approved'] = true) {
+        $approved = '<span class="glyphicon glyphicon-ok"></span>';
+    };
 $dateFrom = date("d-m-Y", strtotime($row['date_from']));
 $dateTo = date("d-m-Y", strtotime($row['date_to']));
     echo'
@@ -55,12 +60,7 @@ $dateTo = date("d-m-Y", strtotime($row['date_to']));
         <td>' .$row['quantity'] .'</td>
         <td>' .$dateFrom.'</td>
         <td>' .$dateTo.'</td>
-        <td>'; if($row['approved'] = false){
-        echo '<span class="glyphicon glyphicon-remove"></span>';
-    } elseif($row['approved'] = true) {
-        echo '<span class="glyphicon glyphicon-ok"></span>';
-    };
-        echo '</td>
+        <td>' .$approved .'</td>
         <td><form action="../../cancelbooking/' .$row['booking_id'] .'" method="POST">
         
                 <button type="submit" class="btn btn-xs btn-warning">Cancel Booking</button>
