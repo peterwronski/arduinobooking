@@ -50,7 +50,7 @@ session_start();
 
             $_SESSION['msg'] = '<div class="alert alert-success alert-dismissable">
                                     <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-                                    <strong>Hi there ' . $_SESSION['userloggedin'] . ' as admin!</strong>
+                                    <strong>Hi there ' . $_SESSION['userloggedin'] . '!</strong> You\'re logged in as admin!
                                 </div>';
             session_write_close();
             header('Location: ./');
