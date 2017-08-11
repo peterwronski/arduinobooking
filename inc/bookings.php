@@ -19,6 +19,7 @@ components.comp_name,
 booking.quantity, 
 booking.date_from, 
 booking.date_to 
+booking.approved
 FROM booking, components 
 WHERE booking.studentid = "'.$_SESSION['studentid'] .'" 
 AND booking.comp_ref = components.comp_ref;';
