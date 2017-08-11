@@ -18,7 +18,7 @@ $query = 'SELECT booking.booking_id,
 components.comp_name,  
 booking.quantity, 
 booking.date_from, 
-booking.date_to 
+booking.date_to,
 booking.approved
 FROM booking, components 
 WHERE booking.studentid = "'.$_SESSION['studentid'] .'" 
@@ -46,9 +46,9 @@ echo '
                 </tr>
 ';
 while ($row = $result->fetch_array()) {
-    if($row['approved'] = false){
+    if($row['approved'] == false){
         $approved = '<span class="glyphicon glyphicon-remove"></span>';
-    } elseif($row['approved'] = true) {
+    } elseif($row['approved'] == true) {
         $approved = '<span class="glyphicon glyphicon-ok"></span>';
     };
 $dateFrom = date("d-m-Y", strtotime($row['date_from']));
