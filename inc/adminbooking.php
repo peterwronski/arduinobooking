@@ -8,6 +8,7 @@ $booking_id = $params['booking_id'];
 if(isset($_SESSION['userloggedin']) && $_SESSION['admin'] == TRUE){
     switch ($action){
         case "view":
+            include('scripts/header.php');
             if($booking_id == "all"){
                 $showAllQuery = "SELECT booking.booking_id, components.comp_name, booking.studentid, users.fname, users.sname,
                 booking.quantity, booking.date_from, booking.date_to, booking.approved FROM booking, components, users
@@ -69,6 +70,7 @@ if(isset($_SESSION['userloggedin']) && $_SESSION['admin'] == TRUE){
         </div>    
 ';
             }
+            include('scripts/footer.php');
             break;
     }
 
