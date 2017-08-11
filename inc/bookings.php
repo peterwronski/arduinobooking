@@ -24,6 +24,7 @@ FROM booking, components
 WHERE booking.studentid = "'.$_SESSION['studentid'] .'" 
 AND booking.comp_ref = components.comp_ref;';
 $result = $conn -> query($query);
+$count = $result->num_rows;
 echo '
  <div class="container" id="componentlist">
         <div class="row">
@@ -45,36 +46,49 @@ echo '
                     <th>Approved</th>
                 </tr>
 ';
-while ($row = $result->fetch_array()) {
-    if($row['approved'] == false){
-        $approved = '<span class="glyphicon glyphicon-remove"></span>';
-    } elseif($row['approved'] == true) {
-        $approved = '<span class="glyphicon glyphicon-ok"></span>';
-    };
-$dateFrom = date("d-m-Y", strtotime($row['date_from']));
-$dateTo = date("d-m-Y", strtotime($row['date_to']));
-    echo'
+if($count > 0) {
+    while ($row = $result->fetch_array()) {
+        if ($row['approved'] == false) {
+            $approved = '<span class="glyphicon glyphicon-remove"></span>';
+        } elseif ($row['approved'] == true) {
+            $approved = '<span class="glyphicon glyphicon-ok"></span>';
+        };
+        $dateFrom = date("d-m-Y", strtotime($row['date_from']));
+        $dateTo = date("d-m-Y", strtotime($row['date_to']));
+        echo '
     <tr>
-        <td>' .$row['booking_id'] .'</td>
-        <td>' .$row['comp_name'] .'</td>
-        <td>' .$row['quantity'] .'</td>
-        <td>' .$dateFrom.'</td>
-        <td>' .$dateTo.'</td>
-        <td>' .$approved .'</td>
-        <td><form action="../../cancelbooking/' .$row['booking_id'] .'" method="POST">
+        <td>' . $row['booking_id'] . '</td>
+        <td>' . $row['comp_name'] . '</td>
+        <td>' . $row['quantity'] . '</td>
+        <td>' . $dateFrom . '</td>
+        <td>' . $dateTo . '</td>
+        <td>' . $approved . '</td>
+        <td><form action="../../cancelbooking/' . $row['booking_id'] . '" method="POST">
         
                 <button type="submit" class="btn btn-xs btn-warning">Cancel Booking</button>
             </form>
         </td>
     </tr>
     ';
-}
-
-echo '
+    }
+    echo '
                 </table>
             </div>
         </div>    
 ';
+} else {
+    echo '
+<tr>
+    <td colspan="6"><i>There is nothing to show at the moment</i></td>
+</tr>
+                </table>
+            </div>
+        </div>    
+';
+}
+
+
+
 
 } else {
     header('Location: 404.php');
