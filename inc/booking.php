@@ -3,7 +3,7 @@ session_start();
 include('scripts/dbconnect.php');
 
 $action = $params['action'];
-$booking_id = $params['booking_id'];
+
 $dateTo = $_POST['date_to'];
 $dateFrom = $_POST['date_from'];
 
