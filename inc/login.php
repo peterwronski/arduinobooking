@@ -45,7 +45,7 @@ session_start();
             $_SESSION['userloggedin'] = $row['fname'];
             $_SESSION['email'] = $row['email'];
             $_SESSION['studentid'] = $row['studentid'];
-            $_SESSION['admin'] = TRUE;
+            $_SESSION['admin'] = "1";
 
 
             $_SESSION['msg'] = '<div class="alert alert-success alert-dismissable">
