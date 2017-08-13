@@ -255,7 +255,8 @@ echo'
             $mail->AddAddress("$email", "$fname");
 
             if(!$mail->Send()) {
-                echo "Mailer Error: " . $mail->ErrorInfo;
+                echo "Mailer Error: " . $mail->ErrorInfo .'<br/>';
+                echo $email;
                 exit;
             } else {
 
@@ -300,7 +301,8 @@ echo'
             $mail->AddAddress("$email", "$fname");
 
             if(!$mail->Send()) {
-                echo "Mailer Error: " . $mail->ErrorInfo;
+                echo "Mailer Error: " . $mail->ErrorInfo .'<br/>';
+                echo $email;
                 exit;
             } else {
 
