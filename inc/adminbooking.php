@@ -40,19 +40,19 @@ if(isset($_SESSION['userloggedin']) && $_SESSION['admin'] == TRUE){
                 </tr>
 ';
                 while ($row = $result->fetch_array()) {
-                    switch($row['approved']){
-                        case "0":
-                            $approved = '<span class="glyphicon glyphicon-time"></span>';
-                            break;
-
+                    switch ($row['approved']){
                         case "1":
-                            $approved = '<span class="glyphicon glyphicon-ok"></span>';
+                            $approved = '<span class="glyphicon glyphicon-remove"></span>';
                             break;
 
                         case "2":
-                            $approved = '<span class="glyphicon glyphicon-remove"></span>';
+                            $approved = '<span class="glyphicon glyphicon-ok"></span>';
                             break;
-                    }
+
+                        default:
+                            $approved = '<span class="glyphicon glyphicon-time"></span>';
+                            break;
+                    };
 
                         echo '
 
