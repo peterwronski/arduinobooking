@@ -96,7 +96,7 @@ if(isset($_SESSION['userloggedin']) && $_SESSION['admin'] == TRUE){
 
                 $showAllQuery = 'SELECT booking.booking_id, components.comp_name, booking.studentid, users.fname, users.sname,
                 booking.quantity, booking.date_from, booking.date_to, booking.approved FROM booking, components, users
-                WHERE booking.comp_ref = components.comp_ref AND booking.studentid = users.studentid AND booking.bookind_id = "' .$booking_id .'"';
+                WHERE booking.comp_ref = components.comp_ref AND booking.studentid = users.studentid AND booking.booking_id = "' .$booking_id .'"';
                 $result = $conn->query($showAllQuery);
 
                 $count = $result->num_rows;
