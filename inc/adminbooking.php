@@ -136,22 +136,22 @@ echo'
     <td colspan ="2">'.$row['booking_id'] .'</td>
 </tr>
 
-<tr>
+<tr class="clickable-row" data-href="../../user/view/' . $row['studentid'] . '">
     <th colspan ="2">Student ID</th>
     <td colspan ="2">'.$row['studentid'] .'</td>
 </tr>
 
-<tr>
+<tr class="clickable-row" data-href="../../user/view/' . $row['studentid'] . '">
     <th colspan ="2">Name</th>
     <td colspan ="2">'.$row['fname'] .' ' .$row['sname'] .'</td>
 </tr>
 
-<tr>
+<tr class="clickable-row" data-href="../../viewcomponent/' . $row['comp_ref'] . '">
     <th colspan ="2">Component ID</th>
     <td colspan ="2">'.$row['comp_ref'] .'</td>
 </tr>
 
-<tr>
+<tr class="clickable-row" data-href="../../viewcomponent/' . $row['comp_ref'] . '">
     <th colspan ="2">Component Name</th>
     <td colspan ="2">'.$row['comp_name'] .'</td>
 </tr>
