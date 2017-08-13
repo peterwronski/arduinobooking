@@ -176,6 +176,8 @@ echo'
     <td colspan ="2">'.$approved .'</td>
 </tr>
 
+<tr><td colspan="4">OPTIONS</td></tr>
+
 <tr>
     <td><form action="../../adminbooking/approve/' . $row['booking_id'] . '" method="POST">
                 <button type="submit" class="btn btn-xs btn-success">Approve</button>
