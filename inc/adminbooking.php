@@ -225,6 +225,7 @@ echo'
         case "approve":
             $approveQuery = 'UPDATE booking SET approved = "2" WHERE booking_id = "' .$booking_id .'"';
             $conn -> query($approveQuery);
+            $dateFrom = date("d-m-Y", strtotime($row['date_from']));
 
 
             $body = 'Hi there, ' .$row['fname'] .'<br/> Your booking was approved by an admin! Your components will be ready to be picked up on ' .$dateFrom .'!. <br/> <br/> Thanks for using Arduino Booking!    ';
