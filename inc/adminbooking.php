@@ -256,6 +256,7 @@ echo'
 
             if(!$mail->Send()) {
                 echo "Mailer Error: " . $mail->ErrorInfo;
+                exit;
             } else {
 
                 $_SESSION['msg'] = '<div class="alert alert-success alert-dismissable">
@@ -299,6 +300,7 @@ echo'
 
             if(!$mail->Send()) {
                 echo "Mailer Error: " . $mail->ErrorInfo;
+                exit;
             } else {
 
                 $_SESSION['msg'] = '<div class="alert alert-success alert-dismissable">
