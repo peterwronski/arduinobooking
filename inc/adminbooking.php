@@ -279,11 +279,11 @@ echo'
             $denyQuery = 'UPDATE booking SET approved = "1" WHERE booking_id = "' .$booking_id .'"';
             $conn -> query($denyQuery);
 
-            $getInfoQuery = 'SELECT booking.date_from, booking.studentid, users.fname, users.email FROM booking, users WHERE booking.studentid = users.studentid AND booking.booking_id = "' .$booking_id .'"';
+            $getInfoQuery = 'SELECT booking.studentid, users.fname, users.email FROM booking, users WHERE booking.studentid = users.studentid AND booking.booking_id = "' .$booking_id .'"';
 
             $result = $conn->query($getInfoQuery);
             while ($row = mysqli_fetch_array($result)) {
-                $dateFrom = date("d-m-Y", strtotime($row['date_from']));
+
                 $body = 'Hi there, ' . $row['fname'] . '<br/> Unfortunately your booking was denied by an admin! You might get an e-mail justifying this decision shortly, but meanwhile why not try booking some other components? <br/> Thanks for using Arduino Booking!    ';
 
                 $mail = new PHPMailer();
