@@ -336,12 +336,12 @@ echo'
 
             $result = $conn->query($getInfoQuery);
             while ($row = mysqli_fetch_array($result)) {
-               // $dateTo = date("d-m-Y", strtotime($row['date_to']));
+                $dateTo = date("d-m-Y", strtotime($row['date_to']));
                 $datetime1 = date_create($date_now);
                 $datetime2 = date_create ($row['date_to']);
 
                 $interval = date_diff($datetime1, $datetime2);
-                $body = 'Hi there, ' . $row['fname'] . '<br/> This is a gentle reminder that your components are due to be returned in ' .$interval .' days! Please remember to return them on time! <br/> Thanks for using Arduino Booking!    ';
+                $body = 'Hi there, ' . $row['fname'] . '<br/> This is a gentle reminder that your components are due to be returned in ' .$interval .' days! ('.$dateTo .') Please remember to return them on time! <br/> Thanks for using Arduino Booking!    ';
 
                 $mail = new PHPMailer();
 
@@ -375,7 +375,7 @@ echo'
 
                     $_SESSION['msg'] = '<div class="alert alert-success alert-dismissable">
                                     <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-                                    <strong>Booking denied!</strong> Email sent to ' . $email . '. User will be notified via email
+                                    <strong>Reminder sent!</strong> Email sent to ' . $email . '.
                                 </div>';
                     header("Location:../../adminbooking/view/all");
                 }
