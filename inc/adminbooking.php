@@ -100,8 +100,7 @@ if(isset($_SESSION['userloggedin']) && $_SESSION['admin'] == TRUE){
                 $result = $conn->query($showAllQuery);
 
                 $count = $result->num_rows;
-                $dateFrom = date("d-m-Y", strtotime($row['date_from']));
-                $dateTo = date("d-m-Y", strtotime($row['date_to']));
+
 
                 echo'
  <div class="container" id="componentlist">
@@ -115,6 +114,8 @@ if(isset($_SESSION['userloggedin']) && $_SESSION['admin'] == TRUE){
                 <table class="componenttable" width="100%">
 ';
                 while ($row = $result->fetch_array()) {
+                    $dateFrom = date("d-m-Y", strtotime($row['date_from']));
+                    $dateTo = date("d-m-Y", strtotime($row['date_to']));
 
                     switch ($row['approved']){
                         case "1":
