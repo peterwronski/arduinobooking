@@ -327,6 +327,58 @@ echo'
 
 
             break;
+
+        case "sendreminder":
+            date_default_timezone_set('Europe/London');
+            $date_now = (new DateTime())->format('Y-m-d');
+
+            $getInfoQuery = 'SELECT booking.date_to, booking.studentid, users.fname, users.email FROM booking, users WHERE booking.studentid = users.studentid AND booking.booking_id = "' .$booking_id .'"';
+
+            $result = $conn->query($getInfoQuery);
+            while ($row = mysqli_fetch_array($result)) {
+
+                $dateTo = date("d-m-Y", strtotime($row['date_to']));
+                $interval = date_diff($date_now, $row['date_to']);
+                $body = 'Hi there, ' . $row['fname'] . '<br/> This is a gentle reminder that your components are due to be returned in ' .$interval .' days! (' .$dateTo .')  Please remember to return them on time! <br/> Thanks for using Arduino Booking!    ';
+
+                $mail = new PHPMailer();
+
+
+                $mail->IsSMTP();
+
+                $mail->SMTPDebug = 1;
+
+                $mail->SMTPAuth = true;                  // enable SMTP authentication
+                $mail->SMTPSecure = "ssl";                 // sets the prefix to the servier
+                $mail->Host = "smtp.gmail.com";      // sets GMAIL as the SMTP server
+                $mail->Port = 465;                   // set the SMTP port for the GMAIL server
+                $mail->Username = "noreply.arduinobooking@gmail.com";  // GMAIL username
+                $mail->Password = "arduinopass";
+
+                $mail->SetFrom('noreply.arduinobooking@gmail.com', 'ArduinoBooking');
+
+                $mail->Subject = "Booking Information | Arduino Booking";
+
+                $mail->MsgHTML($body);
+
+                $fname = $row['fname'];
+                $email = $row['email'];
+                $mail->AddAddress("$email", "$fname");
+
+                if (!$mail->Send()) {
+                    echo "Mailer Error: " . $mail->ErrorInfo . '<br/>';
+                    echo $email;
+                    exit;
+                } else {
+
+                    $_SESSION['msg'] = '<div class="alert alert-success alert-dismissable">
+                                    <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+                                    <strong>Booking denied!</strong> Email sent to ' . $email . '. User will be notified via email
+                                </div>';
+                    header("Location:../../adminbooking/view/all");
+                }
+            }
+            break;
     }
 
 } else {
