@@ -296,6 +296,7 @@ echo'
             $mail->MsgHTML($body);
 
             $fname = $row['fname'];
+            $email = $row['studentid'].'@rgu.ac.uk';
             $mail->AddAddress("$email", "$fname");
 
             if(!$mail->Send()) {
