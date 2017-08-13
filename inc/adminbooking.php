@@ -341,7 +341,7 @@ echo'
                 $datetime2 = date_create ($row['date_to']);
 
                 $interval = date_diff($datetime1, $datetime2);
-                $body = 'Hi there, ' . $row['fname'] . '<br/> This is a gentle reminder that your components are due to be returned in ' .$interval->format('%a') .' days! Please remember to return them on time! <br/> Thanks for using Arduino Booking!    ';
+                $body = 'Hi there, ' . $row['fname'] . '<br/> This is a gentle reminder that your components are due to be returned in ' .$interval .' days! Please remember to return them on time! <br/> Thanks for using Arduino Booking!    ';
 
                 $mail = new PHPMailer();
 
