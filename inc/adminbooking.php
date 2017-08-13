@@ -177,19 +177,19 @@ echo'
 </tr>
 
 <tr>
-    <td><form action="../../adminbooking/approve/' . $row['booking_id'] . '" method="POST">
+    <td colspan ="2"><form action="../../adminbooking/approve/' . $row['booking_id'] . '" method="POST">
                 <button type="submit" class="btn btn-xs btn-success">Approve</button>
             </form></td>
-        <td><form action="../../adminbooking/deny/' . $row['booking_id'] . '" method="POST">
+        <td colspan ="2"><form action="../../adminbooking/deny/' . $row['booking_id'] . '" method="POST">
                 <button type="submit" class="btn btn-xs btn-warning">Deny</button>
             </form></td>
 </tr>
 
 <tr>
-            <td><form action="../../adminbooking/sendreminder/' . $row['booking_id'] . '" method="POST">
+            <td colspan ="2"><form action="../../adminbooking/sendreminder/' . $row['booking_id'] . '" method="POST">
                 <button type="submit" class="btn btn-xs btn-info">Send Reminder</button>
             </form></td>
-            <td><form action="../../user/sendmessage/' . $row['studentid'] . '" method="POST">
+            <td colspan ="2"><form action="../../user/sendmessage/' . $row['studentid'] . '" method="POST">
                 <button type="submit" class="btn btn-xs btn-info">Send Message</button>
             </form></td>
 </tr>
