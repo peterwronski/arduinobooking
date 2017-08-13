@@ -132,7 +132,7 @@ if(isset($_SESSION['userloggedin']) && $_SESSION['admin'] == TRUE){
                     };
 echo' 
 <tr>
-    <th>Booking ID</th>
+    <th colspan ="2">Booking ID</th>
     <td colspan ="2">'.$row['booking_id'] .'</td>
 </tr>
 
@@ -193,6 +193,11 @@ echo'
 
 ';
                 }
+                echo' 
+                            </table>
+                        </div>
+                       </div>
+                       </div>';
             }
             include('scripts/footer.php');
             break;
