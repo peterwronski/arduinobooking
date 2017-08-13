@@ -6,9 +6,14 @@ $action = $params['action'];
 $booking_id = $params['booking_id'];
 
 if(isset($_SESSION['userloggedin']) && $_SESSION['admin'] == TRUE){
+
     switch ($action){
         case "view":
             include('scripts/header_2.php');
+            if (isset($_SESSION['msg'])) {
+                echo $_SESSION['msg'];
+                unset ($_SESSION['msg']);
+            };
             if($booking_id == "all"){
                 $showAllQuery = "SELECT booking.booking_id, components.comp_name, booking.studentid, users.fname, users.sname,
                 booking.quantity, booking.date_from, booking.date_to, booking.approved FROM booking, components, users
@@ -215,6 +220,7 @@ echo'
 
         case "approve":
             $approveQuery = 'UPDATE booking SET approved = "2" WHERE booking_id = "' .$booking_id .'"';
+            $conn -> query($approveQuery);
             $_SESSION['msg'] = '<div class="alert alert-success alert-dismissable">
                                     <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
                                     <strong>Yeee boi!</strong> Booking approved!
@@ -225,7 +231,8 @@ echo'
             break;
 
         case "deny":
-            $approveQuery = 'UPDATE booking SET approved = "1" WHERE booking_id = "' .$booking_id .'"';
+            $denyQuery = 'UPDATE booking SET approved = "1" WHERE booking_id = "' .$booking_id .'"';
+            $conn -> query($denyQuery);
             $_SESSION['msg'] = '<div class="alert alert-success alert-dismissable">
                                     <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
                                     <strong>Yeee boi!</strong> Booking denied!
