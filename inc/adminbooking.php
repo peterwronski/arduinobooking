@@ -40,6 +40,20 @@ if(isset($_SESSION['userloggedin']) && $_SESSION['admin'] == TRUE){
                 </tr>
 ';
                 while ($row = $result->fetch_array()) {
+                    switch($row['approved']){
+                        case "0":
+                            $approved = '<span class="glyphicon glyphicon-time"></span>';
+                            break;
+
+                        case "1":
+                            $approved = '<span class="glyphicon glyphicon-ok"></span>';
+                            break;
+
+                        case "2":
+                            $approved = '<span class="glyphicon glyphicon-remove"></span>';
+                            break;
+                    }
+
                         echo '
 
     <tr style="text-align:center; border-bottom: 1px solid rgba(243, 48, 249, 0.33) !important;" class="clickable-row" data-href="adminbooking/view/' . $row['booking_id'] . '">
@@ -69,6 +83,31 @@ if(isset($_SESSION['userloggedin']) && $_SESSION['admin'] == TRUE){
             </div>
         </div>    
 ';
+            } else {
+
+                $showAllQuery = 'SELECT booking.booking_id, components.comp_name, booking.studentid, users.fname, users.sname,
+                booking.quantity, booking.date_from, booking.date_to, booking.approved FROM booking, components, users
+                WHERE booking.comp_ref = components.comp_ref AND booking.studentid = users.studentid AND booking.bookind_id = "' .$booking_id .'"';
+                $result = $conn->query($showAllQuery);
+
+                $count = $result->num_rows;
+                $dateFrom = date("d-m-Y", strtotime($row['date_from']));
+                $dateTo = date("d-m-Y", strtotime($row['date_to']));
+
+                echo'
+ <div class="container" id="componentlist">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 componentdiv">
+                <h1>Booking</h1> <br/>
+                </div>
+                </div>
+        <div class="row">
+            <div class="col-lg-5 col-lg-offset-2 componentdiv">
+                <table class="componenttable" width="100%">
+';
+                while ($row = $result->fetch_array()) {
+
+                }
             }
             include('scripts/footer.php');
             break;
