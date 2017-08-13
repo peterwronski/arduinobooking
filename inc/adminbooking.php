@@ -183,6 +183,9 @@ echo'
         <td><form action="../../adminbooking/deny/' . $row['booking_id'] . '" method="POST">
                 <button type="submit" class="btn btn-xs btn-warning">Deny</button>
             </form></td>
+</tr>
+
+<tr>
             <td><form action="../../adminbooking/sendreminder/' . $row['booking_id'] . '" method="POST">
                 <button type="submit" class="btn btn-xs btn-info">Send Reminder</button>
             </form></td>
