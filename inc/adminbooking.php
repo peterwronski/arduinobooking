@@ -212,6 +212,28 @@ echo'
             }
             include('scripts/footer.php');
             break;
+
+        case "approve":
+            $approveQuery = 'UPDATE booking SET approved = "2" WHERE booking_id = "' .$booking_id .'"';
+            $_SESSION['msg'] = '<div class="alert alert-success alert-dismissable">
+                                    <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+                                    <strong>Yeee boi!</strong> Booking approved!
+                                </div>';
+
+
+            header("Location:../../adminbooking/view/all");
+            break;
+
+        case "approve":
+            $approveQuery = 'UPDATE booking SET approved = "1" WHERE booking_id = "' .$booking_id .'"';
+            $_SESSION['msg'] = '<div class="alert alert-success alert-dismissable">
+                                    <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+                                    <strong>Yeee boi!</strong> Booking denied!
+                                </div>';
+
+
+            header("Location:../../adminbooking/view/all");
+            break;
     }
 
 } else {
