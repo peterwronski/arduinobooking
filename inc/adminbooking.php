@@ -336,9 +336,11 @@ echo'
 
             $result = $conn->query($getInfoQuery);
             while ($row = mysqli_fetch_array($result)) {
-
                 $dateTo = date("d-m-Y", strtotime($row['date_to']));
-                $interval = date_diff($date_now, $row['date_to']);
+                $datetime1 = date_create($date_now);
+                $datetime2 = date_create ($row['date_to']);
+
+                $interval = date_diff($datetime1, $datetime2);
                 $body = 'Hi there, ' . $row['fname'] . '<br/> This is a gentle reminder that your components are due to be returned in ' .$interval .' days! (' .$dateTo .')  Please remember to return them on time! <br/> Thanks for using Arduino Booking!    ';
 
                 $mail = new PHPMailer();
