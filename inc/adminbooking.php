@@ -184,10 +184,10 @@ echo'
                 <button type="submit" class="btn btn-warning">Deny</button>
             </form></td>
         <td><form action="../../adminbooking/sendreminder/' . $row['booking_id'] . '" method="POST">
-                <button type="submit" class="btn btn-info">Send Reminder</button>
-            </form></td>
-        <td><form action="../../user/sendmessage/' . $row['studentid'] . '" method="POST">
-                <button type="submit" class="btn btn-info">Send Message</button>
+                <button type="submit" class="btn btn-xs btn-info">Send Reminder</button>
+            </form><br/>
+        <form action="../../user/sendmessage/' . $row['studentid'] . '" method="POST">
+                <button type="submit" class="btn btn-xs btn-info">Send Message</button>
             </form></td>
 </tr>
 
