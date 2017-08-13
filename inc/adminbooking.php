@@ -230,47 +230,48 @@ echo'
             $getInfoQuery = 'SELECT booking.date_from, booking.studentid, users.fname, users.email FROM booking, users WHERE booking.studentid = users.studentid AND booking.booking_id = "' .$booking_id .'"';
             $dateFrom = date("d-m-Y", strtotime($row['date_from']));
             $result = $conn->query($getInfoQuery);
-            $row = mysqli_fetch_array($result);
-            $body = 'Hi there, ' .$row['fname'] .'<br/> Your booking was approved by an admin! Your components will be ready to be picked up on ' .$dateFrom .'!. <br/> <br/> Thanks for using Arduino Booking!    ';
+            while ($row = mysqli_fetch_array($result)) {
+                $body = 'Hi there, ' . $row['fname'] . '<br/> Your booking was approved by an admin! Your components will be ready to be picked up on ' . $dateFrom . '!. <br/> <br/> Thanks for using Arduino Booking!    ';
 
-            $mail= new PHPMailer();
+                $mail = new PHPMailer();
 
 
+                $mail->IsSMTP();
 
-            $mail->IsSMTP();
+                $mail->SMTPDebug = 1;
 
-            $mail->SMTPDebug  = 1;
+                $mail->SMTPAuth = true;                  // enable SMTP authentication
+                $mail->SMTPSecure = "ssl";                 // sets the prefix to the servier
+                $mail->Host = "smtp.gmail.com";      // sets GMAIL as the SMTP server
+                $mail->Port = 465;                   // set the SMTP port for the GMAIL server
+                $mail->Username = "noreply.arduinobooking@gmail.com";  // GMAIL username
+                $mail->Password = "arduinopass";
 
-            $mail->SMTPAuth   = true;                  // enable SMTP authentication
-            $mail->SMTPSecure = "ssl";                 // sets the prefix to the servier
-            $mail->Host       = "smtp.gmail.com";      // sets GMAIL as the SMTP server
-            $mail->Port       = 465;                   // set the SMTP port for the GMAIL server
-            $mail->Username   = "noreply.arduinobooking@gmail.com";  // GMAIL username
-            $mail->Password   = "arduinopass";
+                $mail->SetFrom('noreply.arduinobooking@gmail.com', 'ArduinoBooking');
 
-            $mail->SetFrom('noreply.arduinobooking@gmail.com', 'ArduinoBooking');
+                $mail->Subject = "Booking Information | Arduino Booking";
 
-            $mail->Subject    = "Booking Information | Arduino Booking";
+                $mail->MsgHTML($body);
+                $email = $row['email'];
+                $fname = $row['fname'];
+                $mail->AddAddress("$email", "$fname");
 
-            $mail->MsgHTML($body);
-            $email = $row['email'];
-            $fname = $row['fname'];
-            $mail->AddAddress("$email", "$fname");
+                if (!$mail->Send()) {
+                    echo "Mailer Error: " . $mail->ErrorInfo . '<br/>';
+                    echo $email;
+                    exit;
+                } else {
 
-            if(!$mail->Send()) {
-                echo "Mailer Error: " . $mail->ErrorInfo .'<br/>';
-                echo $email;
-                exit;
-            } else {
-
-                $_SESSION['msg'] = '<div class="alert alert-success alert-dismissable">
+                    $_SESSION['msg'] = '<div class="alert alert-success alert-dismissable">
                                     <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-                                    <strong>Booking approved!</strong> Email sent to ' .$email .'. User will be notified via email
+                                    <strong>Booking approved!</strong> Email sent to ' . $email . '. User will be notified via email
                                 </div>';
-            }
+                    header("Location:../../adminbooking/view/all");
+                }
+            };
 
 
-            header("Location:../../adminbooking/view/all");
+
             break;
 
         case "deny":
@@ -280,48 +281,49 @@ echo'
             $getInfoQuery = 'SELECT booking.date_from, booking.studentid, users.fname, users.email FROM booking, users WHERE booking.studentid = users.studentid AND booking.booking_id = "' .$booking_id .'"';
             $dateFrom = date("d-m-Y", strtotime($row['date_from']));
             $result = $conn->query($getInfoQuery);
-            $row = mysqli_fetch_array($result);
-            $body = 'Hi there, ' .$row['fname'] .'<br/> Unfortunately your booking was denied by an admin! You might get an e-mail justifying this decision shortly, but meanwhile why not try booking some other components? <br/> Thanks for using Arduino Booking!    ';
+            while ($row = mysqli_fetch_array($result)) {
+                $body = 'Hi there, ' . $row['fname'] . '<br/> Unfortunately your booking was denied by an admin! You might get an e-mail justifying this decision shortly, but meanwhile why not try booking some other components? <br/> Thanks for using Arduino Booking!    ';
 
-            $mail= new PHPMailer();
+                $mail = new PHPMailer();
 
 
+                $mail->IsSMTP();
 
-            $mail->IsSMTP();
+                $mail->SMTPDebug = 1;
 
-            $mail->SMTPDebug  = 1;
+                $mail->SMTPAuth = true;                  // enable SMTP authentication
+                $mail->SMTPSecure = "ssl";                 // sets the prefix to the servier
+                $mail->Host = "smtp.gmail.com";      // sets GMAIL as the SMTP server
+                $mail->Port = 465;                   // set the SMTP port for the GMAIL server
+                $mail->Username = "noreply.arduinobooking@gmail.com";  // GMAIL username
+                $mail->Password = "arduinopass";
 
-            $mail->SMTPAuth   = true;                  // enable SMTP authentication
-            $mail->SMTPSecure = "ssl";                 // sets the prefix to the servier
-            $mail->Host       = "smtp.gmail.com";      // sets GMAIL as the SMTP server
-            $mail->Port       = 465;                   // set the SMTP port for the GMAIL server
-            $mail->Username   = "noreply.arduinobooking@gmail.com";  // GMAIL username
-            $mail->Password   = "arduinopass";
+                $mail->SetFrom('noreply.arduinobooking@gmail.com', 'ArduinoBooking');
 
-            $mail->SetFrom('noreply.arduinobooking@gmail.com', 'ArduinoBooking');
+                $mail->Subject = "Booking Information | Arduino Booking";
 
-            $mail->Subject    = "Booking Information | Arduino Booking";
+                $mail->MsgHTML($body);
 
-            $mail->MsgHTML($body);
+                $fname = $row['fname'];
+                $email = $row['email'];
+                $mail->AddAddress("$email", "$fname");
 
-            $fname = $row['fname'];
-            $email = $row['email'];
-            $mail->AddAddress("$email", "$fname");
+                if (!$mail->Send()) {
+                    echo "Mailer Error: " . $mail->ErrorInfo . '<br/>';
+                    echo $email;
+                    exit;
+                } else {
 
-            if(!$mail->Send()) {
-                echo "Mailer Error: " . $mail->ErrorInfo .'<br/>';
-                echo $email;
-                exit;
-            } else {
-
-                $_SESSION['msg'] = '<div class="alert alert-success alert-dismissable">
+                    $_SESSION['msg'] = '<div class="alert alert-success alert-dismissable">
                                     <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-                                    <strong>Booking denied!</strong> Email sent to ' .$email .'. User will be notified via email
+                                    <strong>Booking denied!</strong> Email sent to ' . $email . '. User will be notified via email
                                 </div>';
+                    header("Location:../../adminbooking/view/all");
+                }
             }
 
 
-            header("Location:../../adminbooking/view/all");
+
             break;
     }
 
