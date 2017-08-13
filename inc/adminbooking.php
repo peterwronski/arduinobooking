@@ -250,7 +250,7 @@ echo'
             $mail->Subject    = "Booking Information | Arduino Booking";
 
             $mail->MsgHTML($body);
-
+            $email = $row['studentid'].'@rgu.ac.uk';
             $fname = $row['fname'];
             $mail->AddAddress("$email", "$fname");
 
@@ -261,7 +261,7 @@ echo'
 
                 $_SESSION['msg'] = '<div class="alert alert-success alert-dismissable">
                                     <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-                                    <strong>Booking approved!</strong> User will be notified via email
+                                    <strong>Booking approved!</strong> Email sent to ' .$email .'. User will be notified via email
                                 </div>';
             }
 
@@ -306,7 +306,7 @@ echo'
 
                 $_SESSION['msg'] = '<div class="alert alert-success alert-dismissable">
                                     <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-                                    <strong>Booking denied!</strong> User will be notified via email
+                                    <strong>Booking denied!</strong> Email sent to ' .$email .'. User will be notified via email
                                 </div>';
             }
 
