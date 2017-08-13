@@ -94,7 +94,7 @@ if(isset($_SESSION['userloggedin']) && $_SESSION['admin'] == TRUE){
 ';
             } else {
 
-                $showAllQuery = 'SELECT booking.booking_id, components.comp_name, booking.studentid, users.fname, users.sname,
+                $showAllQuery = 'SELECT booking.booking_id, components.comp_ref, components.comp_name, booking.studentid, users.fname, users.sname,
                 booking.quantity, booking.date_from, booking.date_to, booking.approved FROM booking, components, users
                 WHERE booking.comp_ref = components.comp_ref AND booking.studentid = users.studentid AND booking.booking_id = "' .$booking_id .'"';
                 $result = $conn->query($showAllQuery);
@@ -137,56 +137,56 @@ echo'
 </tr>
 
 <tr>
-    <th>Student ID</th>
+    <th colspan ="2">Student ID</th>
     <td colspan ="2">'.$row['studentid'] .'</td>
 </tr>
 
 <tr>
-    <th>Name</th>
+    <th colspan ="2">Name</th>
     <td colspan ="2">'.$row['fname'] .' ' .$row['sname'] .'</td>
 </tr>
 
 <tr>
-    <th>Component ID</th>
+    <th colspan ="2">Component ID</th>
     <td colspan ="2">'.$row['comp_ref'] .'</td>
 </tr>
 
 <tr>
-    <th>Component Name</th>
+    <th colspan ="2">Component Name</th>
     <td colspan ="2">'.$row['comp_name'] .'</td>
 </tr>
 
 <tr>
-    <th>Quantity</th>
+    <th colspan ="2">Quantity</th>
     <td colspan ="2">'.$row['quantity'] .'</td>
 </tr>
 
 <tr>
-    <th>Date From</th>
+    <th colspan ="2">Date From</th>
     <td colspan ="2">'.$dateFrom .'</td>
 </tr>
 
 <tr>
-    <th>Date To</th>
+    <th colspan ="2">Date To</th>
     <td colspan ="2">'.$dateTo .'</td>
 </tr>
 
 <tr>
-    <th>Approved</th>
+    <th colspan ="2">Approved</th>
     <td colspan ="2">'.$approved .'</td>
 </tr>
 
 <tr>
-    <td colspan="3"><form action="../../adminbooking/approve/' . $row['booking_id'] . '" method="POST">
+    <td><form action="../../adminbooking/approve/' . $row['booking_id'] . '" method="POST">
                 <button type="submit" class="btn btn-xs btn-success">Approve</button>
-            </form>
-        <form action="../../adminbooking/deny/' . $row['booking_id'] . '" method="POST">
+            </form></td>
+        <td><form action="../../adminbooking/deny/' . $row['booking_id'] . '" method="POST">
                 <button type="submit" class="btn btn-xs btn-warning">Deny</button>
-            </form>
-            <form action="../../adminbooking/sendreminder/' . $row['booking_id'] . '" method="POST">
+            </form></td>
+            <td><form action="../../adminbooking/sendreminder/' . $row['booking_id'] . '" method="POST">
                 <button type="submit" class="btn btn-xs btn-info">Send Reminder</button>
-            </form>
-            <form action="../../user/sendmessage/' . $row['studentid'] . '" method="POST">
+            </form></td>
+            <td><form action="../../user/sendmessage/' . $row['studentid'] . '" method="POST">
                 <button type="submit" class="btn btn-xs btn-info">Send Message</button>
             </form></td>
 </tr>
