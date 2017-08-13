@@ -224,7 +224,7 @@ echo'
             header("Location:../../adminbooking/view/all");
             break;
 
-        case "approve":
+        case "deny":
             $approveQuery = 'UPDATE booking SET approved = "1" WHERE booking_id = "' .$booking_id .'"';
             $_SESSION['msg'] = '<div class="alert alert-success alert-dismissable">
                                     <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
