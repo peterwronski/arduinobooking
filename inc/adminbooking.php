@@ -116,6 +116,82 @@ if(isset($_SESSION['userloggedin']) && $_SESSION['admin'] == TRUE){
 ';
                 while ($row = $result->fetch_array()) {
 
+                    switch ($row['approved']){
+                        case "1":
+                            $approved = '<span class="glyphicon glyphicon-remove"></span>';
+                            break;
+
+                        case "2":
+                            $approved = '<span class="glyphicon glyphicon-ok"></span>';
+                            break;
+
+                        default:
+                            $approved = '<span class="glyphicon glyphicon-time"></span>';
+                            break;
+                    };
+echo' 
+<tr>
+    <th>Booking ID</th>
+    <td colspan ="2">'.$row['booking_id'] .'</td>
+</tr>
+
+<tr>
+    <th>Booking ID</th>
+    <td colspan ="2">'.$row['studentid'] .'</td>
+</tr>
+
+<tr>
+    <th>Booking ID</th>
+    <td colspan ="2">'.$row['fname'] .' ' .$row['sname'] .'</td>
+</tr>
+
+<tr>
+    <th>Booking ID</th>
+    <td colspan ="2">'.$row['comp_ref'] .'</td>
+</tr>
+
+<tr>
+    <th>Booking ID</th>
+    <td colspan ="2">'.$row['comp_name'] .'</td>
+</tr>
+
+<tr>
+    <th>Booking ID</th>
+    <td colspan ="2">'.$row['quantity'] .'</td>
+</tr>
+
+<tr>
+    <th>Booking ID</th>
+    <td colspan ="2">'.$dateFrom .'</td>
+</tr>
+
+<tr>
+    <th>Booking ID</th>
+    <td colspan ="2">'.$dateTo .'</td>
+</tr>
+
+<tr>
+    <th>Booking ID</th>
+    <td colspan ="2">'.$approved .'</td>
+</tr>
+
+<tr>
+    <td><form action="../../adminbooking/approve/' . $row['booking_id'] . '" method="POST">
+                <button type="submit" class="btn btn-success">Approve</button>
+            </form>
+        </td>
+        <td><form action="../../adminbooking/deny/' . $row['booking_id'] . '" method="POST">
+                <button type="submit" class="btn btn-warning">Deny</button>
+            </form></td>
+        <td><form action="../../adminbooking/sendreminder/' . $row['booking_id'] . '" method="POST">
+                <button type="submit" class="btn btn-info">Send Reminder</button>
+            </form></td>
+        <td><form action="../../user/sendmessage/' . $row['studentid'] . '" method="POST">
+                <button type="submit" class="btn btn-info">Send Message</button>
+            </form></td>
+</tr>
+
+';
                 }
             }
             include('scripts/footer.php');
