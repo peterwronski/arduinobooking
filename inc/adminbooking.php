@@ -5,6 +5,10 @@ include('scripts/dbconnect.php');
 $action = $params['action'];
 $booking_id = $params['booking_id'];
 
+
+    require_once('scripts/PHPMailer/class.phpmailer.php');
+    include("scripts/PHPMailer/class.smtp.php");
+
 if(isset($_SESSION['userloggedin']) && $_SESSION['admin'] == TRUE){
 
     switch ($action){
@@ -221,10 +225,43 @@ echo'
         case "approve":
             $approveQuery = 'UPDATE booking SET approved = "2" WHERE booking_id = "' .$booking_id .'"';
             $conn -> query($approveQuery);
-            $_SESSION['msg'] = '<div class="alert alert-success alert-dismissable">
+
+
+            $body = 'Hi there, ' .$row['fname'] .'<br/> Your booking was approved by an admin! Your components will be ready to be picked up on ' .$dateFrom .'!. <br/> <br/> Thanks for using Arduino Booking!    ';
+
+            $mail= new PHPMailer();
+
+
+
+            $mail->IsSMTP();
+
+            $mail->SMTPDebug  = 1;
+
+            $mail->SMTPAuth   = true;                  // enable SMTP authentication
+            $mail->SMTPSecure = "ssl";                 // sets the prefix to the servier
+            $mail->Host       = "smtp.gmail.com";      // sets GMAIL as the SMTP server
+            $mail->Port       = 465;                   // set the SMTP port for the GMAIL server
+            $mail->Username   = "noreply.arduinobooking@gmail.com";  // GMAIL username
+            $mail->Password   = "arduinopass";
+
+            $mail->SetFrom('noreply.arduinobooking@gmail.com', 'ArduinoBooking');
+
+            $mail->Subject    = "Booking Information | Arduino Booking";
+
+            $mail->MsgHTML($body);
+
+            $fname = $row['fname'];
+            $mail->AddAddress("$email", "$fname");
+
+            if(!$mail->Send()) {
+                echo "Mailer Error: " . $mail->ErrorInfo;
+            } else {
+
+                $_SESSION['msg'] = '<div class="alert alert-success alert-dismissable">
                                     <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-                                    <strong>Yeee boi!</strong> Booking approved!
+                                    <strong>Booking approved!</strong> User will be notified via email
                                 </div>';
+            }
 
 
             header("Location:../../adminbooking/view/all");
@@ -233,10 +270,41 @@ echo'
         case "deny":
             $denyQuery = 'UPDATE booking SET approved = "1" WHERE booking_id = "' .$booking_id .'"';
             $conn -> query($denyQuery);
-            $_SESSION['msg'] = '<div class="alert alert-success alert-dismissable">
+            $body = 'Hi there, ' .$row['fname'] .'<br/> Unfortunately your booking was denied by an admin! You might get an e-mail justifying this decision shortly, but meanwhile why not try booking some other components? <br/> Thanks for using Arduino Booking!    ';
+
+            $mail= new PHPMailer();
+
+
+
+            $mail->IsSMTP();
+
+            $mail->SMTPDebug  = 1;
+
+            $mail->SMTPAuth   = true;                  // enable SMTP authentication
+            $mail->SMTPSecure = "ssl";                 // sets the prefix to the servier
+            $mail->Host       = "smtp.gmail.com";      // sets GMAIL as the SMTP server
+            $mail->Port       = 465;                   // set the SMTP port for the GMAIL server
+            $mail->Username   = "noreply.arduinobooking@gmail.com";  // GMAIL username
+            $mail->Password   = "arduinopass";
+
+            $mail->SetFrom('noreply.arduinobooking@gmail.com', 'ArduinoBooking');
+
+            $mail->Subject    = "Booking Information | Arduino Booking";
+
+            $mail->MsgHTML($body);
+
+            $fname = $row['fname'];
+            $mail->AddAddress("$email", "$fname");
+
+            if(!$mail->Send()) {
+                echo "Mailer Error: " . $mail->ErrorInfo;
+            } else {
+
+                $_SESSION['msg'] = '<div class="alert alert-success alert-dismissable">
                                     <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-                                    <strong>Yeee boi!</strong> Booking denied!
+                                    <strong>Booking denied!</strong> User will be notified via email
                                 </div>';
+            }
 
 
             header("Location:../../adminbooking/view/all");
