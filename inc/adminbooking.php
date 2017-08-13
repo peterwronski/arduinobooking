@@ -197,6 +197,14 @@ echo'
 ';
                 }
                 echo' 
+ 
+ <script>
+                    jQuery(document).ready(function($) {
+                        $(".clickable-row").click(function() {
+                            window.location = $(this).data("href");
+                        });
+                    });
+                </script>
                             </table>
                         </div>
                        </div>
