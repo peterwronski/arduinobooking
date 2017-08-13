@@ -225,9 +225,12 @@ echo'
         case "approve":
             $approveQuery = 'UPDATE booking SET approved = "2" WHERE booking_id = "' .$booking_id .'"';
             $conn -> query($approveQuery);
+
+
+            $getInfoQuery = 'SELECT booking.date_from, booking.studentid, users.fname, users.email FROM booking, users WHERE booking.studentid = users.studentid AND booking.booking_id = "' .$booking_id .'"';
             $dateFrom = date("d-m-Y", strtotime($row['date_from']));
-
-
+            $result = $conn->query($getInfoQuery);
+            $row = mysqli_fetch_array($result);
             $body = 'Hi there, ' .$row['fname'] .'<br/> Your booking was approved by an admin! Your components will be ready to be picked up on ' .$dateFrom .'!. <br/> <br/> Thanks for using Arduino Booking!    ';
 
             $mail= new PHPMailer();
@@ -250,7 +253,7 @@ echo'
             $mail->Subject    = "Booking Information | Arduino Booking";
 
             $mail->MsgHTML($body);
-            $email = $row['studentid'].'@rgu.ac.uk';
+            $email = $row['email'];
             $fname = $row['fname'];
             $mail->AddAddress("$email", "$fname");
 
@@ -273,6 +276,11 @@ echo'
         case "deny":
             $denyQuery = 'UPDATE booking SET approved = "1" WHERE booking_id = "' .$booking_id .'"';
             $conn -> query($denyQuery);
+
+            $getInfoQuery = 'SELECT booking.date_from, booking.studentid, users.fname, users.email FROM booking, users WHERE booking.studentid = users.studentid AND booking.booking_id = "' .$booking_id .'"';
+            $dateFrom = date("d-m-Y", strtotime($row['date_from']));
+            $result = $conn->query($getInfoQuery);
+            $row = mysqli_fetch_array($result);
             $body = 'Hi there, ' .$row['fname'] .'<br/> Unfortunately your booking was denied by an admin! You might get an e-mail justifying this decision shortly, but meanwhile why not try booking some other components? <br/> Thanks for using Arduino Booking!    ';
 
             $mail= new PHPMailer();
@@ -297,7 +305,7 @@ echo'
             $mail->MsgHTML($body);
 
             $fname = $row['fname'];
-            $email = $row['studentid'].'@rgu.ac.uk';
+            $email = $row['email'];
             $mail->AddAddress("$email", "$fname");
 
             if(!$mail->Send()) {
