@@ -137,57 +137,56 @@ echo'
 </tr>
 
 <tr>
-    <th>Booking ID</th>
+    <th>Student ID</th>
     <td colspan ="2">'.$row['studentid'] .'</td>
 </tr>
 
 <tr>
-    <th>Booking ID</th>
+    <th>Name</th>
     <td colspan ="2">'.$row['fname'] .' ' .$row['sname'] .'</td>
 </tr>
 
 <tr>
-    <th>Booking ID</th>
+    <th>Component ID</th>
     <td colspan ="2">'.$row['comp_ref'] .'</td>
 </tr>
 
 <tr>
-    <th>Booking ID</th>
+    <th>Component Name</th>
     <td colspan ="2">'.$row['comp_name'] .'</td>
 </tr>
 
 <tr>
-    <th>Booking ID</th>
+    <th>Quantity</th>
     <td colspan ="2">'.$row['quantity'] .'</td>
 </tr>
 
 <tr>
-    <th>Booking ID</th>
+    <th>Date From</th>
     <td colspan ="2">'.$dateFrom .'</td>
 </tr>
 
 <tr>
-    <th>Booking ID</th>
+    <th>Date To</th>
     <td colspan ="2">'.$dateTo .'</td>
 </tr>
 
 <tr>
-    <th>Booking ID</th>
+    <th>Approved</th>
     <td colspan ="2">'.$approved .'</td>
 </tr>
 
 <tr>
-    <td><form action="../../adminbooking/approve/' . $row['booking_id'] . '" method="POST">
+    <td colspan="3"><form action="../../adminbooking/approve/' . $row['booking_id'] . '" method="POST">
                 <button type="submit" class="btn btn-xs btn-success">Approve</button>
             </form>
-        </td>
-        <td><form action="../../adminbooking/deny/' . $row['booking_id'] . '" method="POST">
+        <form action="../../adminbooking/deny/' . $row['booking_id'] . '" method="POST">
                 <button type="submit" class="btn btn-xs btn-warning">Deny</button>
-            </form></td>
-        <td><form action="../../adminbooking/sendreminder/' . $row['booking_id'] . '" method="POST">
+            </form>
+            <form action="../../adminbooking/sendreminder/' . $row['booking_id'] . '" method="POST">
                 <button type="submit" class="btn btn-xs btn-info">Send Reminder</button>
-            </form></td>
-        <td><form action="../../user/sendmessage/' . $row['studentid'] . '" method="POST">
+            </form>
+            <form action="../../user/sendmessage/' . $row['studentid'] . '" method="POST">
                 <button type="submit" class="btn btn-xs btn-info">Send Message</button>
             </form></td>
 </tr>
