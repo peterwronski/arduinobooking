@@ -344,16 +344,16 @@ echo'
 
             $result = $conn->query($getInfoQuery);
             while ($row = mysqli_fetch_array($result)) {
-                $dateNow = date("Y-m-d");
-                $dateTo = $row['date_to'];
-                $datetime1 = new DateTime($dateNow);
-                $datetime2 = new DateTime($dateTo);
+                //$dateNow = date("Y-m-d");
+                //$dateTo = $row['date_to'];
+                //$datetime1 = new DateTime($dateNow);
+               // $datetime2 = new DateTime($dateTo);
 
 
-                $interval = $datetime1->diff($datetime2);
+                //$interval = $datetime1->diff($datetime2);
 
-
-                $body = 'Hi there, ' . $row['fname'] . '<br/> This is a gentle reminder that your components are due to be returned in ' .$interval .' days! ('.$datetime2->format("d-m-Y") .') Please remember to return them on time! <br/> Thanks for using Arduino Booking!    ';
+$body = "Checking that the email function works";
+                //$body = 'Hi there, ' . $row['fname'] . '<br/> This is a gentle reminder that your components are due to be returned in ' .$interval .' days! ('.$datetime2->format("d-m-Y") .') Please remember to return them on time! <br/> Thanks for using Arduino Booking!    ';
 
                 $mail = new PHPMailer();
 
