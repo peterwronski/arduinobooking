@@ -243,7 +243,7 @@ echo'
             $result = $conn->query($getInfoQuery);
             while ($row = mysqli_fetch_array($result)) {
                 $dateFrom = date("d-m-Y", strtotime($row['date_from']));
-                $body = 'Hi there, ' . $row['fname'] . '<br/> Your booking was approved by an admin! Your components will be ready to be picked up on ' . $dateFrom . '!. <br/> <br/> Thanks for using Arduino Booking!    ';
+                $body = 'Hi there, ' . $row['fname'] . '<br/> Your booking of '.$row['quantity']. 'x ' .$row['comp_name'] .' was approved by an admin! Your components will be ready to be picked up on ' . $dateFrom . '!. <br/> <br/> Thanks for using Arduino Booking!    ';
 
                 $mail = new PHPMailer();
 
@@ -295,7 +295,7 @@ echo'
             $result = $conn->query($getInfoQuery);
             while ($row = mysqli_fetch_array($result)) {
 
-                $body = 'Hi there, ' . $row['fname'] . '<br/> Unfortunately your booking was denied by an admin! You might get an e-mail justifying this decision shortly, but meanwhile why not try booking some other components? <br/> Thanks for using Arduino Booking!    ';
+                $body = 'Hi there, ' . $row['fname'] . '<br/> Unfortunately your booking of '.$row['quantity']. 'x ' .$row['comp_name'] .'  was denied by an admin! You might get an e-mail justifying this decision shortly, but meanwhile why not try booking some other components? <br/> Thanks for using Arduino Booking!    ';
 
                 $mail = new PHPMailer();
 
@@ -340,7 +340,7 @@ echo'
             break;
 
         case "sendreminder":
-            $getInfoQuery = 'SELECT booking.date_to, booking.studentid, users.fname, users.email FROM booking, users WHERE booking.studentid = users.studentid AND booking.booking_id = "' .$booking_id .'"';
+            $getInfoQuery = 'SELECT booking.comp_ref, booking.quantity, components.comp_name, booking.date_to, booking.studentid, users.fname, users.email FROM booking, users WHERE booking.studentid = users.studentid AND booking.booking_id = "' .$booking_id .'" AND booking.comp_ref=components.comp_ref';
 
             $result = $conn->query($getInfoQuery);
             while ($row = mysqli_fetch_array($result)) {
@@ -353,7 +353,7 @@ echo'
                 $interval = date_diff($datetime1, $datetime2);
                 $fname = $row['fname'];
 
-                $body = 'Hi there, ' . $fname . '<br/> This is a gentle reminder that your components are due to be returned in ' .$interval->format("%a") .' days! (' .$datetime2->format("d-m-Y") .') <br/> Please remember to return them on time! <br/> Thanks for using Arduino Booking!    ';
+                $body = 'Hi there, ' . $fname . '<br/> This is a gentle reminder that your components ('.$row['quantity'] .'x ' .$row['comp_name'] .') are due to be returned in ' .$interval->format("%a") .' days! (' .$datetime2->format("d-m-Y") .') <br/> Please remember to return them on time! <br/> Thanks for using Arduino Booking!    ';
 
                 $mail = new PHPMailer();
 
