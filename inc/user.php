@@ -18,7 +18,7 @@ if(isset($_SESSION['userloggedin']) && $_SESSION['admin'] == TRUE) {
                 echo $_SESSION['msg'];
                 unset ($_SESSION['msg']);
             };
-            if ($booking_id == "all") {
+            if ($user_id == "all") {
                 $showAllQuery = "SELECT * FROM users";
                 $result = $conn->query($showAllQuery);
 
