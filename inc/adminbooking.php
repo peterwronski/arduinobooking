@@ -340,7 +340,7 @@ echo'
             break;
 
         case "sendreminder":
-            $getInfoQuery = 'SELECT booking.comp_ref, booking.quantity, components.comp_name, booking.date_to, booking.studentid, users.fname, users.email FROM booking, users WHERE booking.studentid = users.studentid AND booking.booking_id = "' .$booking_id .'" AND booking.comp_ref=components.comp_ref';
+            $getInfoQuery = 'SELECT booking.comp_ref, booking.quantity, components.comp_name, booking.date_to, booking.studentid, users.fname, users.email FROM booking, users, components WHERE booking.studentid = users.studentid AND booking.booking_id = "' .$booking_id .'" AND booking.comp_ref=components.comp_ref';
 
             $result = $conn->query($getInfoQuery);
             while ($row = mysqli_fetch_array($result)) {
