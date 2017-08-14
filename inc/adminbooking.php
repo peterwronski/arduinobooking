@@ -341,12 +341,13 @@ echo'
 
         case "sendreminder":
 
-            $date_now = date("Y-m-d");
+
 
             $getInfoQuery = 'SELECT booking.date_to, booking.studentid, users.fname, users.email FROM booking, users WHERE booking.studentid = users.studentid AND booking.booking_id = "' .$booking_id .'"';
 
             $result = $conn->query($getInfoQuery);
             while ($row = mysqli_fetch_array($result)) {
+                $date_now = date("Y-m-d");
 
                 $datetime1 = date_create($date_now);
                 $datetime2 = date_create ($row['date_to']);
