@@ -86,7 +86,7 @@ if(isset($_SESSION['userloggedin']) && $_SESSION['admin'] == TRUE){
                 <button type="submit" class="btn btn-xs btn-warning">Deny</button>
             </form>
         </td>
-        <td><form action="../../cancelbooking/' . $row['booking_id'] . '" method="POST">
+        <td><form action="../../adminbooking/delete/' . $row['booking_id'] . '" method="POST">
         
                 <button type="submit" class="btn btn-xs btn-danger">DELETE</button>
             </form>
