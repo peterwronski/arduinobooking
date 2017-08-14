@@ -238,7 +238,7 @@ echo'
             $conn -> query($approveQuery);
 
 
-            $getInfoQuery = 'SELECT booking.date_from, booking.studentid, users.fname, users.email FROM booking, users WHERE booking.studentid = users.studentid AND booking.booking_id = "' .$booking_id .'"';
+            $getInfoQuery = 'SELECT booking.date_from, booking.quantity, components.comp_name, booking.studentid, users.fname, users.email FROM booking, users, components WHERE booking.studentid = users.studentid AND booking.booking_id = "' .$booking_id .'" AND booking.comp_ref = components.comp_ref';
 
             $result = $conn->query($getInfoQuery);
             while ($row = mysqli_fetch_array($result)) {
@@ -290,7 +290,7 @@ echo'
             $denyQuery = 'UPDATE booking SET approved = "1" WHERE booking_id = "' .$booking_id .'"';
             $conn -> query($denyQuery);
 
-            $getInfoQuery = 'SELECT booking.studentid, users.fname, users.email FROM booking, users WHERE booking.studentid = users.studentid AND booking.booking_id = "' .$booking_id .'"';
+            $getInfoQuery = 'SELECT booking.quantity, components.comp_name, booking.studentid, users.fname, users.email FROM booking, users, components WHERE booking.studentid = users.studentid AND booking.booking_id = "' .$booking_id .'" AND booking.comp_ref = components.comp_ref';
 
             $result = $conn->query($getInfoQuery);
             while ($row = mysqli_fetch_array($result)) {
