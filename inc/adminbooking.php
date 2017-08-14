@@ -340,20 +340,19 @@ echo'
             break;
 
         case "sendreminder":
-
-
-
             $getInfoQuery = 'SELECT booking.date_to, booking.studentid, users.fname, users.email FROM booking, users WHERE booking.studentid = users.studentid AND booking.booking_id = "' .$booking_id .'"';
 
             $result = $conn->query($getInfoQuery);
             while ($row = mysqli_fetch_array($result)) {
                 $date_now = date("Y-m-d");
-
+                $dateTo = $row['date_to'];
                 $datetime1 = date_create($date_now);
-                $datetime2 = date_create ($row['date_to']);
+                $datetime2 = date_create($dateTo);
 
 
                 $interval = date_diff($datetime1, $datetime2);
+
+
                 $body = 'Hi there, ' . $row['fname'] . '<br/> This is a gentle reminder that your components are due to be returned in ' .$interval .' days! ('.$datetime2 .') Please remember to return them on time! <br/> Thanks for using Arduino Booking!    ';
 
                 $mail = new PHPMailer();
