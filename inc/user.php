@@ -96,7 +96,7 @@ if(isset($_SESSION['userloggedin']) && $_SESSION['admin'] == TRUE) {
 ';
             } else {
 
-                $showAllQuery = 'SELECT * FROM users';
+                $showAllQuery = 'SELECT * FROM users WHERE studentid = "' .$user_id .'"';
                 $result = $conn->query($showAllQuery);
 
                 $count = $result->num_rows;
