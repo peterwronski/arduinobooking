@@ -1,7 +1,7 @@
 <?php
 session_start();
 include('scripts/dbconnect.php');
-
+date_default_timezone_set('Europe/London');
 $action = $params['action'];
 $booking_id = $params['booking_id'];
 
@@ -340,8 +340,8 @@ echo'
             break;
 
         case "sendreminder":
-            date_default_timezone_set('Europe/London');
-            $date_now = (new DateTime())->format('Y-m-d');
+
+            $date_now = date("Y-m-d");
 
             $getInfoQuery = 'SELECT booking.date_to, booking.studentid, users.fname, users.email FROM booking, users WHERE booking.studentid = users.studentid AND booking.booking_id = "' .$booking_id .'"';
 
