@@ -49,6 +49,8 @@ if(isset($_SESSION['userloggedin']) && $_SESSION['admin'] == TRUE){
                 </tr>
 ';
                 while ($row = $result->fetch_array()) {
+                    $dateFrom = date("d-m-Y", strtotime($row['date_from']));
+                    $dateTo = date("d-m-Y", strtotime($row['date_to']));
                     switch ($row['approved']){
                         case "1":
                             $approved = '<span class="glyphicon glyphicon-remove"></span>';
