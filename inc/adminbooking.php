@@ -415,7 +415,7 @@ if ($result && $in_stockUpdate) {
 </div>';
 
 
-    header("Location:../../bookings");
+    header("Location:../../adminbooking/view/all");
 } else {
     $_SESSION['msg'] = '<div class="alert alert-danger alert-dismissable">
     <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
