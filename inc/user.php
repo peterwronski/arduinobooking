@@ -63,7 +63,7 @@ if(isset($_SESSION['userloggedin']) && $_SESSION['admin'] == TRUE) {
         <td>' . $row['studentid'] . '</td>
         <td>' . $row['fname'] . ' ' . $row['sname'] . '</td>
         <td>' . $row['email'] . '</td>
-        <td>' . $row['activated'] . '</td>
+        <td>' . $activated . '</td>
         
 
         <td><form action="../../user/sendmessage/' . $row['studentid'] . '" method="POST">
