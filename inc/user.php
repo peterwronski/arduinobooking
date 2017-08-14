@@ -159,12 +159,12 @@ if(isset($_SESSION['userloggedin']) && $_SESSION['admin'] == TRUE) {
 <tr><td colspan="4">// OPTIONS //</td></tr>
 
 <tr>
-    <td><form action="../../user/sendmessage/' . $row['studentid'] . '" method="POST">
+    <td colspan="2"><form action="../../user/sendmessage/' . $row['studentid'] . '" method="POST">
         
                 <button type="submit" class="btn btn-xs btn-info">Send Message</button>
             </form>
         </td>
-        <td><form action="../../user/delete/' . $row['studentid'] . '" method="POST">
+        <td colspan="2"><form action="../../user/delete/' . $row['studentid'] . '" method="POST">
         
                 <button type="submit" class="btn btn-xs btn-danger">DELETE</button>
             </form>
