@@ -433,3 +433,5 @@ if ($result && $in_stockUpdate) {
 } else {
     header("Location: 404.php");
 }
+
+?>
