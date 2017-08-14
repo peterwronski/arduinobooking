@@ -86,6 +86,11 @@ if(isset($_SESSION['userloggedin']) && $_SESSION['admin'] == TRUE){
                 <button type="submit" class="btn btn-xs btn-warning">Deny</button>
             </form>
         </td>
+        <td><form action="../../cancelbooking/' . $row['booking_id'] . '" method="POST">
+        
+                <button type="submit" class="btn btn-xs btn-danger">DELETE</button>
+            </form>
+        </td>
     </tr>
     ';
                     }
@@ -202,6 +207,10 @@ echo'
             </form></td>
             <td><form action="../../user/sendmessage/' . $row['studentid'] . '" method="POST">
                 <button type="submit" class="btn btn-xs btn-info">Send Message</button>
+            </form></td>
+            <td><form action="../../cancelbooking/' . $row['booking_id'] . '" method="POST">
+        
+                <button type="submit" class="btn btn-xs btn-danger">DELETE</button>
             </form></td>
 </tr>
 
