@@ -350,10 +350,10 @@ echo'
                $datetime2 = new DateTime($dateTo);
 
 
-                //$interval = $datetime1->diff($datetime2);
+                $interval = $datetime1->diff($datetime2);
+                $fname = $row['fname'];
 
-$body = "Checking that the email function works - inserted dateNow - created DateTimes";
-                //$body = 'Hi there, ' . $row['fname'] . '<br/> This is a gentle reminder that your components are due to be returned in ' .$interval .' days! ('.$datetime2->format("d-m-Y") .') Please remember to return them on time! <br/> Thanks for using Arduino Booking!    ';
+                $body = 'Hi there, ' . $fname . '<br/> This is a gentle reminder that your components are due to be returned in ' .$interval .' days! (' .date_format($datetime2, "d-m-Y") .') Please remember to return them on time! <br/> Thanks for using Arduino Booking!    ';
 
                 $mail = new PHPMailer();
 
@@ -375,7 +375,7 @@ $body = "Checking that the email function works - inserted dateNow - created Dat
 
                 $mail->MsgHTML($body);
 
-                $fname = $row['fname'];
+
                 $email = $row['email'];
                 $mail->AddAddress("$email", "$fname");
 
