@@ -353,7 +353,7 @@ echo'
                 $interval = date_diff($datetime1, $datetime2);
                 $fname = $row['fname'];
 
-                $body = 'Hi there, ' . $fname . '<br/> This is a gentle reminder that your components are due to be returned in ' .$interval->format("%a") .' days! (' .$datetime2->format("d-m-Y") .') Please remember to return them on time! <br/> Thanks for using Arduino Booking!    ';
+                $body = 'Hi there, ' . $fname . '<br/> This is a gentle reminder that your components are due to be returned in ' .$interval->format("%a") .' days! (' .$datetime2->format("d-m-Y") .') <br/> Please remember to return them on time! <br/> Thanks for using Arduino Booking!    ';
 
                 $mail = new PHPMailer();
 
