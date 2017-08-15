@@ -371,7 +371,7 @@ if(isset($_SESSION['userloggedin']) && $_SESSION['admin'] == TRUE) {
                         header("Location:../../user/view/all");
                     }
                 }
-                }
+
             };
             include("scripts/footer.php");
             break;
