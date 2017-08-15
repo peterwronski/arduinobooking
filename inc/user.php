@@ -103,7 +103,7 @@ if(isset($_SESSION['userloggedin']) && $_SESSION['admin'] == TRUE) {
 
 
                 echo '
- <div class="container" id="componentlist">
+ <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 componentdiv">
                 <h1>User - ' .$user_id .'</h1> <br/>
