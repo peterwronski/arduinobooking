@@ -96,7 +96,7 @@ if(isset($_SESSION['userloggedin']) && $_SESSION['admin'] == TRUE) {
 ';
             } else {
 
-                $showAllQuery = 'SELECT * FROM users WHERE studentid = "' .$user_id .'"';
+                $showAllQuery = 'SELECT * FROM users, booking, components WHERE users.studentid = "' .$user_id .'" AND booking.comp_ref = components.comp_ref AND booking.studentid = users.studentid';
                 $result = $conn->query($showAllQuery);
 
                 $count = $result->num_rows;
@@ -174,7 +174,9 @@ if(isset($_SESSION['userloggedin']) && $_SESSION['admin'] == TRUE) {
 ';
                 }
                 echo ' 
- 
+ </table>
+ </div>
+ </div>
  <script>
                     jQuery(document).ready(function($) {
                         $(".clickable-row").click(function() {
@@ -186,6 +188,73 @@ if(isset($_SESSION['userloggedin']) && $_SESSION['admin'] == TRUE) {
                         </div>
                        </div>
                        </div>';
+
+
+
+                    echo'
+                <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 componentdiv">
+                <h1>All Bookings</h1> <br/>
+                </div>
+                </div>
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 componentdiv">
+                <table class="componenttable" width="100%">
+                <tr>
+                    <th>Booking ID</th>
+                    <th>Component Name</th>
+                    <th>Quantity</th>
+                    <th>From</th>
+                    <th>To</th>
+                    <th>Approved</th>
+                </tr>
+                ';
+                while ($row = $result->fetch_array()) {
+                    $dateFrom = date("d-m-Y", strtotime($row['date_from']));
+                    $dateTo = date("d-m-Y", strtotime($row['date_to']));
+                    switch ($row['approved']){
+                        case "1":
+                            $approved = '<span class="glyphicon glyphicon-remove"></span>';
+                            break;
+
+                        case "2":
+                            $approved = '<span class="glyphicon glyphicon-ok"></span>';
+                            break;
+
+                        default:
+                            $approved = '<span class="glyphicon glyphicon-time"></span>';
+                            break;
+                    };
+
+                        echo '
+
+    <tr style="text-align:center; border-bottom: 1px solid rgba(243, 48, 249, 0.33) !important;" class="clickable-row" data-href="../../adminbooking/view/' . $row['booking_id'] . '">
+        <td>' . $row['booking_id'] . '</td>
+        <td>' . $row['comp_name'] . '</td>
+        <td>' . $row['studentid'] . '</td>
+        <td>' . $row['fname'] .' ' .$row['sname'] .'</td>
+        <td>' . $row['quantity'] . '</td>
+        <td>' . $dateFrom . '</td>
+        <td>' . $dateTo . '</td>
+        <td>' . $approved . '</td>
+        <td><form action="../../adminbooking/approve/' . $row['booking_id'] . '" method="POST">
+        
+                <button type="submit" class="btn btn-xs btn-success">Approve</button>
+            </form>
+        </td>
+        <td><form action="../../adminbooking/deny/' . $row['booking_id'] . '" method="POST">
+        
+                <button type="submit" class="btn btn-xs btn-warning">Deny</button>
+            </form>
+        </td>
+        <td><form action="../../adminbooking/delete/' . $row['booking_id'] . '" method="POST">
+        
+                <button type="submit" class="btn btn-xs btn-danger">DELETE</button>
+            </form>
+        </td>
+    </tr>
+                ';
+                    }
             }
             include('scripts/footer.php');
             break;
