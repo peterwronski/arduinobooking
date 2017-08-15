@@ -126,24 +126,19 @@ p{
 
 
 .componentdiv{
-
     text-align:center;
-
 }
 
 tr.clickable-row:hover{
     background-color: #c6e7ea;
     cursor:pointer;
 }
-.btn-basic{
 
-}
 
 .componenttable{
     margin-bottom: 50%;
 }
 th {
-    text-align:center;
     border-bottom: 1px solid rgba(243, 48, 249, 0.33) !important;
 }
 
