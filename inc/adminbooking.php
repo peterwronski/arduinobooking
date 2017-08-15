@@ -44,8 +44,8 @@ if(isset($_SESSION['userloggedin']) && $_SESSION['admin'] == TRUE){
                     <th>Student ID</th>
                     <th>Student Name</th>
                     <th>Quantity</th>
-                    <th>From</th>
-                    <th>To</th>
+                    <th class="datefield">From</th>
+                    <th class="datefield">To</th>
                     <th>Approved</th>
                 </tr>
                 </thead>
@@ -76,8 +76,8 @@ if(isset($_SESSION['userloggedin']) && $_SESSION['admin'] == TRUE){
         <td>' . $row['studentid'] . '</td>
         <td>' . $row['fname'] .' ' .$row['sname'] .'</td>
         <td>' . $row['quantity'] . '</td>
-        <td>' . $dateFrom . '</td>
-        <td>' . $dateTo . '</td>
+        <td class="datefield">' . $dateFrom . '</td>
+        <td class="datefield">' . $dateTo . '</td>
         <td>' . $approved . '</td>
         <td><form action="../../adminbooking/approve/' . $row['booking_id'] . '" method="POST">
         
