@@ -299,7 +299,7 @@ if(isset($_SESSION['userloggedin']) && $_SESSION['admin'] == TRUE) {
                 </div>
                 
                 <div class="col-lg-8 col-lg-offset-2 componentdiv">
-                <form class="form-horizontal" action="" method="POST">
+                <form class="form-horizontal" action="../../user/send/'. $user_id.'" method="POST">
 <fieldset>
 
 <!-- Form Name -->
@@ -332,6 +332,10 @@ if(isset($_SESSION['userloggedin']) && $_SESSION['admin'] == TRUE) {
                 
                 </div>
                 ';
+            }
+               break;
+
+               case "send":
 
                 if (count($_POST)) {
                     $body = $_POST['msgBody'];
@@ -374,13 +378,14 @@ if(isset($_SESSION['userloggedin']) && $_SESSION['admin'] == TRUE) {
                         exit;
                     }
                 }
-
+                   include("scripts/footer.php");
+                   break;
             };
-            include("scripts/footer.php");
-            break;
+
+
 
     }
-} else {
+ else {
     header("Location: 404.php");
 }
 
