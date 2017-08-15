@@ -166,3 +166,7 @@ footer {
     padding-left: 5%;
     padding-right: 5%;
 }
+
+table, th, td {
+    white-space: nowrap;
+}
