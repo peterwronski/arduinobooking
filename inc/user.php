@@ -298,8 +298,80 @@ if(isset($_SESSION['userloggedin']) && $_SESSION['admin'] == TRUE) {
                 </div>
                 </div>
                 
+                <div class="col-lg-8 col-lg-offset-2 componentdiv">
+                <form class="form-horizontal" action="" method="POST">
+<fieldset>
+
+<!-- Form Name -->
+
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">Subject</label>  
+  <div class="col-md-4">
+  <input id="msgSubject" name="msgSubject" type="text" placeholder="Email subject" class="form-control input-md" required="">
+    
+  </div>
+</div>
+
+<!-- Textarea -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="msgBody">Message</label>
+  <div class="col-md-4">                     
+    <textarea class="form-control" id="msgBody" name="msgBody">Message to user</textarea>
+  </div>
+</div>
+
+</fieldset>
+</form>
+
+                </div>
+                </div>
                 
+                </div>
                 ';
+
+                if (count($_POST)) {
+                    $body = $_POST['msgBody'];
+
+                    $mail = new PHPMailer();
+
+
+                    $mail->IsSMTP();
+
+                    $mail->SMTPDebug = 1;
+
+                    $mail->SMTPAuth = true;                  // enable SMTP authentication
+                    $mail->SMTPSecure = "ssl";                 // sets the prefix to the servier
+                    $mail->Host = "smtp.gmail.com";      // sets GMAIL as the SMTP server
+                    $mail->Port = 465;                   // set the SMTP port for the GMAIL server
+                    $mail->Username = "noreply.arduinobooking@gmail.com";  // GMAIL username
+                    $mail->Password = "arduinopass";
+
+                    $mail->SetFrom('noreply.arduinobooking@gmail.com', 'ArduinoBooking');
+
+                    $mail->Subject = $_POST['msgSubject'];
+
+                    $mail->MsgHTML($body);
+
+                    $fname = $row['fname'];
+                    $email = $row['email'];
+                    $mail->AddAddress("$email", "$fname");
+
+                    if (!$mail->Send()) {
+                        echo "Mailer Error: " . $mail->ErrorInfo . '<br/>';
+                        echo $email;
+                        exit;
+                    } else {
+
+                        $_SESSION['msg'] = '<div class="alert alert-success alert-dismissable">
+                                    <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+                                    <strong>Message sent!</strong> Email sent to ' . $email . '.
+                                </div>';
+                        header("Location:../../user/view/all");
+                    }
+                }
+                }
             };
             include("scripts/footer.php");
             break;
