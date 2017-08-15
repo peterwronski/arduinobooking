@@ -191,12 +191,12 @@ if(isset($_SESSION['userloggedin']) && $_SESSION['admin'] == TRUE) {
                 $result = $conn->query($userBookings);
                     echo'
                 <div class="row">
-            <div class="col-lg-8 col-lg-offset-2">
+            <div class="col-lg-8 col-lg-offset-2 componentdiv">
                 <h1>User\'s bookings</h1> <br/>
                 </div>
                 </div>
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2">
+            <div class="col-lg-8 col-lg-offset-2 componentdiv">
                 <table class="componenttable" width="100%">
                 <tr>
                     <th>Booking ID</th>
