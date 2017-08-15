@@ -39,7 +39,7 @@ if (($_POST['pass']!==$_POST['pass2'])) {// this checks to see if both password 
     $count = $check_studentid->num_rows;
 
     echo $hashAndSalt .$studentid .$fname .$sname .$email .$activation_hash;
-/*
+
     if ($count == 0) {
         $adduser = "INSERT INTO users VALUE('$studentid', '$fname', '$sname', '$email', '$activated', '$course', '$hashAndSalt', '$activation_hash' )" or die('Insert query failed');
         if ($conn->query($adduser) === TRUE) {
@@ -94,7 +94,7 @@ if (($_POST['pass']!==$_POST['pass2'])) {// this checks to see if both password 
                                 </div>';
         header('Location: ./');
 
-    }*/
+    }
 } else {
         $_SESSION['msg'] = '<div class="alert alert-danger alert-dismissable">
                                     <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
