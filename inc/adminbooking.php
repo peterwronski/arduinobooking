@@ -37,11 +37,14 @@ if(isset($_SESSION['userloggedin']) && $_SESSION['admin'] == TRUE){
         <div class="row">
             <div class="col-lg-10 col-lg-offset-2">
                 <table class="table">
-                <tr>
+                <thead><tr>
                 <td colspan="8"><span class="glyphicon glyphicon-time"></span> - Waiting // 
                                 <span class="glyphicon glyphicon-remove"></span> - Denied // 
                                 <span class="glyphicon glyphicon-ok"></span> - Approved </td>
                 </tr>
+                
+                
+                
                 <tr>
                     <th>Booking ID</th>
                     <th>Component Name</th>
@@ -52,6 +55,8 @@ if(isset($_SESSION['userloggedin']) && $_SESSION['admin'] == TRUE){
                     <th>To</th>
                     <th>Approved</th>
                 </tr>
+                </thead>
+                <tbody>
 ';
                 while ($row = $result->fetch_array()) {
                     $dateFrom = date("d-m-Y", strtotime($row['date_from']));
@@ -108,7 +113,7 @@ if(isset($_SESSION['userloggedin']) && $_SESSION['admin'] == TRUE){
                         });
                     });
                 </script>
-               
+               </tbody>
                 </table>
             </div>
         </div>    
