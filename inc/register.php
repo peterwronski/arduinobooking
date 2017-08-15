@@ -39,7 +39,7 @@ if (($_POST['pass']!==$_POST['pass2'])) {// this checks to see if both password 
     $count = $check_studentid->num_rows;
 
     if ($count == 0) {
-        $adduser = "INSERT INTO users VALUE('$studentid', '$fname', '$sname', '$email', '$hashAndSalt', '$course', '$activation_hash', '$activated')" or die('Insert query failed');
+        $adduser = "INSERT INTO users VALUE('$studentid', '$fname', '$sname', '$email', '$activated', '$course', '$hashAndSalt', '$activation_hash' )" or die('Insert query failed');
         if ($conn->query($adduser) === TRUE) {
             require_once('scripts/PHPMailer/class.phpmailer.php');
             include("scripts/PHPMailer/class.smtp.php");
