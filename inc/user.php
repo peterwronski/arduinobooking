@@ -226,7 +226,7 @@ if(isset($_SESSION['userloggedin']) && $_SESSION['admin'] == TRUE) {
 
                         echo '
 
-    <tr style="text-align:center; border-bottom: 1px solid rgba(243, 48, 249, 0.33) !important;" class="clickable-row" data-href="../../adminbooking/view/' . $row['booking_id'] . '">
+    <tr style="text-align:center; border-bottom: 1px solid rgba(243, 48, 249, 0.33) !important;" class="clickable-row" data-href="../../adminbooking/view/' . $rowBooking['booking_id'] . '">
         <td>' . $rowBooking['booking_id'] . '</td>
         <td>' . $rowBooking['comp_name'] . '</td>
         <td>' . $rowBooking['quantity'] . '</td>
