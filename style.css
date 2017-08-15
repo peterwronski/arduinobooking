@@ -123,12 +123,6 @@ p{
     font-size: 12px;
 }
 
-
-
-.componentdiv{
-    text-align:center;
-}
-
 tr.clickable-row:hover{
     background-color: #c6e7ea;
     cursor:pointer;
