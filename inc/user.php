@@ -96,7 +96,7 @@ if(isset($_SESSION['userloggedin']) && $_SESSION['admin'] == TRUE) {
 ';
             } else {
 
-                $showAllQuery = 'SELECT * FROM users, booking, components WHERE users.studentid = "' .$user_id .'" AND booking.comp_ref = components.comp_ref AND booking.studentid = users.studentid';
+                $showAllQuery = 'SELECT * FROM users WHERE studentid = "'.$user_id .'"';
                 $result = $conn->query($showAllQuery);
 
                 $count = $result->num_rows;
@@ -113,10 +113,10 @@ if(isset($_SESSION['userloggedin']) && $_SESSION['admin'] == TRUE) {
             <div class="col-lg-8 col-lg-offset-2 componentdiv">
                 <table class="componenttable" width="100%">
 ';
-                while ($row = $result->fetch_array()) {
+                while ($rowUser = $result->fetch_array()) {
 
 
-                    switch ($row['activated']) {
+                    switch ($rowUser['activated']) {
                         case "1":
                             $activated = 'Standard';
                             break;
@@ -132,22 +132,22 @@ if(isset($_SESSION['userloggedin']) && $_SESSION['admin'] == TRUE) {
                     echo ' 
 <tr>
     <th colspan ="2">Student ID ID</th>
-    <td colspan ="2">' . $row['studentid'] . '</td>
+    <td colspan ="2">' . $rowUser['studentid'] . '</td>
 </tr>
 
 <tr>
     <th colspan ="2">Student Name</th>
-    <td colspan ="2">' . $row['fname'] . ' ' .$row['sname'] .'</td>
+    <td colspan ="2">' . $rowUser['fname'] . ' ' .$row['sname'] .'</td>
 </tr>
 
 <tr>
     <th colspan ="2">Email</th>
-    <td colspan ="2">' . $row['email'] .'</td>
+    <td colspan ="2">' . $rowUser['email'] .'</td>
 </tr>
 
 <tr>
     <th colspan ="2">Course</th>
-    <td colspan ="2">' . $row['course'] . '</td>
+    <td colspan ="2">' . $rowUser['course'] . '</td>
 </tr>
 
 <tr>
@@ -174,9 +174,6 @@ if(isset($_SESSION['userloggedin']) && $_SESSION['admin'] == TRUE) {
 ';
                 }
                 echo ' 
- </table>
- </div>
- </div>
  <script>
                     jQuery(document).ready(function($) {
                         $(".clickable-row").click(function() {
@@ -189,12 +186,13 @@ if(isset($_SESSION['userloggedin']) && $_SESSION['admin'] == TRUE) {
                        </div>
                        </div>';
 
-
-
+                $userBookings = 'SELECT booking.booking_id, booking.comp_ref, components.comp_name, booking.quantity, booking.date_from, booking.date_to, booking.approved 
+                                  FROM booking, components WHERE booking.studentid = "'.$user_id .'" AND booking.comp_ref = components.comp_ref';
+                $result = $conn->query($userBookings);
                     echo'
                 <div class="row">
             <div class="col-lg-8 col-lg-offset-2 componentdiv">
-                <h1>All Bookings</h1> <br/>
+                <h1>User\'s bookings</h1> <br/>
                 </div>
                 </div>
         <div class="row">
@@ -209,10 +207,10 @@ if(isset($_SESSION['userloggedin']) && $_SESSION['admin'] == TRUE) {
                     <th>Approved</th>
                 </tr>
                 ';
-                while ($row = $result->fetch_array()) {
-                    $dateFrom = date("d-m-Y", strtotime($row['date_from']));
-                    $dateTo = date("d-m-Y", strtotime($row['date_to']));
-                    switch ($row['approved']){
+                while ($rowBooking = $result->fetch_array()) {
+                    $dateFrom = date("d-m-Y", strtotime($rowBooking['date_from']));
+                    $dateTo = date("d-m-Y", strtotime($rowBooking['date_to']));
+                    switch ($rowBooking['approved']){
                         case "1":
                             $approved = '<span class="glyphicon glyphicon-remove"></span>';
                             break;
@@ -229,25 +227,23 @@ if(isset($_SESSION['userloggedin']) && $_SESSION['admin'] == TRUE) {
                         echo '
 
     <tr style="text-align:center; border-bottom: 1px solid rgba(243, 48, 249, 0.33) !important;" class="clickable-row" data-href="../../adminbooking/view/' . $row['booking_id'] . '">
-        <td>' . $row['booking_id'] . '</td>
-        <td>' . $row['comp_name'] . '</td>
-        <td>' . $row['studentid'] . '</td>
-        <td>' . $row['fname'] .' ' .$row['sname'] .'</td>
-        <td>' . $row['quantity'] . '</td>
+        <td>' . $rowBooking['booking_id'] . '</td>
+        <td>' . $rowBooking['comp_name'] . '</td>
+        <td>' . $rowBooking['quantity'] . '</td>
         <td>' . $dateFrom . '</td>
         <td>' . $dateTo . '</td>
         <td>' . $approved . '</td>
-        <td><form action="../../adminbooking/approve/' . $row['booking_id'] . '" method="POST">
+        <td><form action="../../adminbooking/approve/' . $rowBooking['booking_id'] . '" method="POST">
         
                 <button type="submit" class="btn btn-xs btn-success">Approve</button>
             </form>
         </td>
-        <td><form action="../../adminbooking/deny/' . $row['booking_id'] . '" method="POST">
+        <td><form action="../../adminbooking/deny/' . $rowBooking['booking_id'] . '" method="POST">
         
                 <button type="submit" class="btn btn-xs btn-warning">Deny</button>
             </form>
         </td>
-        <td><form action="../../adminbooking/delete/' . $row['booking_id'] . '" method="POST">
+        <td><form action="../../adminbooking/delete/' . $rowBooking['booking_id'] . '" method="POST">
         
                 <button type="submit" class="btn btn-xs btn-danger">DELETE</button>
             </form>
