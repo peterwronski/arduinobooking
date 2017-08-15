@@ -40,8 +40,8 @@ echo '
                 <tr>
                 <td colspan="8">
                 <span class="glyphicon glyphicon-time"></span><p> - Waiting // </p>
-                                <span class="glyphicon glyphicon-remove"></span><p> - Denied // </p>
-                                <span class="glyphicon glyphicon-ok"></span><p> - Approved </p>
+                                <span class="glyphicon glyphicon-remove"></span> - Denied //
+                                <span class="glyphicon glyphicon-ok"></span> - Approved </p>
                 </td>
                 </tr>
                 <tr>
