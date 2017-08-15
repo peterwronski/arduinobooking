@@ -39,7 +39,7 @@ echo '
                 <table class="componenttable" width="100%">
                 <td colspan="8"><span class="glyphicon glyphicon-time"></span> - Waiting // 
                                 <span class="glyphicon glyphicon-remove"></span> - Denied // 
-                                <span class="glyphicon glyphicon-ok"></span>- Approved </td>
+                                <span class="glyphicon glyphicon-ok"></span> - Approved </td>
                 </tr>
                 <tr>
                     <th>Booking ID</th>
