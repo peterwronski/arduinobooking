@@ -360,13 +360,19 @@ if(isset($_SESSION['userloggedin']) && $_SESSION['admin'] == TRUE) {
                     $email = $row['email'];
                     $mail->AddAddress("$email", "$fname");
 
+                    if (!$mail->Send()) {
+                        echo "Mailer Error: " . $mail->ErrorInfo . '<br/>';
+                        echo $email;
+                        exit;
+                    } else {
 
                         $_SESSION['msg'] = '<div class="alert alert-success alert-dismissable">
                                     <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
                                     <strong>Message sent!</strong> Email sent to ' . $email . '.
                                 </div>';
                         header("Location:../../user/view/all");
-                    exit;
+                        exit;
+                    }
                 }
 
             };
