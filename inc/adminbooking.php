@@ -200,7 +200,7 @@ echo'
 <tr><td colspan="4">// OPTIONS //</td></tr>
 
 <tr>
-    <td colspan="2"><form action="../../adminbooking/approve/' . $row['booking_id'] . '" method="POST">
+    <td colspan="4"><form action="../../adminbooking/approve/' . $row['booking_id'] . '" method="POST">
                 <button type="submit" class="btn btn-xs btn-success">Approve</button>
             </form>
         <form action="../../adminbooking/deny/' . $row['booking_id'] . '" method="POST">
