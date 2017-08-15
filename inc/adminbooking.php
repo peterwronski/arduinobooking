@@ -35,7 +35,7 @@ if(isset($_SESSION['userloggedin']) && $_SESSION['admin'] == TRUE){
                 </div>
                 </div>
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 componentdiv">
+            <div class="col-lg-10 col-lg-offset-2 componentdiv">
                 <table class="componenttable" width="100%">
                 <tr>
                 <td colspan="8"><span class="glyphicon glyphicon-time"></span> - Waiting // 
