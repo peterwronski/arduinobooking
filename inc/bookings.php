@@ -39,9 +39,9 @@ echo '
                 <table class="componenttable" width="100%">
                 <tr>
                 <td colspan="8">
-                <span class="glyphicon glyphicon-time"></span><p> - Waiting //
+                <span class="glyphicon glyphicon-time"></span> - Waiting //
                                 <span class="glyphicon glyphicon-remove"></span> - Denied //
-                                <span class="glyphicon glyphicon-ok"></span> - Approved </p>
+                                <span class="glyphicon glyphicon-ok"></span> - Approved
                 </td>
                 </tr>
                 <tr>
