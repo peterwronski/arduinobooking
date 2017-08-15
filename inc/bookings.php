@@ -38,9 +38,11 @@ echo '
             <div class="col-lg-8 col-lg-offset-2 componentdiv">
                 <table class="componenttable" width="100%">
                 <tr>
-                <td colspan="8"><p><span class="glyphicon glyphicon-time"></span> - Waiting // 
+                <td colspan="8">
+                <p><span class="glyphicon glyphicon-time"></span> - Waiting // 
                                 <span class="glyphicon glyphicon-remove"></span> - Denied // 
-                                <span class="glyphicon glyphicon-ok"></span> - Approved </p></td>
+                                <span class="glyphicon glyphicon-ok"></span> - Approved </p>
+                </td>
                 </tr>
                 <tr>
                     <th>Booking ID</th>
