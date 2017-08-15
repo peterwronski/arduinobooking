@@ -285,6 +285,25 @@ if(isset($_SESSION['userloggedin']) && $_SESSION['admin'] == TRUE) {
 
             break;
 
+        case "sendmessage":
+            include ("scripts/header_2.php");
+            $getEmail = 'SELECT studentid, email, fname, sname FROM users WHERE studentid = "'.$user_id.'"';
+            $result = $conn->query($getEmail);
+
+            while ($row = $result->fetch_array()){
+               echo' <div class="container" id="componentlist">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 componentdiv">
+                <h1>Message User - ' .$row['fname'] .' '.$row['sname'] .'</h1> <br/>
+                </div>
+                </div>
+                
+                
+                ';
+            };
+            include("scripts/footer.php");
+            break;
+
     }
 } else {
     header("Location: 404.php");
