@@ -198,6 +198,10 @@ if(isset($_SESSION['userloggedin']) && $_SESSION['admin'] == TRUE) {
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 componentdiv">
                 <table class="componenttable" width="100%">
+                <td colspan="8"><span class="glyphicon glyphicon-time"></span> - Waiting // 
+                                <span class="glyphicon glyphicon-remove"></span> - Denied // 
+                                <span class="glyphicon glyphicon-ok"> - Approved </td>
+                </tr>
                 <tr>
                     <th>Booking ID</th>
                     <th>Component Name</th>
