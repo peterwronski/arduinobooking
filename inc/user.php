@@ -272,7 +272,7 @@ if(isset($_SESSION['userloggedin']) && $_SESSION['admin'] == TRUE) {
 </div>';
 
 
-                header("Location:../../adminbooking/view/all");
+                header("Location:../../user/view/all");
             } else {
                 $_SESSION['msg'] = '<div class="alert alert-danger alert-dismissable">
     <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
