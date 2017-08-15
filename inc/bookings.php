@@ -36,7 +36,7 @@ echo '
                 
         <div class="row">
             <div class="col-lg-10 col-lg-offset-2 componentdiv">
-                <table class="componenttable" width="100%">
+                <table class="componenttable" width="auto">
                 <tr>
                 <td colspan="8">
                 <span class="glyphicon glyphicon-time"></span> - Waiting //
