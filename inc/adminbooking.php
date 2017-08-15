@@ -1,5 +1,6 @@
 <?php
 //comment
+//comment2
 session_start();
 include('scripts/dbconnect.php');
 date_default_timezone_set('Europe/London');
