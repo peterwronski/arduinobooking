@@ -36,14 +36,9 @@ echo '
                 
         <div class="row">
             <div class="col-lg-10 col-lg-offset-2 componentdiv">
-                <table class="componenttable" width="auto">
-                <tr>
-                <td colspan="8">
-                <span class="glyphicon glyphicon-time"></span> - Waiting //
-                                <span class="glyphicon glyphicon-remove"></span> - Denied //
-                                <span class="glyphicon glyphicon-ok"></span> - Approved
-                </td>
-                </tr>
+                <table class="table">
+                
+                <thead>
                 <tr>
                     <th>Booking ID</th>
                     <th>Component Name</th>
@@ -52,6 +47,8 @@ echo '
                     <th>To</th>
                     <th>Approved</th>
                 </tr>
+                </thead>
+                <tbody>
 ';
 if($count > 0) {
     while ($row = $result->fetch_array()) {
@@ -87,6 +84,13 @@ if($count > 0) {
     ';
     }
     echo '
+<td colspan="8">
+                <span class="glyphicon glyphicon-time"></span> - Waiting //
+                                <span class="glyphicon glyphicon-remove"></span> - Denied //
+                                <span class="glyphicon glyphicon-ok"></span> - Approved
+                </td>
+                </tr>
+                </tbody>
                 </table>
             </div>
         </div>    
