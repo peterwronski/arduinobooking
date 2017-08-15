@@ -184,7 +184,7 @@ if(isset($_SESSION['userloggedin']) && $_SESSION['admin'] == TRUE) {
                             </table>
                         </div>
                        </div>
-                       </div>';
+                       ';
 
                 $userBookings = 'SELECT booking.booking_id, booking.comp_ref, components.comp_name, booking.quantity, booking.date_from, booking.date_to, booking.approved 
                                   FROM booking, components WHERE booking.studentid = "'.$user_id .'" AND booking.comp_ref = components.comp_ref';
@@ -251,6 +251,12 @@ if(isset($_SESSION['userloggedin']) && $_SESSION['admin'] == TRUE) {
     </tr>
                 ';
                     }
+
+                    echo '
+                    </table>
+                    </div>
+                    </div>
+                    </div>';
             }
             include('scripts/footer.php');
             break;
