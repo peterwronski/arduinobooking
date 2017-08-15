@@ -111,7 +111,7 @@ if(isset($_SESSION['userloggedin']) && $_SESSION['admin'] == TRUE) {
                 </div>
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 componentdiv">
-                <table class="componenttable" width="100%">
+                <table width="100%">
 ';
                 while ($rowUser = $result->fetch_array()) {
 
