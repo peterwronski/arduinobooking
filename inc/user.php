@@ -261,6 +261,30 @@ if(isset($_SESSION['userloggedin']) && $_SESSION['admin'] == TRUE) {
             include('scripts/footer.php');
             break;
 
+        case "delete":
+
+            $userDelete = 'DELETE FROM users WHERE studentid = "'.$user_id .'"';
+            $result = $conn->query($userDelete);
+            if ($result) {
+                $_SESSION['msg'] = '<div class="alert alert-success alert-dismissable">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+    <strong>Yeee boi!</strong> User deleted!
+</div>';
+
+
+                header("Location:../../adminbooking/view/all");
+            } else {
+                $_SESSION['msg'] = '<div class="alert alert-danger alert-dismissable">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+    <strong>Something went wrong!</strong> User was NOT deleted.
+</div>';
+
+
+                header("Location:../../user/view/all");
+            }
+
+            break;
+
     }
 } else {
     header("Location: 404.php");
