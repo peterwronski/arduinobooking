@@ -28,7 +28,7 @@ if(isset($_SESSION['userloggedin']) && $_SESSION['admin'] == TRUE){
                 $dateFrom = date("d-m-Y", strtotime($row['date_from']));
                 $dateTo = date("d-m-Y", strtotime($row['date_to']));
                 echo '
- <div class="container" id="componentlist">
+ <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
                 <h1>All Bookings</h1> <br/>
@@ -37,14 +37,7 @@ if(isset($_SESSION['userloggedin']) && $_SESSION['admin'] == TRUE){
         <div class="row">
             <div class="col-lg-10 col-lg-offset-2">
                 <table class="table">
-                <thead><tr>
-                <td colspan="8"><span class="glyphicon glyphicon-time"></span> - Waiting // 
-                                <span class="glyphicon glyphicon-remove"></span> - Denied // 
-                                <span class="glyphicon glyphicon-ok"></span> - Approved </td>
-                </tr>
-                
-                
-                
+                <thead>
                 <tr>
                     <th>Booking ID</th>
                     <th>Component Name</th>
@@ -113,6 +106,13 @@ if(isset($_SESSION['userloggedin']) && $_SESSION['admin'] == TRUE){
                         });
                     });
                 </script>
+                
+                <tr>
+                <td colspan="8"><span class="glyphicon glyphicon-time"></span> - Waiting // 
+                                <span class="glyphicon glyphicon-remove"></span> - Denied // 
+                                <span class="glyphicon glyphicon-ok"></span> - Approved </td>
+                </tr>
+                
                </tbody>
                 </table>
             </div>
