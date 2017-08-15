@@ -322,6 +322,8 @@ if(isset($_SESSION['userloggedin']) && $_SESSION['admin'] == TRUE) {
   </div>
 </div>
 
+<button type="submit" class="btn btn-xs btn-info">SEND</button>
+
 </fieldset>
 </form>
 
