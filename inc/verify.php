@@ -37,13 +37,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
 
     if ($match > 0) {
-        $activate = $conn->query("UPDATE users SET activated=1 WHERE activation_hash='" . $activation_hash . "';");
+        $activate = $conn->query("UPDATE users SET activated=1 WHERE activation_hash='" . $activation_hash . "'");
 
         if($activate){
 
             $_SESSION['msg'] = '<div class="alert alert-success alert-dismissable" >
                                     <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-                                    <strong>Awesome!</strong>. Your account has been activated! 
+                                    <strong>Awesome!</strong> Your account has been activated! 
                                 </div>';
             header('Location: ./');
             exit;
@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         } else {
             $_SESSION['msg'] = '<div class="alert alert-danger alert-dismissable" >
                                     <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-                                    <strong>Oh no!</strong>. Your account couldn\'t be activated.
+                                    <strong>Oh no!</strong> Your account couldn\'t be activated.
                                 </div>';
             header('Location: ./');
             exit;
@@ -62,7 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     else {
         $_SESSION['msg'] = '<div class="alert alert-danger alert-dismissable" >
                                     <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-                                    <strong>Oh no!</strong>. This account couldn\'t be found
+                                    <strong>Oh no!</strong> This account couldn\'t be found.
                                 </div>';
         header('Location: ./');
         exit;

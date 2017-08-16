@@ -110,7 +110,7 @@ if($count > 0) {
 
 
 } else {
-    header('Location: 404.php');
+    include(INCLUDE_DIR . '404.php');
 }
 include('scripts/footer.php');
 ?>
