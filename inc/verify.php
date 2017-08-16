@@ -46,6 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                                     <strong>Awesome!</strong>. Your account has been activated! 
                                 </div>';
             header('Location: ./');
+            exit;
 
         } else {
             $_SESSION['msg'] = '<div class="alert alert-danger alert-dismissable" >
@@ -53,6 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                                     <strong>Oh no!</strong>. Your account couldn\'t be activated.
                                 </div>';
             header('Location: ./');
+            exit;
 
         }
 
@@ -63,6 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                                     <strong>Oh no!</strong>. This account couldn\'t be found
                                 </div>';
         header('Location: ./');
+        exit;
 
     };
 };
