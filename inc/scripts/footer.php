@@ -1,17 +1,16 @@
 </body>
 
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myFooter">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">WebSiteName</a>
         </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-            <div class="col-sm-4">
+        <div class="collapse navbar-collapse" id="myFooter">
+            <div class="col-sm-12">
                 <a href="https://www.arduino.cc/"><img src="/inc/img/arduinologo.png"  height="50px" alt="Arduino Community Logo and Link"/></a>
             </div>
 
