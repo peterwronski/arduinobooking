@@ -111,7 +111,8 @@ if(isset($_SESSION['userloggedin']) && $_SESSION['admin'] == TRUE) {
                 </div>
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 componentdiv">
-                <table width="100%">
+                <table class="table">
+                <tbody>
 ';
                 while ($rowUser = $result->fetch_array()) {
 
@@ -181,6 +182,7 @@ if(isset($_SESSION['userloggedin']) && $_SESSION['admin'] == TRUE) {
                         });
                     });
                 </script>
+                </tbody>
                             </table>
                         </div>
                        </div>
@@ -197,11 +199,9 @@ if(isset($_SESSION['userloggedin']) && $_SESSION['admin'] == TRUE) {
                 </div>
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 componentdiv">
-                <table class="componenttable" width="100%">
-                <td colspan="8"><span class="glyphicon glyphicon-time"></span> - Waiting // 
-                                <span class="glyphicon glyphicon-remove"></span> - Denied // 
-                                <span class="glyphicon glyphicon-ok"></span> - Approved </td>
-                </tr>
+                <table class="table">
+                
+                <thead>
                 <tr>
                     <th>Booking ID</th>
                     <th>Component Name</th>
@@ -210,6 +210,8 @@ if(isset($_SESSION['userloggedin']) && $_SESSION['admin'] == TRUE) {
                     <th>To</th>
                     <th>Approved</th>
                 </tr>
+                </thead>
+                <tbody>
                 ';
                 while ($rowBooking = $result->fetch_array()) {
                     $dateFrom = date("d-m-Y", strtotime($rowBooking['date_from']));
@@ -257,6 +259,11 @@ if(isset($_SESSION['userloggedin']) && $_SESSION['admin'] == TRUE) {
                     }
 
                     echo '
+                    <tr>
+                                <td colspan="8"><span class="glyphicon glyphicon-time"></span> - Waiting // 
+                                <span class="glyphicon glyphicon-remove"></span> - Denied // 
+                                <span class="glyphicon glyphicon-ok"></span> - Approved </td>
+                    </tr></tbody>
                     </table>
                     </div>
                     </div>

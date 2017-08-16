@@ -139,7 +139,8 @@ if(isset($_SESSION['userloggedin']) && $_SESSION['admin'] == TRUE){
                 </div>
         <div class="row">
             <div class="col-lg-10">
-                <table class="componenttable" width="100%">
+                <table class="table">
+                <tbody>
 ';
                 while ($row = $result->fetch_array()) {
                     $dateFrom = date("d-m-Y", strtotime($row['date_from']));
