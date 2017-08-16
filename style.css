@@ -129,9 +129,7 @@ tr.clickable-row:hover{
 }
 
 
-.componenttable{
-    margin-bottom: 50%;
-}
+
 th {
     border-bottom: 1px solid rgba(243, 48, 249, 0.33) !important;
 }
@@ -146,24 +144,5 @@ hr {
     border: 1px solid #781d7d;
 }
 
-footer {
-    position:fixed;
-    left:0px;
-    bottom:0px;
-    height:30px;
-    width:100%;
-    background:#f8f8f8;
-    display:flex;
-    align-items: center;
-}
-
-.navbar-fixed-bottom{
-    text-align:center;
-}
 
 
-.datefield {
-
-
-    white-space: nowrap;
-}
