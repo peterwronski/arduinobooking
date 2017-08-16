@@ -162,50 +162,50 @@ if(isset($_SESSION['userloggedin']) && $_SESSION['admin'] == TRUE){
 echo' 
 <tr>
     <th colspan="2">Booking ID</th>
-    <td colspan="2">'.$row['booking_id'] .'</td>
+    <td colspan="3">'.$row['booking_id'] .'</td>
 </tr>
 
 <tr class="clickable-row" data-href="../../user/view/' . $row['studentid'] . '">
     <th colspan="2">Student ID</th>
-    <td colspan="2">'.$row['studentid'] .'</td>
+    <td colspan="3">'.$row['studentid'] .'</td>
 </tr>
 
 <tr class="clickable-row" data-href="../../user/view/' . $row['studentid'] . '">
     <th colspan="2">Name</th>
-    <td colspan="2">'.$row['fname'] .' ' .$row['sname'] .'</td>
+    <td colspan="3">'.$row['fname'] .' ' .$row['sname'] .'</td>
 </tr>
 
 <tr class="clickable-row" data-href="../../viewcomponent/' . $row['comp_ref'] . '">
     <th colspan="2">Component ID</th>
-    <td colspan="2">'.$row['comp_ref'] .'</td>
+    <td colspan="3">'.$row['comp_ref'] .'</td>
 </tr>
 
 <tr class="clickable-row" data-href="../../viewcomponent/' . $row['comp_ref'] . '">
     <th colspan="2">Component Name</th>
-    <td colspan="2">'.$row['comp_name'] .'</td>
+    <td colspan="3">'.$row['comp_name'] .'</td>
 </tr>
 
 <tr>
     <th colspan="2">Quantity</th>
-    <td colspan="2">'.$row['quantity'] .'</td>
+    <td colspan="3">'.$row['quantity'] .'</td>
 </tr>
 
 <tr>
     <th colspan="2">Date From</th>
-    <td colspan="2">'.$dateFrom .'</td>
+    <td colspan="3">'.$dateFrom .'</td>
 </tr>
 
 <tr>
     <th colspan="2">Date To</th>
-    <td colspan="2">'.$dateTo .'</td>
+    <td colspan="3">'.$dateTo .'</td>
 </tr>
 
 <tr>
     <th colspan="2">Approved</th>
-    <td colspan="2">'.$approved .'</td>
+    <td colspan="23">'.$approved .'</td>
 </tr>
 
-<tr><td colspan="4">// OPTIONS //</td></tr>
+<tr><td colspan="5">// OPTIONS //</td></tr>
 
 <tr>
     <td><form action="../../adminbooking/approve/' . $row['booking_id'] . '" method="POST">
