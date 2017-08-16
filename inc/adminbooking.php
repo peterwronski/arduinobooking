@@ -110,7 +110,7 @@ if(isset($_SESSION['userloggedin']) && $_SESSION['admin'] == TRUE){
                 </script>
                 
                 <tr>
-                <td colspan="8"><span class="glyphicon glyphicon-time"></span> - Waiting // 
+                <td><span class="glyphicon glyphicon-time"></span> - Waiting // 
                                 <span class="glyphicon glyphicon-remove"></span> - Denied // 
                                 <span class="glyphicon glyphicon-ok"></span> - Approved </td>
                 </tr>
@@ -161,54 +161,54 @@ if(isset($_SESSION['userloggedin']) && $_SESSION['admin'] == TRUE){
                     };
 echo' 
 <tr>
-    <th colspan ="2">Booking ID</th>
-    <td colspan ="2">'.$row['booking_id'] .'</td>
+    <th>Booking ID</th>
+    <td>'.$row['booking_id'] .'</td>
 </tr>
 
 <tr class="clickable-row" data-href="../../user/view/' . $row['studentid'] . '">
-    <th colspan ="2">Student ID</th>
-    <td colspan ="2">'.$row['studentid'] .'</td>
+    <th>Student ID</th>
+    <td>'.$row['studentid'] .'</td>
 </tr>
 
 <tr class="clickable-row" data-href="../../user/view/' . $row['studentid'] . '">
-    <th colspan ="2">Name</th>
-    <td colspan ="2">'.$row['fname'] .' ' .$row['sname'] .'</td>
+    <th>Name</th>
+    <td>'.$row['fname'] .' ' .$row['sname'] .'</td>
 </tr>
 
 <tr class="clickable-row" data-href="../../viewcomponent/' . $row['comp_ref'] . '">
-    <th colspan ="2">Component ID</th>
-    <td colspan ="2">'.$row['comp_ref'] .'</td>
+    <th>Component ID</th>
+    <td>'.$row['comp_ref'] .'</td>
 </tr>
 
 <tr class="clickable-row" data-href="../../viewcomponent/' . $row['comp_ref'] . '">
-    <th colspan ="2">Component Name</th>
-    <td colspan ="2">'.$row['comp_name'] .'</td>
+    <th>Component Name</th>
+    <td>'.$row['comp_name'] .'</td>
 </tr>
 
 <tr>
-    <th colspan ="2">Quantity</th>
-    <td colspan ="2">'.$row['quantity'] .'</td>
+    <th>Quantity</th>
+    <td>'.$row['quantity'] .'</td>
 </tr>
 
 <tr>
-    <th colspan ="2">Date From</th>
-    <td colspan ="2">'.$dateFrom .'</td>
+    <th>Date From</th>
+    <td>'.$dateFrom .'</td>
 </tr>
 
 <tr>
-    <th colspan ="2">Date To</th>
-    <td colspan ="2">'.$dateTo .'</td>
+    <th>Date To</th>
+    <td>'.$dateTo .'</td>
 </tr>
 
 <tr>
-    <th colspan ="2">Approved</th>
-    <td colspan ="2">'.$approved .'</td>
+    <th>Approved</th>
+    <td>'.$approved .'</td>
 </tr>
 
-<tr><td colspan="4">// OPTIONS //</td></tr>
+<tr><td colspan="2">// OPTIONS //</td></tr>
 
 <tr>
-    <td colspan="4"><form action="../../adminbooking/approve/' . $row['booking_id'] . '" method="POST">
+    <td><form action="../../adminbooking/approve/' . $row['booking_id'] . '" method="POST">
                 <button type="submit" class="btn btn-xs btn-success">Approve</button>
             </form>
         <form action="../../adminbooking/deny/' . $row['booking_id'] . '" method="POST">
@@ -238,6 +238,7 @@ echo'
                         });
                     });
                 </script>
+                </tbody>
                             </table>
                         </div>
                        </div>
