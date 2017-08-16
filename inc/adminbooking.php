@@ -208,20 +208,20 @@ echo'
 <tr><td colspan="2">// OPTIONS //</td></tr>
 
 <tr>
-    <td colspan="2"><form action="../../adminbooking/approve/' . $row['booking_id'] . '" method="POST">
+    <td><form action="../../adminbooking/approve/' . $row['booking_id'] . '" method="POST">
                 <button type="submit" class="btn btn-xs btn-success">Approve</button>
-            </form>
-        <form action="../../adminbooking/deny/' . $row['booking_id'] . '" method="POST">
+            </form></td>
+        <td><form action="../../adminbooking/deny/' . $row['booking_id'] . '" method="POST">
                 <button type="submit" class="btn btn-xs btn-warning">Deny</button>
-            </form>
+            </form></td>
 
-            <form action="../../adminbooking/sendreminder/' . $row['booking_id'] . '" method="POST">
+           <td> <form action="../../adminbooking/sendreminder/' . $row['booking_id'] . '" method="POST">
                 <button type="submit" class="btn btn-xs btn-info">Send Reminder</button>
-            </form>
-            <form action="../../user/sendmessage/' . $row['studentid'] . '" method="POST">
+            </form></td>
+            <td><form action="../../user/sendmessage/' . $row['studentid'] . '" method="POST">
                 <button type="submit" class="btn btn-xs btn-info">Send Message</button>
-            </form>
-            <form action="../../adminbooking/delete/' . $row['booking_id'] . '" method="POST">
+            </form></td>
+           <td><form action="../../adminbooking/delete/' . $row['booking_id'] . '" method="POST">
         
                 <button type="submit" class="btn btn-xs btn-danger">DELETE</button>
             </form></td>
