@@ -1,7 +1,9 @@
 </body>
 
+<div class="footer-bottom">
+    <div class="container">
 
-<footer>
+
             <div class="col-sm-4">
                 <a href="https://www.arduino.cc/"><img src="/inc/img/arduinologo.png"  height="50px" class="img-responsive" alt="Arduino Community Logo and Link"/></a>
             </div>
@@ -13,6 +15,8 @@
             <div class="col-sm-4">
                 <p class="navbar-text">&copy;RGU 2017//Developed by Peter Wronski</p>
             </div>
+    </div>
+</div>
 </footer>
 </html>
 
