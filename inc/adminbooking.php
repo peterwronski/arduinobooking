@@ -110,7 +110,7 @@ if(isset($_SESSION['userloggedin']) && $_SESSION['admin'] == TRUE){
                 </script>
                 
                 <tr>
-                <td colspan="2"><span class="glyphicon glyphicon-time"></span> - Waiting // 
+                <td colspan="3"><span class="glyphicon glyphicon-time"></span> - Waiting // 
                                 <span class="glyphicon glyphicon-remove"></span> - Denied // 
                                 <span class="glyphicon glyphicon-ok"></span> - Approved </td>
                 </tr>
