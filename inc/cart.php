@@ -12,7 +12,7 @@ function itemAdded(){
 
     $_SESSION['msg'] = '<div class="alert alert-success alert-dismissable">
                                     <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-                                    <strong>Yeee boi!</strong> Item added to your cart!
+                                    <strong>Item added to cart!</strong> 
                                 </div>';
     header("Location:../../components");
 
@@ -82,7 +82,7 @@ if(isset($_SESSION['userloggedin']) && !empty($_SESSION['userloggedin'])) {
                     setcookie("cart_cookie", $_SESSION["cart"], time() + (86400 * 30), "/");
                     $_SESSION['msg'] = '<div class="alert alert-info alert-dismissable">
                                     <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-                                    <strong>Yeee boi!</strong> Cart cleared!
+                                    <strong>Cart cleared!</strong> 
                                 </div>';
 
 
@@ -98,7 +98,7 @@ if(isset($_SESSION['userloggedin']) && !empty($_SESSION['userloggedin'])) {
                     }
                     $_SESSION['msg'] = '<div class="alert alert-info alert-dismissable">
                                     <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-                                    <strong>Yeee boi!</strong> Item removed from cart!
+                                    <strong>Item removed!</strong> 
                                 </div>';
 
                     header("Location:../../viewcart");

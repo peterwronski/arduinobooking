@@ -6,7 +6,7 @@ include ('scripts/dbconnect.php');
 if (($_POST['pass']!==$_POST['pass2'])) {// this checks to see if both password fields are identical
     $_SESSION['msg'] = '<div class="alert alert-danger alert-dismissable">
                                     <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-                                    <strong>Heads up!</strong>. Your passwords aren\'t matching. Please make sure your passwords match before submitting the form.
+                                    <strong>Heads up!</strong> Your passwords aren\'t matching. Please make sure your passwords match before submitting the form.
                                 </div>';
     header('Location: ./');
 } else {
@@ -80,7 +80,7 @@ if (($_POST['pass']!==$_POST['pass2'])) {// this checks to see if both password 
             } else {
                 $_SESSION['msg'] = '<div class="alert alert-success alert-dismissable" >
                                     <a href="" class="close" data-dismiss="alert" aria-label="close">×</a>
-                                    <strong>Awesome!</strong>. Your account has been created. Check your email for an activation link which will enable you to login to your account.
+                                    <strong>Awesome!</strong> Your account has been created. Check your email for an activation link which will enable you to login to your account.
                                 </div>';
                 header('Location: ./');
 
@@ -90,7 +90,7 @@ if (($_POST['pass']!==$_POST['pass2'])) {// this checks to see if both password 
 
         $_SESSION['msg'] = '<div class="alert alert-danger alert-dismissable">
                                     <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-                                    <strong>Heads up!</strong>. This student ID is already registered.
+                                    <strong>Heads up!</strong> This student ID is already registered.
                                 </div>';
         header('Location: ./');
 
@@ -98,7 +98,7 @@ if (($_POST['pass']!==$_POST['pass2'])) {// this checks to see if both password 
 } else {
         $_SESSION['msg'] = '<div class="alert alert-danger alert-dismissable">
                                     <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-                                    <strong>Heads up!</strong>. You MUST use an RGU email address to make an account.
+                                    <strong>Heads up!</strong> You MUST use an RGU email address to make an account.
                                 </div>';
         header('Location: ./');
     }

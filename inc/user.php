@@ -279,7 +279,7 @@ if(isset($_SESSION['userloggedin']) && $_SESSION['admin'] == TRUE) {
             if ($result) {
                 $_SESSION['msg'] = '<div class="alert alert-success alert-dismissable">
     <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-    <strong>Yeee boi!</strong> User deleted!
+    <strong>User deleted!</strong> 
 </div>';
 
 

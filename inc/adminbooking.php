@@ -425,7 +425,7 @@ $result = $conn->query($delete);
 if ($result && $in_stockUpdate) {
     $_SESSION['msg'] = '<div class="alert alert-success alert-dismissable">
     <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-    <strong>Yeee boi!</strong> Booking deleted!
+    <strong>Booking deleted!</strong> 
 </div>';
 
 
