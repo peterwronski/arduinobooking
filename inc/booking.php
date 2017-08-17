@@ -37,7 +37,7 @@ if(isset($_SESSION['userloggedin']) && !empty($_SESSION['userloggedin'])) {
 
                     $_SESSION['msg'] = '<div class="alert alert-success alert-dismissable">
                                     <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-                                    <strong>Yeee boi!</strong> Booking created!
+                                    <strong>Booking created!</strong> Check the status of your booking in the <a href="../../bookings">BOOKINGS</a> section
                                 </div>';
 
 
