@@ -87,9 +87,7 @@
                                         <input type="submit" name="login" class="login loginmodal-submit" value="Login">
                                     </form>
 
-                                    <div class="login-help">
-                                        <a href="#">Forgot Password</a>
-                                    </div>
+                                    
                                 </div>
                             </div>
                         </div>
