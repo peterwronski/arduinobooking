@@ -144,13 +144,11 @@ hr {
     border: 1px solid #781d7d;
 }
 
-.footer {
-    background: #EDEFF1;
-    height: auto;
-    padding-bottom: 30px;
-    position: relative;
-    width: 100%;
-    border-bottom: 1px solid #CCCCCC;
-    border-top: 1px solid #DDDDDD;
+.homebox1 {
+    background-color: rgba(16, 192, 255, 0.25);
+}
+
+.homebox2 {
+    background-color: rgba(209, 2, 255, 0.62);
 }
 
