@@ -14,7 +14,8 @@ if(isset($_SESSION['msg'])){
             <h1>Welcome to ArduinoBooking!</h1>
         </div>
         <div class="col-sm-6">
-            <h2>Here's a quick guide on how to use the website</h2>
+            <h2>Here's a quick guide on how to use the website</h2><br/>
+            <p>(Click on the boxes for more info)</p>
         </div>
     </div>
     <div class="row">
