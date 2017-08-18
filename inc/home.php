@@ -59,9 +59,14 @@ if(isset($_SESSION['msg'])){
             <h1>Step 3</h1> <h2>Pick dates</h2>
             <a href="#step3"  data-toggle="collapse"><span class="glyphicon glyphicon-chevron-down"></span> More info <span class="glyphicon glyphicon-chevron-down"></span></a>
             <div id="step3" class="collapse">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                <div class="col-sm-4">
+                    <img src="/inc/img/step3.1.png" class="img-responsive" alt="Step 3 Image 1"/>
+                </div>
+                <div class="col-sm-4">
+                    Go to 'Your Cart' to view all your components. In order to complete the booking, you'll need a starting date and a return date.
+                    When you're done, just click 'Create booking'. If everything goes smoothly, you'll be notified that your booking went through.
+                </div>
+
             </div>
         </div>
     </div>
@@ -70,9 +75,12 @@ if(isset($_SESSION['msg'])){
             <h1>Step 4</h1> <h2>Sit back and wait for confirmation</h2>
             <a href="#step4"  data-toggle="collapse"><span class="glyphicon glyphicon-chevron-down"></span> More info <span class="glyphicon glyphicon-chevron-down"></span></a>
             <div id="step4" class="collapse">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                <div class="col-sm-4">
+                    <img src="/inc/img/step4.1.png" class="img-responsive" alt="Step 4 Image 1"/>
+                </div>
+                <div class="col-sm-4">
+                    Sit back and wait for your booking to be confirmed/denied. You'll get an e-mail notification when an admin makes a decision about your booking, so you don't have to keep checking back.
+                </div>
             </div>
         </div>
     </div>
