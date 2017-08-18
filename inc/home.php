@@ -10,8 +10,10 @@ if(isset($_SESSION['msg'])){
 
 <div class="container">
     <div class="row">
-        <div class="col-sm-12">
-            <h1>Welcome to ArduinoBooking!</h1> <br/>
+        <div class="col-sm-6 col-sm-offset-0">
+            <h1>Welcome to ArduinoBooking!</h1>
+        </div>
+        <div class="col-sm-6 col-sm-offset-6">
             <h2>Here's a quick guide on how to use the website</h2>
         </div>
     </div>
