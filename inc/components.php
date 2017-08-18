@@ -136,7 +136,7 @@ if(isset($_SESSION['userloggedin'])) {
                                     <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
                                     <strong>Heads up!</strong> You need to be logged in to view this content
                                 </div>';
-    header('Location: /components');
+    header('Location: ../../components');
 
 }
     include('scripts/footer.php');
