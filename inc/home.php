@@ -18,7 +18,7 @@ if(isset($_SESSION['msg'])){
         </div>
     </div>
     <div class="row">
-        <div class="col-sm-6 col-sm-offset-0 homebox1">
+        <div class="col-sm-12 col-sm-offset-0 homebox1">
             <h1>Step 1</h1> <h2>Create an account</h2>
 
 
