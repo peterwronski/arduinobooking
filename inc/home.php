@@ -26,8 +26,12 @@ if(isset($_SESSION['msg'])){
                 <div class="col-sm-4">
                     <img src="/inc/img/step1.1.png" class="img-responsive" alt="Step 1 Image 1"/>
                 </div>
-                <div class="col-sm-6">
-                    Click the 'Register' button in the top right corner, and fill out all the details.
+                <div class="col-sm-4">
+                    Click the 'Register' button in the top right corner, and fill out all the details. Remember to use your RGU credentials,
+                    as no other credentials will be accepted (i.e. you can't make an account using your personal email).
+                </div>
+                <div class="col-sm-4">
+                    <img src="/inc/img/step1.2.png" class="img-responsive" alt="Step 1 Image 2"/>
                 </div>
             </div>
         </div>
