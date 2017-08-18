@@ -23,9 +23,12 @@ if(isset($_SESSION['msg'])){
             <h1>Step 1</h1> <h2>Create an account</h2>
             <a href="#step1"  data-toggle="collapse"><span class="glyphicon glyphicon-chevron-down"></span> More info <span class="glyphicon glyphicon-chevron-down"></span></a>
             <div id="step1" class="collapse">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                <div class="col-sm-4">
+                    <img src="/inc/img/step1.1.png" class="img-responsive" alt="Step 1 Image 1"/>
+                </div>
+                <div class="col-sm-6">
+                    Click the 'Register' button in the top right corner, and fill out all the details.
+                </div>
             </div>
         </div>
     </div>
