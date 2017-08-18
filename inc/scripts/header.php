@@ -43,7 +43,7 @@
                 <li><a href="../../">Home</a> </li>
                 <li><a href="about">About Arduino</a> </li>
                 <li><a href="components">Components</a></li>
-                <li><a href="http://campusmoodle.rgu.ac.uk">CampusNoodle</a></li>
+                <li><a href="http://campusmoodle.rgu.ac.uk">CampusMoodle</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <?php
