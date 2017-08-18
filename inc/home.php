@@ -21,7 +21,7 @@ if(isset($_SESSION['msg'])){
     <div class="row">
         <div class="col-sm-12 col-sm-offset-0 homebox1">
             <h1>Step 1</h1> <h2>Create an account</h2>
-            <a href="#step1"  data-toggle="collapse">More info</a>
+            <a href="#step1"  data-toggle="collapse"><span class="glyphicon glyphicon-chevron-down"></span> More info <span class="glyphicon glyphicon-chevron-down"></span></a>
             <div id="step1" class="collapse">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit,
                 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
