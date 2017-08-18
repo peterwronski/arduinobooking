@@ -46,7 +46,7 @@ if(isset($_SESSION['msg'])){
                 </div>
                 <div class="col-sm-4">
                     Find the components needed for your project. Clicking on a component will redirect you to a page which will allow you to add the component to your cart.
-                    Please remember, you can't book more components than are currently available (Displayed in the "In Stock" column).
+                    Pick a quantity, and please remember you can't book more components than are currently available (Displayed in the "In Stock" column).
                 </div>
                 <div class="col-sm-4">
                     <img src="/inc/img/step2.2.png" class="img-responsive" alt="Step 2 Image 2"/>
