@@ -41,9 +41,16 @@ if(isset($_SESSION['msg'])){
             <h1>Step 2</h1> <h2>Find components</h2>
             <a href="#step2"  data-toggle="collapse"><span class="glyphicon glyphicon-chevron-down"></span> More info <span class="glyphicon glyphicon-chevron-down"></span></a>
             <div id="step2" class="collapse">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                <div class="col-sm-4">
+                    <img src="/inc/img/step2.1.png" class="img-responsive" alt="Step 2 Image 1"/>
+                </div>
+                <div class="col-sm-4">
+                    Find the components needed for your project. Clicking on a component will redirect you to a page which will allow you to add the component to your cart.
+                    Please remember, you can't book more components than are currently available (Displayed in the "In Stock" column).
+                </div>
+                <div class="col-sm-4">
+                    <img src="/inc/img/step2.2.png" class="img-responsive" alt="Step 2 Image 2"/>
+                </div>
             </div>
         </div>
     </div>
