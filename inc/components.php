@@ -132,6 +132,10 @@ if(isset($_SESSION['userloggedin']) && !empty($_SESSION['userloggedin'])) {
     </div>
     <?php
 }else{
+    $_SESSION['msg'] = '<div class="alert alert-warning alert-dismissable">
+                                    <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+                                    <strong>Heads up!</strong> You need to be logged in to view this content
+                                </div>';
     header('Location: 404.php');
 
 }
