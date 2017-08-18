@@ -7,7 +7,14 @@ if(isset($_SESSION['msg'])){
 };
 ?>
 
+
 <div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h1>Welcome to ArduinoBooking!</h1> <br/>
+            <h2>Here's a quick guide on how to use the website</h2>
+        </div>
+    </div>
     <div class="row">
         <div class="col-sm-6 col-sm-offset-0 homebox1">
 
