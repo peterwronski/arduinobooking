@@ -25,19 +25,19 @@ if(isset($_SESSION['msg'])){
         </div>
     </div>
     <div class="row">
-        <div class="col-sm-6 col-sm-offset-0 homebox2">
+        <div class="col-sm-12 col-sm-offset-0">
             <h1>Step 2</h1> <h2>Find components</h2>
 
         </div>
     </div>
     <div class="row">
-        <div class="col-sm-6 col-sm-offset-0 homebox1">
+        <div class="col-sm-12 col-sm-offset-0 homebox1">
             <h1>Step 3</h1> <h2>Pick dates</h2>
 
         </div>
     </div>
     <div class="row">
-        <div class="col-sm-6 col-sm-offset-0 homebox2">
+        <div class="col-sm-12 col-sm-offset-0">
             <h1>Step 4</h1> <h2>Sit back and wait for confirmation</h2>
 
         </div>
