@@ -418,7 +418,7 @@ $quantity = $row['in_stock'] + $row['quantity'] ;
 $in_stockUpdate = $conn->query('UPDATE components SET in_stock = "' . $quantity . '" WHERE comp_ref="' . $row['comp_ref'] . '"');
 
 
-$delete = 'DELETE FROM booking WHERE booking_id ="'.$booking_id .'" AND studentid = "'.$_SESSION['studentid'] .'";';
+$delete = 'DELETE FROM booking WHERE booking_id ="'.$booking_id .'"';
 $result = $conn->query($delete);
 
 
