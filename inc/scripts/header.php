@@ -73,6 +73,7 @@
                 }
                 else {
                     echo'
+<!-- SOURCE https://bootsnipp.com/snippets/featured/clean-modal-login-form -->
                 <li><a href="#" data-toggle="modal" data-target="#login-modal"><span class="glyphicon glyphicon-user"></span>Login</a>
                         <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
                             <div class="modal-dialog">
@@ -92,6 +93,7 @@
                             </div>
                         </div>
                 </li>
+                
                 
                 <li><a href="#" data-toggle="modal" data-target="#reg-modal"><span class="glyphicon glyphicon-plus-sign"></span>Register</a>
                     <div class="modal fade" id="reg-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">

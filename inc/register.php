@@ -38,7 +38,7 @@ if (($_POST['pass']!==$_POST['pass2'])) {// this checks to see if both password 
     $check_studentid = $conn->query("SELECT studentid FROM users WHERE studentid='$studentid'"); #CHECKING THAT THE STUDENTID ISN'T REGISTERED
     $count = $check_studentid->num_rows;
 
-    echo $hashAndSalt .$studentid .$fname .$sname .$email .$activation_hash;
+    //echo $hashAndSalt .$studentid .$fname .$sname .$email .$activation_hash;
 
     if ($count == 0) {
         $adduser = "INSERT INTO users VALUE('$studentid', '$fname', '$sname', '$email', '$activated', '$course', '$hashAndSalt', '$activation_hash' )" or die('Insert query failed');

@@ -41,20 +41,16 @@ if(isset($_SESSION['userloggedin'])) {
 
 
                    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
                             $sort_method1 = $_POST['sort_method1'];
                             $sort_method2 = $_POST['sort_method2'];
-
                                 switch ($sort_method1) {
                                     case "name":
                                         $_SESSION['sort_method1'] = " comp_name";
                                         break;
-
                                     case "in_stock":
                                         $_SESSION['sort_method1'] = " in_stock";
                                     break;
                                 };
-
                                 switch ($sort_method2) {
                                     case "ascending":
                                         $_SESSION['sort_method2'] = " ASC";
